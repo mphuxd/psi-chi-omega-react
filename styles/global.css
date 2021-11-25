@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "inter";
+    font-weight: 1 999;
+    src: url(/fonts/Inter/Inter.var.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Cinzel";
+    src: url(/public/fonts/Cinzel/cinzel.otf) format("otf");
+    font-weight: 400;
+  }
+}
+
+.p {
+  @apply font-body;
+}
