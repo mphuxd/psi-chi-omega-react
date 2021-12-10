@@ -1,12 +1,13 @@
 import { HeaderMenuDropdown } from "./HeaderMenuDropdown";
+import { navContext } from "../../context/nav-context";
+import { useContext } from "react";
 
-export const HeaderNavBar = ({ navData }) => {
-  //for each prop create a itemgroup
+export const HeaderNavBar = () => {
+  let navData = useContext(navContext);
   return (
-    <nav className='hidden md:flex md:flex-row md:justify-between 2xl:w-1/2'>
+    <nav className='hidden md:flex md:flex-row md:justify-between'>
       {navData.map((navItem, step) => {
-        //for each navdata item create a dropdown and passdown navitem as a prop
-        return <HeaderMenuDropdown navItem={navItem}  key={step} />;
+        return <HeaderMenuDropdown navItem={navItem} key={step} />;
       })}
     </nav>
   );

@@ -1,22 +1,19 @@
-/* ./styles/global.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
 
 @layer base {
   @font-face {
     font-family: "inter";
     font-weight: 1 999;
     src: url(/fonts/Inter/Inter.var.woff2) format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Cinzel";
     src: url(/public/fonts/Cinzel/cinzel.otf) format("otf");
     font-weight: 400;
+    font-display: swap;
   }
-}
-
-.p {
-  @apply font-body;
 }

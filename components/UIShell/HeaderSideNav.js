@@ -1,20 +1,25 @@
-import { Children } from "react";
+import { navContext } from "../../context/nav-context";
+import { useContext } from "react";
+import cx from "classnames";
 import HeaderSideNavGroup from "./HeaderSideNavGroup";
+import PropTypes from "prop-types";
 
-//auto generate
-export const HeaderSideNav = ({ navData, isActive }) => {
-  let className ="flex-col" + ' z-10' + ' absolute' + ' mt-24' + ' ml-2';
+export const HeaderSideNav = ({ isActive }) => {
   let display = isActive ? " flex" : " hidden";
-  className = className + display;
+  let className = "flex-col z-10  absolute mt-24 ml-2";
+  let classNames = cx(className, display);
+  let navData = useContext(navContext);
   return (
-    //for each prop create an item
-    <div className={className}>
+    <div className={classNames}>
       {navData.map((navItem, step) => {
-        //for each navdata item create a dropdown and passdown navitem as a prop
         return <HeaderSideNavGroup navItem={navItem} key={step} />;
       })}
     </div>
   );
+};
+
+HeaderSideNav.propTypes = {
+  isActive: PropTypes.bool,
 };
 
 export default HeaderSideNav;

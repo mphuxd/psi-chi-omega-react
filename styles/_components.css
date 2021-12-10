@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+@layer components {
+  .theme-default-layout {
+    @apply pl-2 pr-2 md:pr-14 md:pl-14 lg:pl-12 lg:pr-12 xl:pl-20 xl:pr-20 2xl:pl-28 2xl:pr-28 2xl:mr-auto 2xl:ml-auto max:pl-0 max:pr-0 max:max-w-1280;
+  }
+  .theme-grid {
+    @apply px-2 grid w-screen grid-cols-4 gap-x-4
+    sm:px-4 sm:grid-cols-8 sm:gap-x-8
+    md:px-14 md:grid-cols-12 md:gap-x-4
+    lg:px-12 lg:grid-cols-12 lg:gap-x-8
+    xl:px-20 xl:grid-cols-12 
+    2xl:px-28  
+    max:px-20 max:max-w-1280;
+  }
+  .card-default-layout {
+    @apply col-span-full flex flex-col sm:flex sm:flex-row md:col-span-4 md:block mr-2 ml-2 md:mr-0 md:ml-0;
+  }
+  .card-2x-layout {
+    @apply sm:flex sm:flex-row md:block md:w-1/2 mr-2 ml-2 md:mr-0 md:ml-0;
+  }
+  .section-heading {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 0;
+    padding-right: 8px;
+  }
+  .section-heading::after {
+    content: "";
+    background: #fff;
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 100%;
+    width: 100vw;
+    height: 1px;
+  }
+  .swiper-slide-width {
+    @apply w-3/4 lg:flex lg:flex-row lg:w-10/12 xl:w-10/12 2xl:w-3/4 
+      max:w-7/12 !important;
+  }
+}

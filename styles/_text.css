@@ -1,0 +1,39 @@
+/*------------------------------------*\
+  #TEXT UTILITIES
+\*------------------------------------*/
+
+@layer utilities {
+  .superheadline {
+  }
+
+  .headline {
+    @apply text-5xl leading-tight font-semibold md:text-6xl md:leading-tight md:font-bold xl:text-7xl xl:leading-tight xl:font-semibold;
+  }
+  .subheadline {
+    @apply text-2xl leading-8 font-bold sm:text-2xl md:text-5xl md:leading-tight md:font-bold xl:text-4xl xl:font-semibold xl:leading-tight;
+  }
+
+  .miniheadline {
+    @apply text-tiny leading-6 md:text-lg font-bold;
+  }
+
+  .largebodytext {
+    @apply text-lg leading-7 font-light px-2 xl:text-xl xl:leading-8;
+  }
+
+  .bodytext {
+    @apply text-tiny font-light leading-5 md:text-lg md:leading-6 xl:leading-7;
+  }
+
+  .minibodytext {
+    @apply;
+  }
+
+  .captiontext {
+    @apply text-sm font-light leading-4 md:text-tiny;
+  }
+
+  .buttontext {
+    @apply font-medium text-lg leading-6;
+  }
+}

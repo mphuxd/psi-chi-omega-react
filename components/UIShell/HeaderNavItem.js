@@ -1,5 +1,12 @@
 export const HeaderNavItem = ({ navLink, step }) => {
-  return <a key={step}>{navLink}</a>;
+  return (
+    <a className='' key={step}>
+      {navLink}
+    </a>
+  );
 };
+
+
+
 
 export default HeaderNavItem;

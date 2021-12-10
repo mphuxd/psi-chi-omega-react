@@ -1,23 +1,42 @@
 import React, { useState } from "react";
-import HeaderNavItem from "./HeaderNavItem";
+import LinkNav from "../Link/LinkNavGroup";
+import cx from "classnames";
+import PropTypes from "prop-types";
 
-export const HeaderMenuDropdown = ({ navItem, step}) => {
-  //
+export const HeaderMenuDropdown = ({ navItem, step }) => {
   let [isOpenDropdown, setIsOpenDropdown] = useState(false);
-  let displayDropdown = isOpenDropdown ? " flex" : " hidden";
-  let classNames = "flex-col";
-  classNames = classNames + displayDropdown;
+  let displayDropdown = isOpenDropdown ? "flex" : "hidden";
+  let classNames = cx(" flex-col absolute", displayDropdown);
+
+  const handleSetIsOpenDropdownClick = () => setIsOpenDropdown((isOpenDropdown = !isOpenDropdown));
+
+  const handleSetIsOpenDropdownBlur = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setIsOpenDropdown((isOpenDropdown = false));
+    }
+  };
 
   return (
-    <div key={step} className='mt-auto mb-auto'>
+    <div
+      onClick={handleSetIsOpenDropdownClick}
+      onBlur={handleSetIsOpenDropdownBlur}
+      key={step}
+      tabIndex='0'
+      className='mt-auto mb-auto p-2 hover:underline hover:cursor-pointer md:ml-4'
+    >
       {navItem.link}
       <div className={classNames}>
         {navItem.sublinks.map((navLink, step) => {
-          return <HeaderNavItem navLink={navLink} key={step} />;
+          return <LinkNav key={step} navItem={navItem} navLink={navLink} />;
         })}
       </div>
     </div>
   );
+};
+
+HeaderMenuDropdown.propTypes = {
+  navItem: PropTypes.object,
+  step: PropTypes.number,
 };
 
 export default HeaderMenuDropdown;

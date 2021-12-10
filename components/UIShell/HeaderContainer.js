@@ -1,9 +1,7 @@
 import React, { useState, useCallback } from "react";
+import PropTypes from "prop-types";
 
-const HeaderContainer = ({ isSideNavExpanded, navData, render: Children }) => {
-  //define state and props here to pass to children
-  //state for expandable sidenav
-
+const HeaderContainer = ({ isSideNavExpanded, render: Children }) => {
   const [isSideNavExpandedState, setIsSideNavExpandedState] = useState(isSideNavExpanded);
 
   const handleHeaderMenuButtonClick = useCallback(() => {
@@ -14,31 +12,16 @@ const HeaderContainer = ({ isSideNavExpanded, navData, render: Children }) => {
     <Children
       isSideNavExpanded={isSideNavExpandedState}
       onClickSideNavExpand={handleHeaderMenuButtonClick}
-      navData={navData}
     />
   );
 };
 
+HeaderContainer.propTypes = {
+  isSideNavExpanded: PropTypes.bool,
+};
+
 HeaderContainer.defaultProps = {
   isSideNavExpanded: false,
-  navData: [
-    {
-      link: "About Us",
-      sublinks: ["Little Sister Program", "History", "Community Involvement"],
-    },
-    {
-      link: "Members",
-      sublinks: ["Brothers", "Alumni"],
-    },
-    {
-      link: "Resources",
-      sublinks: ["COVID-19", "FAQ", "Mental Health", "Contact Us"],
-    },
-    {
-      link: "Join",
-      sublinks: ["Psi Chi Omega Fraternity", "Psi Chi Omega Little Sis"],
-    },
-  ],
 };
 
 export default HeaderContainer;

@@ -1,10 +1,13 @@
-import React from 'react'
+import PropTypes from "prop-types";
 
-const HeroTitle = ({children}) => {
-    let classNames = 'text-4xl font-normal w-auto text-center font-display max:text-7xl'
-    return (
-        <h1 className={classNames}>{children}</h1>
-    )
-}
+const HeroTitle = ({ children }) => {
+  let classNames =
+    "text-4xl font-normal w-auto text-center font-display md:text-7xl theme-default-layout";
+  return <h1 className={classNames}>{children}</h1>;
+};
 
-export default HeroTitle
+HeroTitle.propTypes = {
+  children: PropTypes.string,
+};
+
+export default HeroTitle;
