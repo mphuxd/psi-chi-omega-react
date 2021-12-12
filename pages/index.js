@@ -60,7 +60,7 @@ export default function Home() {
           </Grid>
 
           <Carousel>
-            <SwiperSlide className='swiper-slide-width'>
+            <SwiperSlide className="swiper-slide-width">
               <CarouselSlideImage
                 src='/images/rona.png'
                 alt='Coronavirus-19'
@@ -78,7 +78,7 @@ export default function Home() {
                 </ContentLink>
               </CarouselSlideBody>
             </SwiperSlide>
-            <SwiperSlide className='swiper-slide-width xl:flex xl:flex-row xl:w-10/12 '>
+            <SwiperSlide className="swiper-slide-width">
               <CarouselSlideImage
                 src='/images/rona.png'
                 alt='Coronavirus-19'
@@ -96,7 +96,7 @@ export default function Home() {
                 </ContentLink>
               </CarouselSlideBody>
             </SwiperSlide>
-            <SwiperSlide className='swiper-slide-width xl:flex xl:flex-row xl:w-10/12 '>
+            <SwiperSlide className="swiper-slide-width">
               <CarouselSlideImage
                 src='/images/rona.png'
                 alt='Coronavirus-19'
