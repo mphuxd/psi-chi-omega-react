@@ -5,7 +5,6 @@ import HeroTitle from "../components/Hero/HeroTitle";
 import HeroImage from "../components/Hero/HeroImage";
 import HeroSubText from "../components/Hero/HeroSubText";
 import HeroSubtitle from "../components/Hero/HeroSubtitle";
-import HeroMediaControl from "../components/Hero/HeroMediaControl";
 import ContentHeader from "../components/Content/ContentHeader";
 import ContentLink from "../components/Content/ContentLink";
 import ContentBody from "../components/Content/ContentBody";
@@ -34,16 +33,17 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Hero>
-          <HeroTitle>Psi Chi Omega</HeroTitle>
-          <HeroSubtitle>Fraternity</HeroSubtitle>
-          <HeroImage src='/images/placeholder.jpg' alt='placeholder' width={1440} height={600} />
-          <HeroSubText>INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD</HeroSubText>
-          <HeroSubText> Gamma Chapter ∙ University of California, Davis</HeroSubText>
-          <HeroMediaControl />
-        </Hero>
+        <Wrapper className='justify-center'>
+          <Hero>
+            <HeroTitle>Psi Chi Omega</HeroTitle>
+            <HeroSubtitle>Fraternity</HeroSubtitle>
+            <HeroImage src='/images/placeholder.jpg' alt='placeholder' width={1440} height={600} />
+            <HeroSubText>INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD</HeroSubText>
+            <HeroSubText> Gamma Chapter ∙ University of California, Davis</HeroSubText>
+          </Hero>
+        </Wrapper>
 
-        <Wrapper className='justify-center mt-32 mb-32 max:mt-64 max:mb-44'>
+        <Wrapper className='justify-center mt-32 mb-32 max:mt-36 max:mb-44'>
           <Grid className='mx-auto'>
             <SectionHeader>
               <ContentHeader title='About us' isCenter={true} />

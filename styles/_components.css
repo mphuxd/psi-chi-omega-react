@@ -42,4 +42,17 @@
     @apply w-3/4 lg:flex lg:flex-row lg:w-10/12 xl:w-10/12 2xl:w-3/4 
       max:w-7/12 !important;
   }
+  .hero-flex-layout {
+    @apply object-center flex flex-col justify-center w-screen mt-9 md:px-6 lg:px-12 xl:px-20 2xl:px-28 2xl:mr-auto 2xl:ml-auto max:px-0 max:max-w-1440;
+  }
+
+  .hero-grid-layout {
+    @apply grid w-screen mx-auto grid-cols-4 gap-x-4
+    sm:px-4 sm:grid-cols-8 sm:gap-x-8
+    md:px-14 md:grid-cols-12 md:gap-x-4
+    lg:px-12 lg:grid-cols-12 lg:gap-x-8
+    xl:px-20 xl:grid-cols-12 
+    2xl:px-28  
+    max:px-20 max:max-w-1280;
+  }
 }
