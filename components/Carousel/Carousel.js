@@ -2,16 +2,38 @@ import { Swiper } from "swiper/react";
 import { Navigation } from "swiper";
 import Image from "next/image";
 import PropTypes from "prop-types";
+import useBreakpointSize from "../../hooks/useBreakpointSize";
 
-//hook in useBreakpoint to set swiper prop values
 const Carousel = ({ children }) => {
+  let breakPoint = useBreakpointSize();
+  let swiperProps = {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 16,
+    effect: "fade",
+  };
+
+  switch (breakPoint) {
+    case "default":
+      break;
+    case "sm":
+      swiperProps.spaceBetween = 32;
+      break;
+    case "md":
+      swiperProps.spaceBetween = 16;
+      break;
+    case "lg" && "xl" && "2xl" && "max":
+      swiperProps.spaceBetween = 32;
+      break;
+  }
+
   return (
     <div className='mt-20 xl:mt-32 2xl:mt-48'>
       <Swiper
-        slidesPerView={"auto"}
+        slidesPerView={swiperProps.slidesPerView}
         modules={[Navigation]}
         centeredSlides={true} //set to false and create setTranslate function
-        spaceBetween={16}
+        spaceBetween={swiperProps.spaceBetween}
         navigation={{
           prevEl: ".pag-prev",
           nextEl: ".pag-next",
@@ -21,7 +43,7 @@ const Carousel = ({ children }) => {
       </Swiper>
 
       <div className='theme-grid mx-auto'>
-        <div className='mt-10 flex flex-row justify-center col-span-2 xl:col-start-11 '>
+        <div className='mt-10 flex flex-row justify-center col-span-full xl:col-start-11 '>
           <button className='pag-prev mr-2'>
             <Image src='/pag-prev.svg' alt='Move Carousel Back' width={56} height={56} />
           </button>
