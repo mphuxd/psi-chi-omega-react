@@ -1,7 +1,10 @@
 module.exports = {
   mode: "jit",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
     screens: {
@@ -50,9 +53,6 @@ module.exports = {
       arsenic: "#394149",
       poseidon: "#212B4B",
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
