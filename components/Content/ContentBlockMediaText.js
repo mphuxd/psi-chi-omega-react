@@ -1,13 +1,12 @@
 import ContentBlockMedia from "./ContentBlockMedia";
-import ContentBlockQuoteBody from "./ContentBlockQuoteBody";
+import ContentBlockBody from "./ContentBlockBody";
 import ContentBlockText from "./ContentBlockText";
-import ContentBlockQuoteBodyAttributes from "./ContentBlockQuoteBodyAttributes";
 import LinkButton from "../Link/LinkButton";
 import Image from "next/image";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-const ContentBlockQuote = ({
+const ContentBlockMediaText = ({
   className = "",
   isReversed,
   imgSrc,
@@ -16,9 +15,7 @@ const ContentBlockQuote = ({
   imgHeight,
   eyebrowLabel,
   header,
-  quote,
-  quoteAuthor,
-  quoteAuthorSubtext,
+  text,
   linkHref,
   linkClassName,
   linkAlt,
@@ -32,7 +29,7 @@ const ContentBlockQuote = ({
     "sm:order-1": !isReversed,
   });
 
-  let bodyClassName = cx("content-block--quote_body", {
+  let bodyClassName = cx("content-block--text", {
     "sm:order-1": isReversed,
     "sm:order-2": !isReversed,
   });
@@ -44,18 +41,8 @@ const ContentBlockQuote = ({
       <ContentBlockMedia className={imgClassName}>
         <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} layout='responsive' />
       </ContentBlockMedia>
-      <ContentBlockQuoteBody className={bodyClassName}>
-        <ContentBlockText
-          className='flex flex-col'
-          eyebrowLabel={eyebrowLabel}
-          header={header}
-          text={quote}
-        />
-        <ContentBlockQuoteBodyAttributes
-          className=''
-          quoteAuthor={quoteAuthor}
-          quoteAuthorSubtext={quoteAuthorSubtext}
-        />
+      <ContentBlockBody className={bodyClassName}>
+        <ContentBlockText className='' eyebrowLabel={eyebrowLabel} header={header} text={text} />
         <LinkButton
           className={linkClassNames}
           href={linkHref}
@@ -63,12 +50,12 @@ const ContentBlockQuote = ({
           label={label}
           isCenter={linkIsCenter}
         />
-      </ContentBlockQuoteBody>
+      </ContentBlockBody>
     </div>
   );
 };
 
-ContentBlockQuote.propType = {
+ContentBlockMediaText.propType = {
   className: PropTypes.string,
   isReversed: PropTypes.bool,
   imgSrc: PropTypes.string,
@@ -77,9 +64,7 @@ ContentBlockQuote.propType = {
   imgHeight: PropTypes.number,
   eyebrowLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   header: PropTypes.string,
-  quote: PropTypes.string,
-  quoteAuthor: PropTypes.string,
-  quoteAuthorSubtext: PropTypes.string,
+  text: PropTypes.string,
   linkHref: PropTypes.string,
   linkClassName: PropTypes.string,
   linkAlt: PropTypes.string,
@@ -87,4 +72,4 @@ ContentBlockQuote.propType = {
   linkIsCenter: PropTypes.bool,
 };
 
-export default ContentBlockQuote;
+export default ContentBlockMediaText;

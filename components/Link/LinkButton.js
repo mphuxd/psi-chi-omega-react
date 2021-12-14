@@ -5,13 +5,12 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 const LinkButton = React.forwardRef(({ className, onClick, href, alt, label, isCenter }, ref) => {
-  let linkPosition = isCenter ? " justify-center" : "";
-  let classNames = cx("inline-flex flex-row", className, linkPosition);
+  let classNames = cx(className, "button--link", { "justify-center": isCenter });
   return (
     <Link href={href} passHref>
       <a className={classNames} href={href} onClick={onClick} ref={ref} alt={alt}>
         <Image src='/link-arrow.svg' width={48} height={48} alt={alt} />
-        <button className='font-body font-medium text-lg mt-auto mb-auto'>{label}</button>
+        <button className='text--button my-auto'>{label}</button>
       </a>
     </Link>
   );
