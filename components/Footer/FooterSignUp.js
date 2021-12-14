@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const FooterSignUp = ({ youtube, ig, facebook, text }) => {
   return (
@@ -12,19 +13,47 @@ const FooterSignUp = ({ youtube, ig, facebook, text }) => {
 
       <p className='text--body text-left mt-5 w-full max-w-[400px] sm:max-w-none'>{text}</p>
 
-      <form className='flex flex-row mt-8'>
-        <input
-          type='text'
-          name='name'
-          className='p-4 px-4 resize-none outline-none border text--caption text-midnight'
-          placeholder='EMAIL ADDRESS'
-        />
-        <input
-          type='submit'
-          value='SIGN UP'
-          className='bg-white text-midnight p-4 px-4 text--caption'
-        />
-      </form>
+      <Formik
+        initialValues={{ email: "" }}
+        validate={(values) => {
+          const errors = {};
+          if (!values.email) {
+            errors.email = "Required";
+          } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+            errors.email = "Invalid email address";
+          }
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form className='flex flex-col mt-8'>
+            <ErrorMessage name='email' className='font--caption text-red '>
+              {(msg) => <div className='text--minibody text-red-500'>{msg}</div>}
+            </ErrorMessage>
+            <div className='flex flex-row'>
+              <Field
+                type='email'
+                name='email'
+                className='p-4 px-4 resize-none outline-none text--caption text-midnight'
+                placeholder='EMAIL ADDRESS'
+              />
+              <Field
+                type='submit'
+                name=''
+                value='SIGN UP'
+                className='bg-mist text-midnight resize-none outline-none p-4 px-4 text--caption'
+                disabled={isSubmitting}
+              />
+            </div>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };

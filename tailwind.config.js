@@ -36,18 +36,20 @@ module.exports = {
       "12xl": "5.25rem", //84px
       "13xl": "5.75rem", //92px
     },
-    colors: {
-      forest: "#0D5736",
-      darkforest: "#004225",
-      midnight: "#212121",
-      white: "#FFFFFF",
-      smoke: "#F5F5F5",
-      mist: "#F2F2F2",
-      silver: "#949494",
-      gray: "#6A6A6A",
-      nickel: "#656F77",
-      arsenic: "#394149",
-      poseidon: "#212B4B",
+    extend: {
+      colors: {
+        forest: "#0D5736",
+        darkforest: "#004225",
+        midnight: "#212121",
+        white: "#FFFFFF",
+        smoke: "#F5F5F5",
+        mist: "#F2F2F2",
+        silver: "#949494",
+        gray: "#6A6A6A",
+        nickel: "#656F77",
+        arsenic: "#394149",
+        poseidon: "#212B4B",
+      },
     },
   },
   plugins: [],
