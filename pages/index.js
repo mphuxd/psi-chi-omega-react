@@ -24,11 +24,10 @@ import ContentBlockQuote from "../components/Content/ContentBlockQuote";
 import ContentEvent from "../components/Content/ContentEvent";
 import LinkButton from "../components/Link/LinkButton";
 import ContentBlockMediaText from "../components/Content/ContentBlockMediaText";
-import ContentBlockMedia from "../components/Content/ContentBlockMedia";
 
 export default function Home() {
   return (
-    <div className='antialiased overflow-x-hidden'>
+    <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
         <title>Psi Chi Omega Fraternity</title>
         <link rel='icon' href='/favicon.ico' />
@@ -229,8 +228,8 @@ export default function Home() {
               isReversed={false}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
-              imgWidth={1759}
-              imgHeight={1333}
+              imgWidth={1200}
+              imgHeight={900}
               eyebrowLabel=''
               header='The Brothers'
               quote='“Nunc, diam imperdiet gravida mauris, ac faucibus interdum proin nibh erat id mauris lectus amet feugiat ipsum quis dignissim imperdiet.”'
@@ -247,8 +246,8 @@ export default function Home() {
               isReversed={true}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
-              imgWidth={1759}
-              imgHeight={1333}
+              imgWidth={1200}
+              imgHeight={900}
               eyebrowLabel=''
               header='Little Sis'
               text='The little sis program allows college women to join our community and is an integral part of Psi Chi Omega. '
@@ -263,8 +262,8 @@ export default function Home() {
               isReversed={false}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
-              imgWidth={1759}
-              imgHeight={1333}
+              imgWidth={1200}
+              imgHeight={900}
               eyebrowLabel=''
               header='Our Alumni'
               text='Our extensive alumni network supports the fraternity by providing career opportunities, guidance, financial scholarships, and fraternal advising. If you’re an alumni, see how you can get involved.'
@@ -277,7 +276,7 @@ export default function Home() {
           </Grid>
         </Wrapper>
 
-        <Wrapper className='items-center pt-20 md:pt-28 lg:pt-32 lg:pb-44'>
+        <Wrapper className='items-center py-20 md:py-24 lg:py-32 xl:py-40'>
           <Grid className='mx-auto sm:gap-x-4 md:gap-x-4 lg:gap-x-8'>
             <ContentHeader className='col-span-full' title='Upcoming Events' isCenter={false} />
             <ContentEvent
