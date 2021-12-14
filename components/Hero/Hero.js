@@ -2,7 +2,7 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 const Hero = ({ className, children }) => {
-  let classNames = cx('hero-grid-layout', className);
+  let classNames = cx("hero--grid-layout mt-8", className);
 
   return <div className={classNames}>{children}</div>;
 };

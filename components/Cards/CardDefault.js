@@ -1,7 +1,8 @@
+import Card from "./Card";
 import LinkButton from "../Link/LinkButton";
-import Link from "next/link";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import cx from "classnames";
 
 const CardDefault = ({
   className,
@@ -17,41 +18,42 @@ const CardDefault = ({
   linkClassName,
   linkIsCenter,
 }) => {
+  let classNames = cx("card--default-layout", className);
   return (
-    <div className={className}>
+    <Card className={classNames}>
       <div className='sm:w-1/2 md:w-full'>
         <Image src={srcImg} alt={altImg} width={widthImg} height={heightImg} layout='responsive' />
       </div>
-      <div className='flex flex-col h-60 sm:h-auto sm:w-1/2 md:w-full md:h-60 justify-between bg-mist 2xl:h-80 p-4'>
+      <div className='flex flex-col h-60 sm:h-auto sm:w-1/2 md:w-full md:h-72 justify-between bg-mist 2xl:h-80 p-4'>
         <div>
-          <h3 className='font-bold text-2xl font-body leading-8'>{heading}</h3>
-          <p className='mt-3 font-body text-tiny font-light leading-5'>{body}</p>
+          <h3 className='text--minorheadline'>{heading}</h3>
+          <p className='text--body mt-3'>{body}</p>
         </div>
-        <Link href={linkHref} passHref>
-          <LinkButton
-            className={linkClassName}
-            alt={linkAlt}
-            label={linkLabel}
-            isCenter={linkIsCenter}
-          />
-        </Link>
+        <LinkButton
+          className={linkClassName}
+          href={linkHref}
+          alt={linkAlt}
+          label={linkLabel}
+          isCenter={linkIsCenter}
+        />
       </div>
-    </div>
+    </Card>
   );
 };
 
 CardDefault.propTypes = {
+  className: PropTypes.string,
   srcImg: PropTypes.string,
   altImg: PropTypes.string,
+  widthImg: PropTypes.number,
+  heightImg: PropTypes.number,
   heading: PropTypes.string,
   body: PropTypes.string,
   linkHref: PropTypes.string,
   linkAlt: PropTypes.string,
   linkLabel: PropTypes.string,
-  className: PropTypes.string,
   linkClassName: PropTypes.string,
   linkIsCenter: PropTypes.bool,
 };
 
 export default CardDefault;
-

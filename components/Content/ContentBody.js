@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
+import cx from "classnames";
 
-const ContentBody = ({ text }) => {
-  return (
-    <p className='text-center font-body text-tiny font-light leading-5 mt-4 md:text-lg md:leading-7'>
-      {text}
-    </p>
-  );
+const ContentBody = ({ isCenter, text }) => {
+  let classNames = cx("text--body mt-4", { "text-center": isCenter });
+
+  return <p className={classNames}>{text}</p>;
 };
 
 ContentBody.propTypes = {
+  isCenter: PropTypes.bool,
   text: PropTypes.string,
 };
 

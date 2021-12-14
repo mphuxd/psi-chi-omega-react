@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 const CarouselSlideBodyTitle = ({ title }) => {
   return (
-    <h3 className='font-body text-2xl font-bold leading-8 mt-2 md:text-5xl md:leading-10'>
+    <h2 className='mt-2 text--subheadline'>
       {title}
-    </h3>
+    </h2>
   );
 };
 

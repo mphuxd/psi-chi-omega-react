@@ -12,7 +12,7 @@ export const HeaderDefault = () => (
       //render prop exposes props to be used below
       <Header
         isActive={isSideNavExpanded}
-        className='w-screen h-16 flex flex-row flex-wrap justify-between content-center static z-50 md:h-20 theme-default-layout'
+        className='w-screen h-16 flex flex-row flex-wrap justify-between content-center static z-50 md:h-20 theme--default-layout'
       >
         <HeaderName isActive={isSideNavExpanded}></HeaderName>
         <HeaderMenuButton onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />

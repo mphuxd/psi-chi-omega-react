@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 
-const HeroSubtitle = ({ children }) => {
-  let classNames = "text-3xl w-auto text-center font-display col-span-full";
-  return <h1 className={classNames}>{children}</h1>;
+const HeroSubtitle = ({ text }) => {
+  let classNames = "hero--subtitle";
+  return <h1 className={classNames}>{text}</h1>;
 };
 
 HeroSubtitle.propTypes = {
-  children: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default HeroSubtitle;

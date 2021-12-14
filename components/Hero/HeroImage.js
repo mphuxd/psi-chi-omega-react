@@ -6,7 +6,7 @@ const HeroImage = ({ className, src, alt, width, height }) => {
   let classNames = cx("mt-7 col-span-full", className);
   return (
     <div className={classNames}>
-      <Image src={src} alt={alt} width={width} height={height} priority />
+      <Image src={src} alt={alt} width={width} height={height} layout="responsive" priority />
     </div>
   );
 };

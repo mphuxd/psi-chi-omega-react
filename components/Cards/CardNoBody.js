@@ -1,3 +1,4 @@
+import Card from "./Card";
 import LinkButton from "../Link/LinkButton";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,13 +17,19 @@ const CardNoBody = ({
   label,
   linkIsCenter,
 }) => {
-  let classNames = cx("flex flex-col", className);
+  let classNames = cx("card--no-body", className);
   return (
     <Link href={linkHref} passHref>
       <div className={classNames}>
         <Image src={srcImg} alt={altImg} width={widthImg} height={heightImg} layout='responsive' />
         <div className='flex flex-col justify-between p-4'>
-          <LinkButton className={linkClassname} href={linkHref} alt={linkAlt} label={label} isCenter={linkIsCenter} />
+          <LinkButton
+            className={linkClassname}
+            href={linkHref}
+            alt={linkAlt}
+            label={label}
+            isCenter={linkIsCenter}
+          />
         </div>
       </div>
     </Link>
@@ -35,6 +42,7 @@ CardNoBody.propTypes = {
   altImg: PropTypes.string,
   widthImg: PropTypes.number,
   heightImg: PropTypes.number,
+  linkClassname: PropTypes.string,
   linkHref: PropTypes.string,
   linkAlt: PropTypes.string,
   label: PropTypes.string,

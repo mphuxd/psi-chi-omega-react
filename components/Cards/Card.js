@@ -1,12 +1,12 @@
-import React from 'react'
+import PropTypes from "prop-types";
 
-const Card = ({className, children}) => {
-    let classNames = 'flex flex-col ' + className;
-    return (
-        <div className={classNames}>  
-            {children}
-        </div>
-    )
-}
+const Card = ({ className, children }) => {
+  return <div className={className}>{children}</div>;
+};
 
-export default Card
+Card.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+export default Card;
