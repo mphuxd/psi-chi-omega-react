@@ -1,9 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
       xs: "320px",
@@ -17,6 +14,7 @@ module.exports = {
     fontFamily: {
       display: ["cinzel"],
       body: ["inter"],
+      mono: ["IBMPlexMono"],
     },
     fontSize: {
       xs: ".625rem", //10px

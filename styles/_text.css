@@ -32,7 +32,7 @@
   }
 
   .text--minibody {
-    @apply;
+    @apply font-body text-tiny font-light leading-5 sm:text-base sm:leading-6;
   }
 
   .text--caption {

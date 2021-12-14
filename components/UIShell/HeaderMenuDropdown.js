@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 export const HeaderMenuDropdown = ({ navItem, step }) => {
   let [isOpenDropdown, setIsOpenDropdown] = useState(false);
   let displayDropdown = isOpenDropdown ? "flex" : "hidden";
-  let classNames = cx(" flex-col absolute", displayDropdown);
+  let classNames = cx(" flex-col absolute mt-1 bg-white pb-1 pr-1", displayDropdown);
 
   const handleSetIsOpenDropdownClick = () => setIsOpenDropdown((isOpenDropdown = !isOpenDropdown));
 
@@ -22,7 +22,7 @@ export const HeaderMenuDropdown = ({ navItem, step }) => {
       onBlur={handleSetIsOpenDropdownBlur}
       key={step}
       tabIndex='0'
-      className='mt-auto mb-auto p-2 hover:underline hover:cursor-pointer md:ml-4'
+      className='header-menu--dropdown'
     >
       {navItem.link}
       <div className={classNames}>

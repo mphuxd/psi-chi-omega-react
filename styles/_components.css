@@ -32,7 +32,10 @@
   }
   .footer--nav {
     @apply px-2 mt-16 grid grid-cols-2 gap-y-12 gap-x-4 col-span-full md:grid-cols-4 md:px-0 md:col-span-9 md:order-4 
-    xl:col-span-8 xl:col-start-5 xl:mt-4 lg:px-12 lg:gap-x-8
+    xl:col-span-8 xl:col-start-5 xl:mt-4 lg:px-12 lg:gap-x-8;
+  }
+  .header-menu--dropdown {
+    @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-base sm:leading-6  hover:underline hover:cursor-pointer md:ml-5 2xl:ml-8;
   }
   .hero--flex-layout {
     @apply object-center flex flex-col justify-center w-screen mt-9 md:px-6 lg:px-12 xl:px-20 2xl:px-28 2xl:mr-auto 2xl:ml-auto max:px-0 max:max-w-1440;
