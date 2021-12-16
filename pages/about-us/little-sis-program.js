@@ -1,6 +1,6 @@
 import Development from "../development";
 
-function Covid19() {
+function LittleSisProgram() {
   return <Development />;
 }
-export default Covid19;
+export default LittleSisProgram;

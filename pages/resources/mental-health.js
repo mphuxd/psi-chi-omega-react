@@ -1,11 +1,7 @@
-import React from 'react'
+import Development from "../development";
 
 const MentalHealth = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <Development />;
+};
 
-export default MentalHealth
+export default MentalHealth;

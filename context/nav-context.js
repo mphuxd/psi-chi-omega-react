@@ -4,7 +4,7 @@ export const navData = {
   navData: [
     {
       link: "About Us",
-      sublinks: ["About Us", "Little Sis Program", "History", "Community Involvement"],
+      sublinks: ["Little Sis Program", "History", "Community Involvement"],
     },
     {
       link: "Members",
@@ -12,11 +12,11 @@ export const navData = {
     },
     {
       link: "Resources",
-      sublinks: ["Resources", "COVID-19", "FAQ", "Mental Health", "Contact Us"],
+      sublinks: ["COVID-19", "FAQ", "Mental Health", "Contact Us"],
     },
     {
       link: "Join",
-      sublinks: ["Join Us", "Fraternity", "Little Sis"],
+      sublinks: ["Fraternity", "Little Sis"],
     },
   ],
 };

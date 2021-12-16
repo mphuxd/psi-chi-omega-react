@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const faq = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function Faq() {
+  return <Development />;
 }
-
-export default faq
+export default Faq;

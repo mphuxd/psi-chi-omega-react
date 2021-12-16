@@ -33,10 +33,10 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Layout>
+      <Layout className=''>
         <Wrapper className='justify-center'>
-          <Hero>
-            <HeroTitle text='Psi Chi Omega' />
+          <Hero className='animate__animated animate__fadeIn'>
+            <HeroTitle className='animate__animated animate__fadeIn' text='Psi Chi Omega' />
             <HeroSubtitle text='Fraternity' />
             <HeroImage src='/images/placeholder.jpg' alt='placeholder' width={1440} height={600} />
             <HeroSubText text='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD' />
@@ -90,17 +90,14 @@ export default function Home() {
             </SwiperSlide>
             <SwiperSlide className='swiper--slide-width'>
               <CarouselSlideImage
-                src='/images/rona.png'
-                alt='Coronavirus-19'
+                src='/images/16-9_placeholder.jpg'
+                alt='Placeholder Image'
                 width={1600}
                 height={900}
               />
               <CarouselSlideBody>
-                <CarouselSlideBodyTitle title='COVID-19 Response' />
-                <CarouselSlideBodyText
-                  text='The health, safety, and well-being of our community, on and off campus, is our top
-                  priority'
-                />
+                <CarouselSlideBodyTitle title='Featured Article' />
+                <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
                 <LinkButton
                   className='mt-10'
                   href='/'
@@ -112,17 +109,14 @@ export default function Home() {
             </SwiperSlide>
             <SwiperSlide className='swiper--slide-width'>
               <CarouselSlideImage
-                src='/images/rona.png'
-                alt='Coronavirus-19'
+                src='/images/16-9_placeholder.jpg'
+                alt='Placeholder Image'
                 width={1600}
                 height={900}
               />
               <CarouselSlideBody>
-                <CarouselSlideBodyTitle title='COVID-19 Response' />
-                <CarouselSlideBodyText
-                  text='The health, safety, and well-being of our community, on and off campus, is our top
-                  priority'
-                />
+                <CarouselSlideBodyTitle title='Featured Article' />
+                <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
                 <LinkButton
                   className='mt-10'
                   href='/'
@@ -140,8 +134,8 @@ export default function Home() {
               altImg='placeholder'
               widthImg={352}
               heightImg={264}
-              heading='Our Initatives'
-              body='See what we’re doing to get involved and make a difference in our community.'
+              heading='Our Brothers'
+              body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.'
               linkHref='/'
               linkAlt='Read More'
               linkLabel='Read More'
@@ -152,8 +146,8 @@ export default function Home() {
               altImg='placeholder'
               widthImg={352}
               heightImg={264}
-              heading='Our Initatives'
-              body='See what we’re doing to get involved and make a difference in our community.'
+              heading='Our History'
+              body='Learn about our roots and why Psi Chi Omega was founded.'
               linkHref='/'
               linkAlt='Read More'
               linkLabel='Read More'
@@ -180,10 +174,7 @@ export default function Home() {
               <ContentHeader title='Join Psi Chi Omega' isCenter={true} />
               <ContentBody
                 isCenter={true}
-                text='Founded in 1992 at UCSD, Psi Chi Omega is one of the most competitive and fastest
-                growing Asian-American social fraternities in California. Our traditions, values,
-                and community guide our members towards excellence in their pursuit to become
-                leaders, fighters, and givers for their community.'
+                text='Psi Chi Omega offers our members the tools, guidance, and environment to help create meaningful, longlasting experiences, memories, and relationships.'
               />
             </SectionHeader>
             <div className='col-span-full sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
@@ -194,7 +185,7 @@ export default function Home() {
                 heightImg={252}
                 linkHref='/'
                 linkAlt='placeholder'
-                label='Join the Brothers'
+                label='Join the Fraternity'
                 linkIsCenter={false}
               />
               <CardNoBody
@@ -204,7 +195,7 @@ export default function Home() {
                 heightImg={252}
                 linkHref='/'
                 linkAlt='placeholder'
-                label='Join the Brothers'
+                label='Join Little Sis'
                 linkIsCenter={false}
               />
             </div>
@@ -217,8 +208,7 @@ export default function Home() {
               <ContentHeader title='Our Community' isCenter={true} />
               <ContentBody
                 isCenter={true}
-                text='Founded in 1992 at UCSD, Psi Chi Omega is one of the most competitive and fastest
-                growing Asian-American social fraternities in California.'
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, tpraesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis.'
               />
             </SectionHeader>
           </Grid>
@@ -231,7 +221,7 @@ export default function Home() {
               imgWidth={1200}
               imgHeight={900}
               eyebrowLabel=''
-              header='The Brothers'
+              header='Our President'
               quote='“Nunc, diam imperdiet gravida mauris, ac faucibus interdum proin nibh erat id mauris lectus amet feugiat ipsum quis dignissim imperdiet.”'
               quoteAuthor='John Smith'
               quoteAuthorSubtext='Alpha Mu Class, Spring 2014'

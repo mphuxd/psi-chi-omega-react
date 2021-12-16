@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const brothers = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function Brothers() {
+  return <Development />;
 }
-
-export default brothers
+export default Brothers;

@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const alumni = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function Alumni() {
+  return <Development />;
 }
-
-export default alumni
+export default Alumni;

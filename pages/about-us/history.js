@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const history = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function History() {
+  return <Development />;
 }
-
-export default history
+export default History;

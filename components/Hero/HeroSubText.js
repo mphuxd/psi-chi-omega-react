@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import cx from 'classnames'
 
-const HeroSubText = ({ text }) => {
-  let classNames = "hero--subtext";
+const HeroSubText = ({ className, text }) => {
+  let classNames = cx("hero--subtext", className);
   return <h2 className={classNames}>{text}</h2>;
 };
 

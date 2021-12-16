@@ -1,4 +1,6 @@
-function About() {
-    return <div>About</div>
+import Development from "../development";
+
+function CommunityInvolvement() {
+  return <Development />;
 }
-export default About
+export default CommunityInvolvement

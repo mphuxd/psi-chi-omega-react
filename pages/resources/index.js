@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const index = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function Resources() {
+  return <Development />;
 }
-
-export default index
+export default Resources;

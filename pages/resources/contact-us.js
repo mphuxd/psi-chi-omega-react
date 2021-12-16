@@ -1,11 +1,6 @@
-import React from 'react'
+import Development from "../development";
 
-const contactus = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+function ContactUs() {
+  return <Development />;
 }
-
-export default contactus
+export default ContactUs;
