@@ -1,15 +1,23 @@
 import cx from "classnames";
 import PropTypes from "prop-types";
+import React from "react";
 
-const Hero = ({ className, children }) => {
-  let classNames = cx("hero--grid-layout mt-8", className);
+const Hero = React.forwardRef(({ inView, entry, animateClassNames, className, children }, ref) => {
+  let classNames = cx("hero--grid-layout mt-8", className, {
+    "animate__animated animate__fadeIn": inView,
+  });
+  return (
+    <div ref={ref} className={classNames}>
+      {children}
+    </div>
+  );
+});
 
-  return <div className={classNames}>{children}</div>;
-};
-
-Hero.proptypes = {
+Hero.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 };
+
+Hero.displayName = "Hero";
 
 export default Hero;
