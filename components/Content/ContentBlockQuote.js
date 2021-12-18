@@ -6,10 +6,12 @@ import LinkButton from "../Link/LinkButton";
 import Image from "next/image";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import { useInView } from "react-intersection-observer";
 
 const ContentBlockQuote = ({
   className = "",
   isReversed,
+  animateInView,
   imgSrc,
   imgAlt,
   imgWidth,
@@ -25,7 +27,20 @@ const ContentBlockQuote = ({
   label,
   linkIsCenter,
 }) => {
-  let classNames = cx(className, "content-block--quote");
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+
+  let classNames = cx(
+    className,
+    "content-block--quote",
+    { "opacity-0": animateInView },
+    {
+      "animate__animated animate__fadeInUp animate__fast opacity-100": inView && animateInView,
+    }
+  );
 
   let imgClassName = cx("content-block--media", {
     "sm:order-2": isReversed,
@@ -40,7 +55,7 @@ const ContentBlockQuote = ({
   let linkClassNames = cx(linkClassName, "mt-6");
 
   return (
-    <div className={classNames}>
+    <div ref={ref} className={classNames}>
       <ContentBlockMedia className={imgClassName}>
         <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} layout='responsive' />
       </ContentBlockMedia>
@@ -71,6 +86,7 @@ const ContentBlockQuote = ({
 ContentBlockQuote.propType = {
   className: PropTypes.string,
   isReversed: PropTypes.bool,
+  animateInView: PropTypes.bool,
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
   imgWidth: PropTypes.number,
@@ -88,3 +104,5 @@ ContentBlockQuote.propType = {
 };
 
 export default ContentBlockQuote;
+
+//to-do - refactor using slot pattern
