@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 
 const Grid = React.forwardRef(
   ({ className = "", inView, entry, animateClassNames, children }, ref) => {
-    let classNames = cx("theme--grid", className, animateClassNames, {
-      "animate__animated animate__fadeIn": inView,
+    let classNames = cx(className, animateClassNames, {
+      "theme--grid": true,
+      animateClassNames: inView,
     });
     return (
       <div ref={ref} className={classNames}>
