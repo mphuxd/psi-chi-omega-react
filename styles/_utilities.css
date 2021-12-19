@@ -12,4 +12,16 @@
   .max-w-1120 {
     max-width: 1120px;
   }
+  .animate--ease-in {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .animate--ease-out-quintic {
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .animate--duration-500ms {
+    animation-duration: 500ms !important;
+  }
+  .animate--duration-300ms {
+    animation-duration: 300ms !important;
+  }
 }

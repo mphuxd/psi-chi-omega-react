@@ -24,6 +24,8 @@ import ContentBlockQuote from "../components/Content/ContentBlockQuote";
 import ContentEvent from "../components/Content/ContentEvent";
 import LinkButton from "../components/Link/LinkButton";
 import ContentBlockMediaText from "../components/Content/ContentBlockMediaText";
+import IsInView from "../components/IsInView";
+import CarouselSlideContainer from "../components/Carousel/CarouselSlideContainer";
 
 export default function Home() {
   return (
@@ -35,13 +37,20 @@ export default function Home() {
 
       <Layout className=''>
         <Wrapper className='justify-center'>
-          <Hero className='animate__animated animate__fadeIn'>
-            <HeroTitle className='animate__animated animate__fadeIn' text='Psi Chi Omega' />
-            <HeroSubtitle text='Fraternity' />
-            <HeroImage src='/images/placeholder.jpg' alt='placeholder' width={1440} height={600} />
-            <HeroSubText text='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD' />
-            <HeroSubText text='Gamma Chapter ∙ University of California, Davis' />
-          </Hero>
+          <IsInView toggleOnce={true}>
+            <Hero className=''>
+              <HeroTitle className='' text='Psi Chi Omega' />
+              <HeroSubtitle text='Fraternity' />
+              <HeroImage
+                src='/images/placeholder.jpg'
+                alt='placeholder'
+                width={1440}
+                height={600}
+              />
+              <HeroSubText text='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD' />
+              <HeroSubText text='Gamma Chapter ∙ University of California, Davis' />
+            </Hero>
+          </IsInView>
         </Wrapper>
 
         <Wrapper className='justify-center mt-32 mb-32 max:mt-36 max:mb-44'>
@@ -65,111 +74,131 @@ export default function Home() {
             </SectionHeader>
           </Grid>
 
-          <Carousel>
-            <SwiperSlide className='swiper--slide-width'>
-              <CarouselSlideImage
-                src='/images/rona.png'
-                alt='Coronavirus-19'
-                width={1600}
-                height={900}
-              />
-              <CarouselSlideBody>
-                <CarouselSlideBodyTitle title='COVID-19 Response' />
-                <CarouselSlideBodyText
-                  text='The health, safety, and well-being of our community, on and off campus, is our top
-                  priority'
-                />
-                <LinkButton
-                  className='mt-10'
-                  href='/'
-                  alt='placeholder'
-                  label='Learn More'
-                  isCenter={false}
-                />
-              </CarouselSlideBody>
-            </SwiperSlide>
-            <SwiperSlide className='swiper--slide-width'>
-              <CarouselSlideImage
-                src='/images/16-9_placeholder.jpg'
-                alt='Placeholder Image'
-                width={1600}
-                height={900}
-              />
-              <CarouselSlideBody>
-                <CarouselSlideBodyTitle title='Featured Article' />
-                <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
-                <LinkButton
-                  className='mt-10'
-                  href='/'
-                  alt='placeholder'
-                  label='Learn More'
-                  isCenter={false}
-                />
-              </CarouselSlideBody>
-            </SwiperSlide>
-            <SwiperSlide className='swiper--slide-width'>
-              <CarouselSlideImage
-                src='/images/16-9_placeholder.jpg'
-                alt='Placeholder Image'
-                width={1600}
-                height={900}
-              />
-              <CarouselSlideBody>
-                <CarouselSlideBodyTitle title='Featured Article' />
-                <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
-                <LinkButton
-                  className='mt-10'
-                  href='/'
-                  alt='placeholder'
-                  label='Learn More'
-                  isCenter={false}
-                />
-              </CarouselSlideBody>
-            </SwiperSlide>
-          </Carousel>
+          <IsInView toggleOnce={true} animateClassNames='animate__fast'>
+            <Carousel>
+              <SwiperSlide className='swiper--slide-width'>
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/rona.png'
+                      alt='Coronavirus-19'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='COVID-19 Response' />
+                      <CarouselSlideBodyText
+                        text='The health, safety, and well-being of our community, on and off campus, is our top
+                    priority'
+                      />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
+              </SwiperSlide>
+              <SwiperSlide className='swiper--slide-width'>
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/16-9_placeholder.jpg'
+                      alt='Placeholder Image'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='Featured Article' />
+                      <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
+              </SwiperSlide>
+              <SwiperSlide className='swiper--slide-width'>
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/16-9_placeholder.jpg'
+                      alt='Placeholder Image'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='Featured Article' />
+                      <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
+              </SwiperSlide>
+            </Carousel>
+          </IsInView>
 
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 md:gap-x-4 lg:gap-x-8 mx-auto'>
-            <CardDefault
-              srcImg='/card.png'
-              altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
-              heading='Our Brothers'
-              body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.'
-              linkHref='/'
-              linkAlt='Read More'
-              linkLabel='Read More'
-              linkClassName='mt-10'
-            />
-            <CardDefault
-              srcImg='/card.png'
-              altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
-              heading='Our History'
-              body='Learn about our roots and why Psi Chi Omega was founded.'
-              linkHref='/'
-              linkAlt='Read More'
-              linkLabel='Read More'
-              linkClassName='mt-10'
-            />
-            <CardDefault
-              srcImg='/card.png'
-              altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
-              heading='Our Initatives'
-              body='See what we’re doing to get involved and make a difference in our community.'
-              linkHref='/'
-              linkAlt='Read More'
-              linkLabel='Read More'
-              linkClassName='mt-10'
-            />
+            <IsInView toggleOnce={true} threshold={0.5} animateClassNames='animate__faster'>
+              <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our Brothers'
+                body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.'
+                linkHref='/'
+                linkAlt='Read More'
+                linkLabel='Read More'
+                linkClassName='mt-10'
+              />
+            </IsInView>
+            <IsInView toggleOnce={true} threshold={0.5} animateClassNames='animate__fast'>
+              <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our History'
+                body='Learn about our roots and why Psi Chi Omega was founded.'
+                linkHref='/'
+                linkAlt='Read More'
+                linkLabel='Read More'
+                linkClassName='mt-10'
+              />
+            </IsInView>
+            <IsInView toggleOnce={true} threshold={0.5}>
+              <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our Initatives'
+                body='See what we’re doing to get involved and make a difference in our community.'
+                linkHref='/'
+                linkAlt='Read More'
+                linkLabel='Read More'
+                linkClassName='mt-10'
+              />
+            </IsInView>
           </Grid>
         </Wrapper>
 
         <Wrapper className='bg-mist items-center pt-20 md:py-28  lg:pt-32 lg:pb-44'>
-          <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-16 xl:gap-y-20'>
+          <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-12'>
             <SectionHeader>
               <ContentHeader title='Join Psi Chi Omega' isCenter={true} />
               <ContentBody
@@ -216,6 +245,7 @@ export default function Home() {
             <ContentBlockQuote
               className='mt-8 sm:mt-12 md:mt-28 xl:mt-20'
               isReversed={false}
+              animateInView={true}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
               imgWidth={1200}
@@ -234,6 +264,7 @@ export default function Home() {
             <ContentBlockMediaText
               className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32'
               isReversed={true}
+              animateInView={true}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
               imgWidth={1200}
@@ -250,6 +281,7 @@ export default function Home() {
             <ContentBlockMediaText
               className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32'
               isReversed={false}
+              animateInView={true}
               imgSrc='/images/4-3_placeholder.jpg'
               imgAlt='placeholder'
               imgWidth={1200}

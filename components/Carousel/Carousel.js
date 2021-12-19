@@ -1,10 +1,12 @@
 import { Swiper } from "swiper/react";
 import { Navigation } from "swiper";
+import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
+import cx from "classnames";
 
-const Carousel = ({ children }) => {
+const Carousel = React.forwardRef(({ children, inView, entry, animateClassNames }, ref) => {
   let breakPoint = useBreakpointSize();
   let swiperProps = {
     slidesPerView: "auto",
@@ -26,13 +28,20 @@ const Carousel = ({ children }) => {
       swiperProps.spaceBetween = 32;
       break;
   }
+  let classNames = cx(
+    "mt-20 xl:mt-32 2xl:mt-48",
+    {
+      "animate__animated animate__fadeIn ": inView,
+    },
+    animateClassNames
+  );
 
   return (
-    <div className='mt-20 xl:mt-32 2xl:mt-48'>
+    <div ref={ref} className={classNames}>
       <Swiper
         slidesPerView={swiperProps.slidesPerView}
         modules={[Navigation]}
-        centeredSlides={true} //set to false and create setTranslate function
+        centeredSlides={true}
         spaceBetween={swiperProps.spaceBetween}
         navigation={{
           prevEl: ".pag-prev",
@@ -54,11 +63,13 @@ const Carousel = ({ children }) => {
       </div>
     </div>
   );
-};
+});
 
 Carousel.propTypes = {
   children: PropTypes.node,
 };
+
+Carousel.displayName = "Carousel";
 
 export default Carousel;
 

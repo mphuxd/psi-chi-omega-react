@@ -4,7 +4,7 @@
 
 @layer components {
   .button--link {
-    @apply inline-flex flex-row;
+    @apply inline-flex flex-row w-fit;
   }
   .content-block--quote {
     @apply col-span-full theme--grid_inner text-white;
@@ -34,8 +34,20 @@
     @apply px-2 mt-16 grid grid-cols-2 gap-y-12 gap-x-4 col-span-full md:grid-cols-4 md:px-0 md:col-span-9 md:order-4 
     xl:col-span-8 xl:col-start-5 xl:mt-4 lg:px-12 lg:gap-x-8;
   }
+  .header {
+    @apply w-screen h-16 flex flex-row flex-wrap justify-between content-center absolute z-50 md:h-20 theme--default-layout md:static;
+  }
   .header-menu--dropdown {
     @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-base sm:leading-6  hover:underline hover:cursor-pointer md:ml-5 2xl:ml-8;
+  }
+  .header--side-panel {
+    @apply fixed bg-midnight h-auto min-h-screen w-screen -ml-2 overflow-x-hidden z-30 transition-all ease-out;
+  }
+  .header--side-panel--active {
+    @apply opacity-100 translate-x-0;
+  }
+  .header--side-panel--closed {
+    @apply opacity-0 translate-x-full;
   }
   .hero--flex-layout {
     @apply object-center flex flex-col justify-center w-screen mt-9 md:px-6 lg:px-12 xl:px-20 2xl:px-28 2xl:mr-auto 2xl:ml-auto max:px-0 max:max-w-1440;
@@ -76,7 +88,7 @@
     height: 1px;
   }
   .swiper--slide-width {
-    @apply w-3/4 lg:flex lg:flex-row lg:w-10/12 xl:w-10/12 2xl:w-3/4 
+    @apply w-3/4 lg:w-10/12 xl:w-10/12 2xl:w-3/4 
       max:w-7/12 2xl:max-w-1120 !important;
   }
   .theme--default-layout {

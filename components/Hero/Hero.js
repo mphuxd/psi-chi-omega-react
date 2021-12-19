@@ -13,11 +13,11 @@ const Hero = React.forwardRef(({ inView, entry, animateClassNames, className, ch
   );
 });
 
-Hero.displayName = "Hero";
-
 Hero.proptypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 };
+
+Hero.displayName = "Hero";
 
 export default Hero;

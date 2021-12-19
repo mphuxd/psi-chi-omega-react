@@ -4,16 +4,17 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 export const HeaderSidepanel = ({ callBack, isActive, children }) => {
-  let className = "fixed bg-midnight h-auto min-h-screen w-screen -ml-2 overflow-x-hidden z-30";
-  let display = isActive ? "inline-block" : "hidden";
-  let classNames = cx(className, display);
+  let classNames = cx({
+    "header--side-panel": true,
+    "header--side-panel--active": isActive,
+    "header--side-panel--closed": !isActive,
+  });
   let size = useWindowSize();
 
   useEffect(() => {
     if (size[0] > 767 && isActive) {
-      callBack();
+      callBack(); //setIsActive
     }
-    return () => {};
   }, [isActive, callBack, size]);
 
   return <div className={classNames}>{children}</div>;
