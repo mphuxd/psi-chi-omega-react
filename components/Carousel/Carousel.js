@@ -41,7 +41,7 @@ const Carousel = React.forwardRef(({ children, inView, entry, animateClassNames 
       <Swiper
         slidesPerView={swiperProps.slidesPerView}
         modules={[Navigation]}
-        centeredSlides={true} //set to false and create setTranslate function
+        centeredSlides={true}
         spaceBetween={swiperProps.spaceBetween}
         navigation={{
           prevEl: ".pag-prev",

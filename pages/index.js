@@ -25,6 +25,7 @@ import ContentEvent from "../components/Content/ContentEvent";
 import LinkButton from "../components/Link/LinkButton";
 import ContentBlockMediaText from "../components/Content/ContentBlockMediaText";
 import IsInView from "../components/IsInView";
+import CarouselSlideContainer from "../components/Carousel/CarouselSlideContainer";
 
 export default function Home() {
   return (
@@ -76,74 +77,82 @@ export default function Home() {
           <IsInView toggleOnce={true} animateClassNames='animate__fast'>
             <Carousel>
               <SwiperSlide className='swiper--slide-width'>
-                <CarouselSlideImage
-                  src='/images/rona.png'
-                  alt='Coronavirus-19'
-                  width={1600}
-                  height={900}
-                />
-                <CarouselSlideBody>
-                  <CarouselSlideBodyTitle title='COVID-19 Response' />
-                  <CarouselSlideBodyText
-                    text='The health, safety, and well-being of our community, on and off campus, is our top
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/rona.png'
+                      alt='Coronavirus-19'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='COVID-19 Response' />
+                      <CarouselSlideBodyText
+                        text='The health, safety, and well-being of our community, on and off campus, is our top
                     priority'
-                  />
-                  <LinkButton
-                    className='mt-10'
-                    href='/'
-                    alt='placeholder'
-                    label='Learn More'
-                    isCenter={false}
-                  />
-                </CarouselSlideBody>
+                      />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
               </SwiperSlide>
               <SwiperSlide className='swiper--slide-width'>
-                <CarouselSlideImage
-                  src='/images/16-9_placeholder.jpg'
-                  alt='Placeholder Image'
-                  width={1600}
-                  height={900}
-                />
-                <CarouselSlideBody>
-                  <CarouselSlideBodyTitle title='Featured Article' />
-                  <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
-                  <LinkButton
-                    className='mt-10'
-                    href='/'
-                    alt='placeholder'
-                    label='Learn More'
-                    isCenter={false}
-                  />
-                </CarouselSlideBody>
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/16-9_placeholder.jpg'
+                      alt='Placeholder Image'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='Featured Article' />
+                      <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
               </SwiperSlide>
               <SwiperSlide className='swiper--slide-width'>
-                <CarouselSlideImage
-                  src='/images/16-9_placeholder.jpg'
-                  alt='Placeholder Image'
-                  width={1600}
-                  height={900}
-                />
-                <CarouselSlideBody>
-                  <CarouselSlideBodyTitle title='Featured Article' />
-                  <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
-                  <LinkButton
-                    className='mt-10'
-                    href='/'
-                    alt='placeholder'
-                    label='Learn More'
-                    isCenter={false}
-                  />
-                </CarouselSlideBody>
+                {({ isActive }) => (
+                  <CarouselSlideContainer isActive={isActive}>
+                    <CarouselSlideImage
+                      src='/images/16-9_placeholder.jpg'
+                      alt='Placeholder Image'
+                      width={1600}
+                      height={900}
+                    />
+                    <CarouselSlideBody>
+                      <CarouselSlideBodyTitle title='Featured Article' />
+                      <CarouselSlideBodyText text='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.' />
+                      <LinkButton
+                        className='mt-10'
+                        href='/'
+                        alt='placeholder'
+                        label='Learn More'
+                        isCenter={false}
+                      />
+                    </CarouselSlideBody>
+                  </CarouselSlideContainer>
+                )}
               </SwiperSlide>
             </Carousel>
           </IsInView>
 
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 md:gap-x-4 lg:gap-x-8 mx-auto'>
-            <IsInView
-              toggleOnce={true}
-              threshold={0}
-              animateClassNames='animate--ease-in animate__faster'
-            >
+            <IsInView toggleOnce={true} threshold={0.5} animateClassNames='animate__faster'>
               <CardDefault
                 srcImg='/card.png'
                 altImg='placeholder'
@@ -157,11 +166,7 @@ export default function Home() {
                 linkClassName='mt-10'
               />
             </IsInView>
-            <IsInView
-              toggleOnce={true}
-              threshold={0}
-              animateClassNames='animate--ease-in animate__fast'
-            >
+            <IsInView toggleOnce={true} threshold={0.5} animateClassNames='animate__fast'>
               <CardDefault
                 srcImg='/card.png'
                 altImg='placeholder'
@@ -175,7 +180,7 @@ export default function Home() {
                 linkClassName='mt-10'
               />
             </IsInView>
-            <IsInView toggleOnce={true} threshold={0} animateClassNames='animate--ease-in'>
+            <IsInView toggleOnce={true} threshold={0.5}>
               <CardDefault
                 srcImg='/card.png'
                 altImg='placeholder'
@@ -193,39 +198,37 @@ export default function Home() {
         </Wrapper>
 
         <Wrapper className='bg-mist items-center pt-20 md:py-28  lg:pt-32 lg:pb-44'>
-          <IsInView threshold={0}>
-            <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-16 xl:gap-y-20'>
-              <SectionHeader>
-                <ContentHeader title='Join Psi Chi Omega' isCenter={true} />
-                <ContentBody
-                  isCenter={true}
-                  text='Psi Chi Omega offers our members the tools, guidance, and environment to help create meaningful, longlasting experiences, memories, and relationships.'
-                />
-              </SectionHeader>
-              <div className='col-span-full sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
-                <CardNoBody
-                  srcImg='/card.png'
-                  altImg='placeholder'
-                  widthImg={364}
-                  heightImg={252}
-                  linkHref='/'
-                  linkAlt='placeholder'
-                  label='Join the Fraternity'
-                  linkIsCenter={false}
-                />
-                <CardNoBody
-                  srcImg='/card.png'
-                  altImg='placeholder'
-                  widthImg={364}
-                  heightImg={252}
-                  linkHref='/'
-                  linkAlt='placeholder'
-                  label='Join Little Sis'
-                  linkIsCenter={false}
-                />
-              </div>
-            </Grid>
-          </IsInView>
+          <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-12'>
+            <SectionHeader>
+              <ContentHeader title='Join Psi Chi Omega' isCenter={true} />
+              <ContentBody
+                isCenter={true}
+                text='Psi Chi Omega offers our members the tools, guidance, and environment to help create meaningful, longlasting experiences, memories, and relationships.'
+              />
+            </SectionHeader>
+            <div className='col-span-full sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
+              <CardNoBody
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={364}
+                heightImg={252}
+                linkHref='/'
+                linkAlt='placeholder'
+                label='Join the Fraternity'
+                linkIsCenter={false}
+              />
+              <CardNoBody
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={364}
+                heightImg={252}
+                linkHref='/'
+                linkAlt='placeholder'
+                label='Join Little Sis'
+                linkIsCenter={false}
+              />
+            </div>
+          </Grid>
         </Wrapper>
 
         <Wrapper className='bg-midnight items-center pt-20 pb-20 md:pt-28 lg:pt-32 lg:pb-44'>

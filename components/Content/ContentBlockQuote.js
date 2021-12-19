@@ -30,7 +30,7 @@ const ContentBlockQuote = ({
   const { ref, inView, entry } = useInView({
     /* Optional options */
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.5,
   });
 
   let classNames = cx(
@@ -38,7 +38,7 @@ const ContentBlockQuote = ({
     "content-block--quote",
     { "opacity-0": animateInView },
     {
-      "animate__animated animate__fadeInUp animate__fast opacity-100": inView && animateInView,
+      "animate__animated animate__fadeInUp opacity-100 animate--ease-out-quintic animate--duration-500ms": inView && animateInView,
     }
   );
 
