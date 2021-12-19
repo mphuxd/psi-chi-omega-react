@@ -10,10 +10,7 @@ export const HeaderDefault = () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       //render prop exposes props to be used below
-      <Header
-        isActive={isSideNavExpanded}
-        className='w-screen h-16 flex flex-row flex-wrap justify-between content-center static z-50 md:h-20 theme--default-layout'
-      >
+      <Header isActive={isSideNavExpanded}>
         <HeaderName isActive={isSideNavExpanded}></HeaderName>
         <HeaderMenuButton onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />
         <HeaderNavBar />
