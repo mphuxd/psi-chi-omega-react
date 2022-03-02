@@ -3,19 +3,19 @@ import React from "react";
 export const navData = {
   navData: [
     {
-      link: "About Us",
-      sublinks: ["Little Sis Program", "History", "Community Involvement"],
+      link: "Who We Are",
+      sublinks: ["About ΨΧΩ", "Little Sis Program", "History", "Our Commitments"],
     },
     {
       link: "Members",
-      sublinks: ["Brothers", "Alumni"],
+      sublinks: ["The Brothers", "Alumni"],
     },
     {
       link: "Resources",
-      sublinks: ["COVID-19", "FAQ", "Mental Health", "Contact Us"],
+      sublinks: ["COVID-19", "FAQ", "Contact Us"],
     },
     {
-      link: "Join",
+      link: "Join Us",
       sublinks: ["Fraternity", "Little Sis"],
     },
   ],

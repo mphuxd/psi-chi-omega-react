@@ -26,6 +26,7 @@ import LinkButton from "../components/Link/LinkButton";
 import ContentBlockMediaText from "../components/Content/ContentBlockMediaText";
 import IsInView from "../components/IsInView";
 import CarouselSlideContainer from "../components/Carousel/CarouselSlideContainer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -36,39 +37,36 @@ export default function Home() {
       </Head>
 
       <Layout className=''>
-        <Wrapper className='justify-center'>
+        <Wrapper className='justify-center mt-24 md:mt-20 max:mt-24'>
           <IsInView toggleOnce={true}>
             <Hero className=''>
-              <HeroTitle className='' text='Psi Chi Omega' />
-              <HeroSubtitle text='Fraternity' />
+              <HeroTitle className='uppercase' text='Psi Chi Omega' />
+              {/* <HeroSubtitle text='Fraternity' /> */}
               <HeroImage
                 src='/images/placeholder.jpg'
                 alt='placeholder'
                 width={1440}
                 height={600}
               />
-              <HeroSubText text='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD' />
-              <HeroSubText text='Gamma Chapter ∙ University of California, Davis' />
+              <HeroSubText text='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD ∙ GAMMA CHAPTER ∙ UC DAVIS' />
+              {/* <HeroSubText text='Gamma Chapter ∙ University of California, Davis' /> */}
             </Hero>
           </IsInView>
         </Wrapper>
 
-        <Wrapper className='justify-center mt-32 mb-32 max:mt-36 max:mb-44'>
+        <Wrapper className='justify-center my-20 md:mt-32 md:mb-32 max:mt-24 max:mb-44'>
           <Grid className='mx-auto'>
             <SectionHeader>
-              <ContentHeader title='About us' isCenter={true} />
+              <ContentHeader className="uppercase" title='Who We Are' isCenter={true} />
               <ContentBody
                 isCenter={true}
-                text='Founded in 1992 at UCSD, Psi Chi Omega is one of the most competitive and fastest
-                growing Asian-American social fraternities in California. Our traditions, values,
-                and community guide our members towards excellence in their pursuit to become
-                leaders, fighters, and givers for their community.'
+                text='Founded in 1992 at UCSD, Psi Chi Omega is the largest and fastest growing Asian-American social fraternity in California. Our success comes from bringing like-minded people together under shared values, traditions, community, and experiences. We provide members with a social environment that encourages mutual growth and cultural acceptance.'
               />
               <LinkButton
                 className='mt-10'
                 href='/'
                 alt='placeholder'
-                label='Learn More'
+                label='About ΨΧΩ'
                 isCenter={true}
               />
             </SectionHeader>
@@ -159,10 +157,10 @@ export default function Home() {
                 widthImg={352}
                 heightImg={264}
                 heading='Our Brothers'
-                body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.'
+                body='The brothers are responsible for maintaining the fraternity and most importantly, taking care of our community.'
                 linkHref='/'
-                linkAlt='Read More'
-                linkLabel='Read More'
+                linkAlt='Meet the brothers'
+                linkLabel='Meet the brothers'
                 linkClassName='mt-10'
               />
             </IsInView>
@@ -173,10 +171,10 @@ export default function Home() {
                 widthImg={352}
                 heightImg={264}
                 heading='Our History'
-                body='Learn about our roots and why Psi Chi Omega was founded.'
+                body='Founded in 1992, Psi Chi Omega was formed to address the need for a space for Asian American men.'
                 linkHref='/'
-                linkAlt='Read More'
-                linkLabel='Read More'
+                linkAlt='About our history'
+                linkLabel='About our history'
                 linkClassName='mt-10'
               />
             </IsInView>
@@ -186,24 +184,24 @@ export default function Home() {
                 altImg='placeholder'
                 widthImg={352}
                 heightImg={264}
-                heading='Our Initatives'
+                heading='Our Commitments'
                 body='See what we’re doing to get involved and make a difference in our community.'
                 linkHref='/'
-                linkAlt='Read More'
-                linkLabel='Read More'
+                linkAlt='View all of our commitments'
+                linkLabel='View all of our commitments'
                 linkClassName='mt-10'
               />
             </IsInView>
           </Grid>
         </Wrapper>
 
-        <Wrapper className='bg-mist items-center pt-20 md:py-28  lg:pt-32 lg:pb-44'>
+        <Wrapper className='bg-mist items-center pt-20 md:py-28 lg:pt-32 lg:pb-44'>
           <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-12'>
             <SectionHeader>
-              <ContentHeader title='Join Psi Chi Omega' isCenter={true} />
+              <ContentHeader className="uppercase" title='Start a new journey' isCenter={true} />
               <ContentBody
                 isCenter={true}
-                text='Psi Chi Omega offers our members the tools, guidance, and environment to help create meaningful, longlasting experiences, memories, and relationships.'
+                text='At Psi Chi Omega, you’ll have opportunities to make the most of your college experience, redefine your identity, experience personal growth, and form meaningful relationships.'
               />
             </SectionHeader>
             <div className='col-span-full sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
@@ -216,6 +214,7 @@ export default function Home() {
                 linkAlt='placeholder'
                 label='Join the Fraternity'
                 linkIsCenter={false}
+                linkIsUppercase={true}
               />
               <CardNoBody
                 srcImg='/card.png'
@@ -226,14 +225,15 @@ export default function Home() {
                 linkAlt='placeholder'
                 label='Join Little Sis'
                 linkIsCenter={false}
+                linkIsUppercase={true}
               />
             </div>
           </Grid>
         </Wrapper>
 
-        <Wrapper className='bg-midnight items-center pt-20 pb-20 md:pt-28 lg:pt-32 lg:pb-44'>
+        <Wrapper className='bg-smoke items-center pt-20 pb-20 md:pt-28 lg:pt-32 lg:pb-44'>
           <Grid className='mx-auto'>
-            <SectionHeader className='text-white'>
+            <SectionHeader className=''>
               <ContentHeader title='Our Community' isCenter={true} />
               <ContentBody
                 isCenter={true}
@@ -262,7 +262,7 @@ export default function Home() {
               linkIsCenter={false}
             />
             <ContentBlockMediaText
-              className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32'
+              className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32 max:mt-64'
               isReversed={true}
               animateInView={true}
               imgSrc='/images/4-3_placeholder.jpg'
@@ -270,16 +270,16 @@ export default function Home() {
               imgWidth={1200}
               imgHeight={900}
               eyebrowLabel=''
-              header='Little Sis'
-              text='The little sis program allows college women to join our community and is an integral part of Psi Chi Omega. '
+              header='Little Sis Program'
+              text='The little sis program was created to allow college women to officially join and become a part of the Psi Chi Omega community.'
               linkHref='/'
               linkClassName=''
               linkAlt='Go to About Little Sis page'
-              label='About Our Little Sisters'
+              label='Read More'
               linkIsCenter={false}
             />
             <ContentBlockMediaText
-              className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32'
+              className='mt-8 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32 max:mt-64'
               isReversed={false}
               animateInView={true}
               imgSrc='/images/4-3_placeholder.jpg'
@@ -287,12 +287,12 @@ export default function Home() {
               imgWidth={1200}
               imgHeight={900}
               eyebrowLabel=''
-              header='Our Alumni'
-              text='Our extensive alumni network supports the fraternity by providing career opportunities, guidance, financial scholarships, and fraternal advising. If you’re an alumni, see how you can get involved.'
+              header='Alumni'
+              text='Our alumni network connects members with mentors, establish professional connections with people in their field, and maintain relationships after college.'
               linkHref='/'
               linkClassName=''
               linkAlt='Go to Our Alumni webpage'
-              label='About our Alumni'
+              label='Read More'
               linkIsCenter={false}
             />
           </Grid>
@@ -317,6 +317,15 @@ export default function Home() {
             />
           </Grid>
         </Wrapper>
+
+        <Wrapper className="pb-12 md:py-20 xl:pt-32 xl:pb-64">
+          <Grid className='mx-auto'>
+            <span className="text--subheadline col-span-full justify-self-center ">
+            Need help? Check out our <Link href='/'><a className="underline decoration-midnight">FAQ</a></Link> or <Link className='underline' href='/'><a className="underline decoration-midnight">Contact Us</a></Link>.</span>
+          </Grid>
+        </Wrapper>
+
+
       </Layout>
     </div>
   );

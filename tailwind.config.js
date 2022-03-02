@@ -40,6 +40,7 @@ module.exports = {
       colors: {
         forest: "#0D5736",
         darkforest: "#004225",
+        psichigreen: '#006341',
         midnight: "#212121",
         white: "#FFFFFF",
         smoke: "#F5F5F5",

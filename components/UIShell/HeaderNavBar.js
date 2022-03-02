@@ -2,6 +2,7 @@ import { HeaderMenuDropdown } from "./HeaderMenuDropdown";
 import { navContext } from "../../context/nav-context";
 import { useContext } from "react";
 
+
 export const HeaderNavBar = () => {
   let navData = useContext(navContext);
   return (

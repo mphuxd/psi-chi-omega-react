@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import cx from "classnames";
 
-const Carousel = React.forwardRef(({ children, inView, entry, animateClassNames }, ref) => {
+const Carousel = React.forwardRef(({ children, inView, entry, className, animateClassNames }, ref) => {
   let breakPoint = useBreakpointSize();
   let swiperProps = {
     slidesPerView: "auto",
@@ -29,7 +29,7 @@ const Carousel = React.forwardRef(({ children, inView, entry, animateClassNames 
       break;
   }
   let classNames = cx(
-    "mt-20 xl:mt-32 2xl:mt-48",
+    "mt-20 xl:mt-32 2xl:mt-48 hover:cursor-grab active:cursor-grabbing ",
     {
       "animate__animated animate__fadeIn ": inView,
     },

@@ -16,6 +16,7 @@ const CardNoBody = ({
   linkAlt,
   label,
   linkIsCenter,
+  linkIsUppercase,
 }) => {
   let classNames = cx("card--no-body", className);
   return (
@@ -29,6 +30,7 @@ const CardNoBody = ({
             alt={linkAlt}
             label={label}
             isCenter={linkIsCenter}
+            isUppercase={linkIsUppercase}
           />
         </div>
       </div>
@@ -47,6 +49,7 @@ CardNoBody.propTypes = {
   linkAlt: PropTypes.string,
   label: PropTypes.string,
   linkIsCenter: PropTypes.bool,
+  linkIsUppercase: PropTypes.bool,
 };
 
 export default CardNoBody;

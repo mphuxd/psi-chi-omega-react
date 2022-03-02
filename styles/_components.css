@@ -7,7 +7,7 @@
     @apply inline-flex flex-row w-fit;
   }
   .content-block--quote {
-    @apply col-span-full theme--grid_inner text-white;
+    @apply col-span-full theme--grid_inner;
   }
   .content-block--quote_body {
     @apply col-span-full flex flex-col mt-4 px-2 sm:col-span-4 md:col-span-6 xl:my-auto;
@@ -38,7 +38,26 @@
     @apply w-screen h-16 flex flex-row flex-wrap justify-between content-center absolute z-50 md:h-20 theme--default-layout md:static;
   }
   .header-menu--dropdown {
-    @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-base sm:leading-6  hover:underline hover:cursor-pointer md:ml-5 2xl:ml-8;
+    @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-tiny md:relative sm:leading-6 hover:cursor-pointer md:ml-5 2xl:ml-8;
+  }
+  .header-menu--divider::after {
+    content:'';
+    position:absolute;
+    top:100%;
+    left:8px;
+    width:50%;
+    height:2px;
+    background-color: #006341;
+  }
+  .test::after {
+    position:absolute;
+    z-index: -1;
+    content:'';
+    bottom:0px;
+    left:-100vw;
+    right:-100vw;
+    background-color: white;
+    height:200px;
   }
   .header--side-panel {
     @apply fixed bg-midnight h-auto min-h-screen w-screen -ml-2 overflow-x-hidden z-30 transition-all ease-out;
@@ -62,13 +81,13 @@
     max:px-20 max:max-w-1280;
   }
   .hero--title {
-    @apply text-4xl font-normal text-center font-display md:text-7xl col-span-full;
+    @apply text-4xl font-bold text-center font-body uppercase md:text-7xl md:leading-none xl:leading-[56px] xl:tracking-tight col-span-full;
   }
   .hero--subtitle {
     @apply text-3xl w-auto text-center font-display col-span-full;
   }
   .hero--subtext {
-    @apply text-tiny font-normal w-auto text-center col-span-full font-display mt-8 max:text-2xl max:mt-6;
+    @apply text-sm font-normal w-auto text-center col-span-full font-body mt-8 md:text-tiny max:text-lg max:mt-12  ;
   }
   .section--heading {
     position: relative;
