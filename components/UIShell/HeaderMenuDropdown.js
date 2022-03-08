@@ -19,6 +19,7 @@ export const HeaderMenuDropdown = ({ navItem, step }) => {
   };
 
   const router = useRouter();
+  console.log(router.asPath);
   const handleSetIsActiveLink = () => {
     console.log(router.asPath); //to-do
   }
