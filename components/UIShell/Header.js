@@ -14,8 +14,8 @@ const Header = ({ isActive, children }) => {
     //disabled for now
   );
   return (
-    <header ref={ref} className={classNames}>
-      {children}
+    <header ref={ref}>
+      <div className={classNames}>{children}</div>
     </header>
   );
 };

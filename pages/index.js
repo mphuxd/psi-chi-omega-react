@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
 
       <Layout className=''>
-        <Wrapper className='justify-center mt-24 md:mt-20 max:mt-24'>
+        <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
           <IsInView toggleOnce={true}>
             <Hero className=''>
               <HeroTitle className='uppercase' text='Psi Chi Omega' />
@@ -150,6 +150,43 @@ export default function Home() {
           </IsInView>
 
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 md:gap-x-4 lg:gap-x-8 mx-auto'>
+              {/* <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our Brothers'
+                body='The brothers are responsible for maintaining the fraternity and most importantly, taking care of our community.'
+                linkHref='/'
+                linkAlt='Meet the brothers'
+                linkLabel='Meet the brothers'
+                linkClassName='mt-10'
+              />
+              <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our History'
+                body='Founded in 1992, Psi Chi Omega was formed to address the need for a space for Asian American men.'
+                linkHref='/'
+                linkAlt='About our history'
+                linkLabel='About our history'
+                linkClassName='mt-10'
+              />
+              <CardDefault
+                srcImg='/card.png'
+                altImg='placeholder'
+                widthImg={352}
+                heightImg={264}
+                heading='Our Commitments'
+                body='See what we’re doing to get involved and make a difference in our community.'
+                linkHref='/'
+                linkAlt='View all of our commitments'
+                linkLabel='View all of our commitments'
+                linkClassName='mt-10'
+              /> */}
+            
             <IsInView toggleOnce={true} threshold={0.5} animateClassNames='animate__faster'>
               <CardDefault
                 srcImg='/card.png'

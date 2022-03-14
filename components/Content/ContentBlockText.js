@@ -7,7 +7,7 @@ const ContentBlockText = ({ className, eyebrowLabel, header, text }) => {
   return (
     <div className={classNames}>
       <Eyebrow label={eyebrowLabel} />
-      <h3 className='text--minorheadline'>{header}</h3>
+      <h3 className='text--subheadline'>{header}</h3>
       <span className='text--body pt-3'>{text}</span>
     </div>
   );

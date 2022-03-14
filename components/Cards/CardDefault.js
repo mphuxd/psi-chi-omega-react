@@ -26,8 +26,8 @@ const CardDefault = React.forwardRef(
     ref
   ) => {
     let classNames = cx(className, animateClassNames, {
-      "card--default-layout opacity-0": true,
-      "animate__animated animate__fadeInUp animate-duration-500ms animate-ease-out-quintic opacity-100": inView,
+      "card--default-layout": true,
+      "animate__animated animate__fadeInUp animate-duration-500ms animate-ease-out-quintic opacity-100": false,
     });
     return (
       <div ref={ref} className={classNames}>

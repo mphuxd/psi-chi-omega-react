@@ -9,10 +9,12 @@ const HeaderContainer = ({ isSideNavExpanded, render: Children }) => {
   }, [setIsSideNavExpandedState]);
 
   return (
-    <Children
-      isSideNavExpanded={isSideNavExpandedState}
-      onClickSideNavExpand={handleHeaderMenuButtonClick}
-    />
+ 
+      <Children
+        isSideNavExpanded={isSideNavExpandedState}
+        onClickSideNavExpand={handleHeaderMenuButtonClick}
+      />
+
   );
 };
 

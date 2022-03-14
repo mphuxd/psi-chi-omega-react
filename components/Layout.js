@@ -7,7 +7,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
+      
       <HeaderDefault />
+      
       <div className='min-h-screen text-midnight'>
         <main>{children}</main>
       </div>
