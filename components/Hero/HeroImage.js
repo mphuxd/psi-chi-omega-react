@@ -3,7 +3,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 
 const HeroImage = ({ className, src, alt, width, height }) => {
-  let classNames = cx("mt-5 md:mt-8 col-span-full xl:mt-12", className);
+  let classNames = cx("col-span-full -mx-4 mt-5 md:mx-0 md:mt-8 xl:mt-12", className);
   return (
     <div className={classNames}>
       <Image src={src} alt={alt} width={width} height={height} layout="responsive" priority />

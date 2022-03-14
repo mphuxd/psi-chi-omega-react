@@ -31,7 +31,7 @@ const CardDefault = React.forwardRef(
     });
     return (
       <div ref={ref} className={classNames}>
-        <div className='sm:w-1/2 md:w-full'>
+        <div className='md:w-full'>
           <Image
             src={srcImg}
             alt={altImg}
@@ -40,7 +40,7 @@ const CardDefault = React.forwardRef(
             layout='responsive'
           />
         </div>
-        <div className='flex flex-col h-60 sm:h-auto sm:w-1/2 md:w-full md:h-72 justify-between bg-mist 2xl:h-80 p-4'>
+        <div className='flex flex-col h-60 sm:h-[260px] md:w-full md:h-72 justify-between bg-mist 2xl:h-80 p-4'>
           <div>
             <h3 className='text--minorheadline'>{heading}</h3>
             <p className='text--body mt-3'>{body}</p>

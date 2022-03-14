@@ -1,8 +1,11 @@
 import cx from "classnames";
 import PropTypes from "prop-types";
 
-const ContentHeader = ({ className = "", title, isCenter }) => {
-  let classNames = cx("text--subheadline", className, { "text-center": isCenter });
+const ContentHeader = ({ className = "", title, isUppercase, isCenter }) => {
+  let classNames = cx(className, "text--subheadline", {
+    ["text-center"]: isCenter,
+    ["uppercase"]: isUppercase,
+  });
 
   return <h2 className={classNames}>{title}</h2>;
 };

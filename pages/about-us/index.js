@@ -157,7 +157,7 @@ function About() {
                 title='OUR PILLARS'
                 body='Pillars are the fundamental principles that serve as the foundation for our fraternity. They unite us together as a community, guide us as men to make good decisions, and help us live a life with meaning and purpose.'
               />
-              <Accordion className='w-full relative mt-4 pb-20'>
+              <Accordion className='w-full relative mt-4 mb-20 accordion--item--end'>
                 <AccordionItem title='Integrity' caption='in·teg·ri·ty'>
                   <div className='mt-4 lg:mt-0'>
                     1. the quality of being honest and having strong moral principles; moral

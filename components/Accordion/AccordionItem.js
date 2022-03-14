@@ -3,7 +3,7 @@ import cx from "classnames";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import Image from "next/image";
 
-const AccordionItem = ({ title, caption, children, open = false }) => {
+const AccordionItem = ({ title, caption, children, open = false}) => {
   const [isOpen, setIsOpen] = useState(open);
   let className = cx({
     ["accordion__item text--body col-span-full lg:col-span-8 lg:block"]: true,
@@ -39,13 +39,9 @@ const AccordionItem = ({ title, caption, children, open = false }) => {
           </h3>
           <p className={captionClass}>{caption}</p>
         </div>
-        <Image
-          src='/images/icons/expand_more.svg'
-          alt='Expand More'
-          width={32}
-          height={32}
-          className='inline-block lg:hidden'
-        ></Image>
+        <div className='inline-block lg:hidden'>
+          <Image src='/images/icons/expand_more.svg' alt='Expand More' width={32} height={32} />
+        </div>
       </button>
 
       <div className={className}>{children}</div>

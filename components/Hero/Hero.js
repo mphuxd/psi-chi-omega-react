@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const Hero = React.forwardRef(({ inView, entry, animateClassNames, className, children }, ref) => {
-  let classNames = cx("hero--grid-layout", className, {
-    "animate__animated animate__fadeIn": inView,
+  let classNames = cx(className, {
+    ["theme--grid"]: true,
+    ["animate__animated animate__fadeIn"]: inView,
   });
   return (
     <div ref={ref} className={classNames}>
@@ -13,7 +14,7 @@ const Hero = React.forwardRef(({ inView, entry, animateClassNames, className, ch
   );
 });
 
-Hero.proptypes = {
+Hero.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 };

@@ -54,7 +54,7 @@ const ContentBlockMediaText = ({
 
   return (
     <div ref={ref} className={classNames}>
-      <ContentBlockMedia className={imgClassName}>
+      <ContentBlockMedia noPaddingMobile={true} className={imgClassName}>
         <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} layout='responsive' />
       </ContentBlockMedia>
       <ContentBlockBody className={bodyClassName}>
