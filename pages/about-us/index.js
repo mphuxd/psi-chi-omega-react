@@ -21,7 +21,7 @@ function About() {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
-        <title>Psi Chi Omega Fraternity</title>
+        <title>About Us | ΨΧΩ</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -64,7 +64,7 @@ function About() {
         </Wrapper>
 
         <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
-          <Grid className='mx-auto'>
+          <Grid isCenter={true}>
             <SectionSplitHeader2
               leftText={
                 <>
@@ -72,6 +72,7 @@ function About() {
                 </>
               }
               rightText='Brothers keep each other accountable, lift them up in their time of need, and push each other forward. No one gets left behind.'
+              button={true}
               href='/members/brothers'
               alt='Link to the brothers webpage'
               label='Meet the brothers'
@@ -135,7 +136,7 @@ function About() {
         </Wrapper>
 
         <Wrapper className='bg-smoke pt-12 md:mt-20 lg:py-32'>
-          <Grid className='mx-auto'>
+          <Grid isCenter={true}>
             <SectionSplitHeader2
               leftText='A place to celebrate our culture and heritage'
               rightText='Psi Chi Omega was founded to help students connect through their shared identity, culture and experiences to discover what it means to be Asian American.'
@@ -184,8 +185,8 @@ function About() {
             </Wrapper>
           </Grid>
         </Wrapper>
-        <Wrapper className='md:mt-20 lg:pt-[128px]'>
-          <Grid className='md:mx-auto'>
+        <Wrapper className='md:pt-20 lg:pt-[128px]'>
+          <Grid isCenter={true}>
             <ContentBlockLeftRight
               className='flex-col-reverse md:flex-col my-20 md:gap-y-8 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
@@ -247,7 +248,7 @@ function About() {
           </Grid>
         </Wrapper>
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
-          <Grid className='mx-auto'>
+          <Grid isCenter={true}>
             <ContentBlockLinkFeed>
               <ContentBlockLinkFeedItem
                 className=''

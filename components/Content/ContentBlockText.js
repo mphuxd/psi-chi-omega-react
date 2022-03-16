@@ -8,7 +8,7 @@ const ContentBlockText = ({ className, eyebrowLabel, header, text }) => {
     <div className={classNames}>
       <Eyebrow label={eyebrowLabel} />
       <h3 className='text--minorheadline'>{header}</h3>
-      <span className='text--body pt-3'>{text}</span>
+      <div className='text--body pt-3'>{text}</div>
     </div>
   );
 };
@@ -17,7 +17,7 @@ ContentBlockText.propTypes = {
   className: PropTypes.string,
   eyebrowLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   header: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.object ]),
 };
 
 export default ContentBlockText;
