@@ -10,7 +10,7 @@ const ContentBlockLinkFeedItem = ({ title, caption, link }) => {
           <span className='content-block--feed-item__header'>{title}</span>
           <span className='content-block--feed-item__caption my-auto'>{caption}</span>
         </div>
-        <div className='col-span-1 self-center justify-self-center h-fit'>
+        <div className='pt-2 md:pt-4 lg:pt-0 col-span-1 self-center justify-self-center h-fit'>
           <Image src='/images/icons/arrow_filled.svg' alt='Link Arrow' width={48} height={48} />
         </div>
       </a>

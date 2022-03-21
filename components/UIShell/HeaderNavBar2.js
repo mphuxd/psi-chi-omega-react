@@ -22,6 +22,7 @@ export const HeaderNavBar2 = () => {
      <HeaderNavBarItem itemName='Join Us' itemTag='join'>
       <HeaderLink linkName='Fraternity' linkHref='/join/fraternity'/>
       <HeaderLink linkName='Little Sis' linkHref='/join/little-sis'/>
+      <HeaderLink linkName='Why Psi Chi Omega' linkHref='/join/why'/>
      </HeaderNavBarItem>
     </nav>
   );

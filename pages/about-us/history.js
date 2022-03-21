@@ -165,11 +165,7 @@ function History() {
                   introduce the Psi Chi Lil Sis program so young college women could experience the
                   Greek lifestyle without having to bear the full-time responsibilities of a
                   sorority sister.
-                </p>
-                <p>
-                  Thus, from humble beginnings, the foundation of a unique Asian-American fraternity
-                  was born.
-                </p>
+                </p>          
                 <p>
                   However, the ultimate goal of the Lil Sis Program is to create an eternal bond of
                   friendship between the brothers and their little sisters.

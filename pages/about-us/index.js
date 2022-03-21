@@ -78,7 +78,7 @@ function About() {
               label='Meet the brothers'
             />
             <ContentBlockLeftRight
-              className='mt-20 md:mt-8 lg:mt-24 lg:gap-x-8'
+              className='mt-20 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockMedia className='lg:w-1/2'>
                   <Image

@@ -154,18 +154,11 @@
     width: 1px;
     left: 0%;
   }
-  .section--split-header-offset::before {
-    content: "";
-    background: #000;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: 1px;
-    left: 0px;
+  .section--split-header-offset {
+    @apply w-full relative py-8 theme--grid_inner;
   }
 
-  .section--split-header-offset2::before {
+  .section--split-header-offset-divider::before {
     content: "";
     background: #000;
     position: absolute;
@@ -173,8 +166,9 @@
     transform: translateY(-50%);
     height: 100%;
     width: 1px;
-    left: 33.3333333333%;
+    left: 32.9%;
   }
+
   .swiper--slide-width {
     @apply w-3/4 lg:w-3/4 xl:w-10/12 2xl:w-3/4 max-w-1120 !important;
   }
@@ -204,5 +198,22 @@
     width:100%;
     height:1px;
 
+  }
+
+  .form--input-divider::after {
+    position:absolute;
+    width:100%;
+    content: '';
+    height:1px;
+    background-color:#000;
+    top:100%
+  }
+
+  .form--input-error {
+    @apply absolute -bottom-6 left-2 text-tiny font-body font-normal text-red-500
+  }
+
+  .form--input {
+    @apply pl-2 py-1 sm:py-2 text--body
   }
 }

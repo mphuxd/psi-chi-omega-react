@@ -30,7 +30,7 @@ function LittleSisProgram() {
             <h1 className='col-span-full text--headline xl:col-span-9 uppercase'>
               Little Sister Program
             </h1>
-            <p className='col-span-full lg:col-span-9 md:text-3xl md:leading-9 lg:text-2xl lg:leading-8 mt-4 md:mt-8 text-base font-medium tracking-[3%] lg:font-medium'>
+            <p className='col-span-full lg:col-span-9 mt-4 md:mt-8 text--body'>
               Little sis is an organization for women within the Psi Chi Omega fraternity. It was
               created to officially invite college women into Psi Chi Omega and their greek social
               space. After a decade of little sisters, it was recognized by UC Davis as it’s own
