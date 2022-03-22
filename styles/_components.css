@@ -216,4 +216,37 @@
   .form--input {
     @apply pl-2 py-1 sm:py-2 text--body
   }
+
+  .content-block--text-join {
+    @apply lg:w-1/2 text--body space-y-6 mt-2 md:mt-4 lg:mt-0 max-w-3xl
+  }
+
+  .section-header--vertical-divider::after {
+    @apply absolute content-none bg-black h-full w-px left-1/2 translate-x-1/2
+  }
+
+  .section-header--vertical-divider__top::before {
+    position: absolute;
+    content: '';
+    background-color: #949494;
+    height: 80px;
+    width: 1px;
+    opacity: 50%;
+    top:0px;
+    left:50%;
+
+  }
+
+  .section-header--vertical-divider__bottom::after {
+    position: absolute;
+    content: '';
+    background-color: #949494 ;
+    opacity: 50%;
+    height: 80px;
+    width: 1px;
+    bottom:0px;
+    left:50%;
+
+  }
+
 }

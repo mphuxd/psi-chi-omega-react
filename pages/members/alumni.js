@@ -43,7 +43,7 @@ function Alumni() {
             }
             right={
               <div className='grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-rows-3 md:grid-cols-3 md:gap-4'>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -52,7 +52,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -61,7 +61,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -70,7 +70,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -79,7 +79,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -88,7 +88,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -97,7 +97,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -106,7 +106,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -115,7 +115,7 @@ function Alumni() {
                     layout='responsive'
                   />
                 </div>
-                <div className="col-span-1 row-span-1">
+                <div className='col-span-1 row-span-1'>
                   <Image
                     src='/images/4-3_placeholder.jpg'
                     alt='test'
@@ -170,7 +170,7 @@ function Alumni() {
         </Wrapper>
 
         <Wrapper className='bg-smoke'>
-          <Grid className='pt-12 md:py-20 py-32' isCenter={true}>
+          <Grid className='pt-12 md:py-20 lg:py-40' isCenter={true}>
             <div className='col-span-full lg:col-start-3 lg:col-span-8 space-y-8 text--body'>
               <h2 className='text--subheadline'>A message from our founding fathers</h2>
               <p>

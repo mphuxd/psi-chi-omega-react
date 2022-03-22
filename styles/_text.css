@@ -4,7 +4,7 @@
 
 @layer utilities {
   .text--superheadline {
-    @apply text-6xl leading-tight font-bold xl:text-9xl xl:font-semibold xl:tracking-tight;
+    @apply text-4xl font-body md:text-6xl leading-tight font-bold xl:text-9xl xl:font-semibold xl:tracking-tight;
   }
 
   .text--headline {

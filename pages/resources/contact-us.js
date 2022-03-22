@@ -6,7 +6,6 @@ import Grid from "../../components/Grid/Grid";
 import LeaderSimple from "../../components/Leader/LeaderSimple";
 import { Formik } from "formik";
 import { useForm, Controller } from "react-hook-form";
-import FormInput from "../../components/Form/FormInput";
 import FormInputLabel from "../../components/Form/FormInputLabel";
 import FormInputContainer from "../../components/Form/FormInputContainer";
 
@@ -104,17 +103,15 @@ function ContactUs() {
                 className='min-w-[120px] row-start-7 md:row-start-6 p-2 outline-1 outline flex flex-row justify-center items-center'
                 type='submit'
               >
-                <span className="text--button pr-2">SUBMIT</span>
+                <span className='text--button pr-2'>SUBMIT</span>
 
-               
-                  <Image
-                    src='/images/icons/arrow_nopadding.svg'
-                    alt='test'
-                    width={16}
-                    height={16}
-                    layout='fixed'
-                  />
-             
+                <Image
+                  src='/images/icons/arrow_nopadding.svg'
+                  alt='test'
+                  width={16}
+                  height={16}
+                  layout='fixed'
+                />
               </button>
             </form>
           </Grid>
