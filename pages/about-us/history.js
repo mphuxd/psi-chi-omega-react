@@ -1,15 +1,16 @@
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import Grid from "../../components/Grid/Grid";
-import LeaderSimple from "../../components/Leader/LeaderSimple";
-import Image from "next/image";
-import ContentBlockHistory from "../../components/Content/ContentBlockHistory/ContentBlockHistory";
-import HistoryBody from "../../components/Content/ContentBlockHistory/HistoryBody";
-import HistoryMetricList from "../../components/Content/ContentBlockHistory/HistoryMetricList";
-import HistoryMetricListItem from "../../components/Content/ContentBlockHistory/HistoryMetricListItem";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
+import {
+  Layout,
+  Wrapper,
+  LeaderSimple,
+  Grid,
+  ContentBlockHistory,
+  HistoryBody,
+  HistoryMetricList,
+  HistoryMetricListItem,
+  LinkFeed,
+  LinkFeedItem,
+} from "@/components";
 
 function History() {
   return (
@@ -27,7 +28,7 @@ function History() {
           />
         </Wrapper>
 
-        <Wrapper className='mt-12 md:mt-20  lg:pb-10'>
+        <Wrapper className='mt-12 md:mt-20 lg:pb-10'>
           <ContentBlockHistory
             heading='1992 - ALPHA CHAPTER FOUNDED PSI CHI OMEGA AT UCSD'
             imageSrc='/images/ucsd-campus.jpg'
@@ -82,7 +83,7 @@ function History() {
           />
         </Wrapper>
 
-        <Wrapper className='mt-12 md:mt-20  lg:pb-10'>
+        <Wrapper className='mt-12 md:mt-20 lg:pb-10'>
           <ContentBlockHistory
             heading='1995 - GAMMA CHAPTER ESTABLISHED AT UC DAVIS'
             imageSrc='/images/davis-mu.jpg'
@@ -165,7 +166,7 @@ function History() {
                   introduce the Psi Chi Lil Sis program so young college women could experience the
                   Greek lifestyle without having to bear the full-time responsibilities of a
                   sorority sister.
-                </p>          
+                </p>
                 <p>
                   However, the ultimate goal of the Lil Sis Program is to create an eternal bond of
                   friendship between the brothers and their little sisters.
@@ -181,26 +182,26 @@ function History() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Our Commitments'
                 caption='SEE HOW WE’RE GIVING BACK TO OUR COMMUNITY'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <kLinkFeedItem
                 className=''
                 title='WHY PSI CHI OMEGA'
                 caption='READ WHY OUR MEMBERS LOVE PSI CHI OMEGA'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

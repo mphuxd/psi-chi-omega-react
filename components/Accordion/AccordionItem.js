@@ -3,7 +3,7 @@ import cx from "classnames";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import Image from "next/image";
 
-const AccordionItem = ({ title, caption, children, open = false}) => {
+const AccordionItem = ({ title, caption, children, open = false }) => {
   const [isOpen, setIsOpen] = useState(open);
   let className = cx({
     ["accordion__item text--body col-span-full lg:col-span-8 lg:block"]: true,

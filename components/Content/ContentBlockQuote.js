@@ -28,7 +28,6 @@ const ContentBlockQuote = ({
   linkIsCenter,
 }) => {
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     triggerOnce: true,
     threshold: 0.5,
   });
@@ -38,7 +37,8 @@ const ContentBlockQuote = ({
     "content-block--quote",
     { "opacity-0": animateInView },
     {
-      "animate__animated animate__fadeInUp opacity-100 animate--ease-out-quintic animate--duration-500ms": inView && animateInView,
+      "animate__animated animate__fadeInUp opacity-100 animate--ease-out-quintic animate--duration-500ms":
+        inView && animateInView,
     }
   );
 

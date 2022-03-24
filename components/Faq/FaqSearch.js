@@ -25,5 +25,3 @@ function FaqSearch(props) {
 FaqSearch.propTypes = {};
 
 export default FaqSearch;
-
-//expose the input as a render prop to pass down into the other components

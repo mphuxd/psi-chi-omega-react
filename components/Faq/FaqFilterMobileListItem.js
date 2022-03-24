@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import cx from "classnames";
 
-function FaqFilterMobileListItem({ onClick, label, type, category }) {
+function FaqFilterMobileListItem({ onClick, label, activeFilter }) {
   let className = cx({
-    ["mobile-list-item--active underline"]: category === type,
-    ["mobile-list-item basis-1/2 sm:basis-1/4 shrink hover:cursor-pointer"]: true,
+    ["underline"]: label === activeFilter,
+    ["basis-1/2 sm:basis-1/4 shrink hover:cursor-pointer"]: true,
   });
 
   function handleClick() {
-    onClick(type);
+    onClick(label);
   }
 
   return (

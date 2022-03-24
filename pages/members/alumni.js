@@ -1,13 +1,17 @@
 import Head from "next/head";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import Layout from "../../components/Layout";
-import LeaderSimpleMedia from "../../components/Leader/LeaderSimpleMedia";
 import Image from "next/image";
-import ContentBlockLeftRightOffset from "../../components/Content/ContentBlockLeftRightOffset";
-import ContentBlockText from "../../components/Content/ContentBlockText";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
-import Grid from "../../components/Grid/Grid";
+import {
+  Wrapper,
+  Layout,
+  Grid,
+  LeaderSimpleMedia,
+  ContentBlockText,
+  LinkFeed,
+  LinkFeedItem,
+  ContentBlockLeftRightOffset,
+  ContentBlockLogoGrid,
+  ContentBlockLogoGridItem,
+} from "@/components";
 
 function Alumni() {
   return (
@@ -30,7 +34,7 @@ function Alumni() {
           />
         </Wrapper>
 
-        <Wrapper className='mt-24 md:mt-20 lg:mt-0 pb-20 lg:pb-32 gap-y-16 md:gap-y-24 lg:gap-y-32 '>
+        <Wrapper className='mt-24 md:mt-20 lg:mt-0 pb-20 lg:pb-32 gap-y-16 md:gap-y-24 lg:gap-y-32'>
           <ContentBlockLeftRightOffset
             center={true}
             reverse={true}
@@ -42,89 +46,67 @@ function Alumni() {
               />
             }
             right={
-              <div className='grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-rows-3 md:grid-cols-3 md:gap-4'>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-                <div className='col-span-1 row-span-1'>
-                  <Image
-                    src='/images/4-3_placeholder.jpg'
-                    alt='test'
-                    width={1200}
-                    height={900}
-                    layout='responsive'
-                  />
-                </div>
-              </div>
+              <ContentBlockLogoGrid>
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+
+                <ContentBlockLogoGridItem
+                  src='/images/4-3_placeholder.jpg'
+                  alt='placeholder'
+                  width={1200}
+                  height={900}
+                />
+              </ContentBlockLogoGrid>
             }
           />
           <ContentBlockLeftRightOffset
@@ -207,26 +189,26 @@ function Alumni() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

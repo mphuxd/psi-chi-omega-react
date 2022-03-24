@@ -1,20 +1,23 @@
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import Grid from "../../components/Grid/Grid";
-import Wrapper from "../../components/Wrapper/Wrapper";
 import Image from "next/image";
-import SectionSplitHeader2 from "../../components/Heading/SectionSplitHeader2";
-import ContentBlockLeftRight from "../../components/Content/ContentBlockLeftRight";
-import ContentBlockMedia from "../../components/Content/ContentBlockMedia";
-import ContentBlockText from "../../components/Content/ContentBlockText";
-import ContentBlockBody from "../../components/Content/ContentBlockBody";
-import LinkButton from "../../components/Link/LinkButton";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
 import Link from "next/link";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import Gallery from "../../components/Gallery/Gallery";
-import GalleryItemDefault from "../../components/Gallery/GalleryItemDefault";
-import GalleryItemLarge from "../../components/Gallery/GalleryItemLarge";
+import {
+  Layout,
+  Wrapper,
+  Grid,
+  SectionHeaderSplit,
+  ContentBlockLeftRight,
+  ContentBlockMedia,
+  ContentBlockText,
+  ContentBlockBody,
+  LeaderSimpleMedia,
+  LinkButton,
+  LinkFeedItem,
+  LinkFeed,
+  Gallery,
+  GalleryItemDefault,
+  GalleryItemLarge,
+} from "@/components";
 
 function LittleSisProgram() {
   return (
@@ -25,7 +28,20 @@ function LittleSisProgram() {
       </Head>
 
       <Layout>
-        <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
+        <LeaderSimpleMedia
+          heading='Little Sister Program'
+          body='  Little sis is an organization for women within the Psi Chi Omega fraternity. It was
+              created to officially invite college women into Psi Chi Omega and their greek social
+              space. After a decade of little sisters, it was recognized by UC Davis as it’s own
+              independent organization. These women continue to be an integral part of the Psi Chi
+              Omega family.'
+          imageSrc='/images/berlin-trident.jpg'
+          imageAlt='Psi Chi Little Sisters'
+          imageWidth={2000}
+          imageHeight={1333}
+        />
+
+        {/* <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
           <Grid isCenter={true}>
             <h1 className='col-span-full text--headline xl:col-span-9 uppercase'>
               Little Sister Program
@@ -46,11 +62,11 @@ function LittleSisProgram() {
               />
             </div>
           </Grid>
-        </Wrapper>
+        </Wrapper> */}
 
         <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
           <Grid isCenter={true}>
-            <SectionSplitHeader2
+            <SectionHeaderSplit
               leftText={
                 <>
                   A place that feels like <span className='text-red-800'>home.</span>
@@ -171,26 +187,26 @@ function LittleSisProgram() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
 

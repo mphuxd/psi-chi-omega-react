@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import { useState } from "react";
 
-function FaqFilterDesktopListItem({ onClick, label, type, category }) {
+function FaqFilterDesktopListItem({ onClick, label, activeFilter }) {
   let className = cx({
-    ["w-fit hover:cursor-pointer "]:true,
-    ["underline"]: type === category,
+    ["w-fit hover:cursor-pointer "]: true,
+    ["underline"]: label === activeFilter,
   });
 
-  function handleClick(event) {
-    onClick(type);
+  function handleClick() {
+    onClick(label);
   }
 
   return (
@@ -23,7 +22,3 @@ function FaqFilterDesktopListItem({ onClick, label, type, category }) {
 FaqFilterDesktopListItem.propTypes = {};
 
 export default FaqFilterDesktopListItem;
-
-// how do i toggle active when user clicks on another button?
-//state must be lifted and should not be here
-//if activecategoryprop matches item-tag then set as active

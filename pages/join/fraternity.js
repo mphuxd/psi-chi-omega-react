@@ -1,15 +1,15 @@
 import Head from "next/head";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import Layout from "../../components/Layout";
 import Image from "next/image";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
-import Grid from "../../components/Grid/Grid";
-import SectionHeader from "../../components/Heading/SectionHeader";
-import ContentHeader from "../../components/Content/ContentHeader";
-import ContentBody from "../../components/Content/ContentBody";
-import ContentBlockLeftRight from "../../components/Content/ContentBlockLeftRight";
-
+import {
+  Wrapper,
+  Layout,
+  Grid,
+  SectionHeader,
+  ContentHeader,
+  ContentBlockLeftRight,
+  LinkFeed,
+  LinkFeedItem,
+} from "@/components";
 
 function Fraternity() {
   return (
@@ -49,13 +49,11 @@ function Fraternity() {
 
         <Wrapper className='my-8 lg:my-16'>
           <Grid className='mx-auto relative'>
-            <SectionHeader className='py-20 after:h-12 before:h-12 sm:py-20  sm:after:h-16 sm:before:h-16 md:after:h-20 md:before:h-20 md:py-28 xl:py-32 section-header--vertical-divider__top section-header--vertical-divider__bottom'>
-              <ContentHeader title='Our Selection Process' isUppercase={false} isCenter={true} />
-              <ContentBody
-                isCenter={true}
-                text='Psi Chi Omega recruits new brothers at the beginning of every fall and spring quarter during rush week — a week of events designed for us to get to know each other.  During this time, our brothers are looking for people who demonstrate behavior consistent with our values — those who display courage to step out of their comfort zone, who are genuine, dependable, and make an effort to get to know our community. If this sounds like you, we encourage you to come find us.'
-              />
-            </SectionHeader>
+            <SectionHeader
+              className='section-header--vertical-dividers'
+              heading='Our Selection Process'
+              copy='Psi Chi Omega recruits new brothers at the beginning of every fall and spring quarter during rush week — a week of events designed for us to get to know each other.  During this time, our brothers are looking for people who demonstrate behavior consistent with our values — those who display courage to step out of their comfort zone, who are genuine, dependable, and make an effort to get to know our community. If this sounds like you, we encourage you to come find us.'
+            />
           </Grid>
         </Wrapper>
 
@@ -156,26 +154,26 @@ function Fraternity() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

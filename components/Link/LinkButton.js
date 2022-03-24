@@ -15,7 +15,7 @@ const LinkButton = React.forwardRef(
     return (
       <Link href={href} passHref>
         <a className={classNames} href={href} onClick={onClick} ref={ref} alt={alt}>
-          <Image src='/link-arrow.svg' width={48} height={48} alt={alt} />
+          <Image src='/link-arrow.svg' width={48} height={48} alt="Arrow" />
           <span className='text--button my-auto'>{label}</span>
         </a>
       </Link>

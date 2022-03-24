@@ -1,13 +1,14 @@
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import Wrapper from "../../components/Wrapper/Wrapper";
 import Image from "next/image";
-import Grid from "../../components/Grid/Grid";
-import LeaderSimple from "../../components/Leader/LeaderSimple";
-import { Formik } from "formik";
-import { useForm, Controller } from "react-hook-form";
-import FormInputLabel from "../../components/Form/FormInputLabel";
-import FormInputContainer from "../../components/Form/FormInputContainer";
+import { useForm } from "react-hook-form";
+import {
+  Layout,
+  Wrapper,
+  Grid,
+  LeaderSimple,
+  FormInputContainer,
+  FormInputLabel,
+} from "@/components";
 
 function ContactUs() {
   const {
@@ -16,6 +17,7 @@ function ContactUs() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+  //hook up API after buying license
 
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
@@ -35,10 +37,7 @@ function ContactUs() {
 
         <Wrapper>
           <Grid isCenter={true}>
-            <form
-              className='my-12 md:my-16 lg:mt-0 col-span-full theme--grid_inner grid-rows-6 md:grid-rows-6 gap-y-8 md:gap-y-12 lg:gap-y-16 lg:mb-48'
-              onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className='form--container' onSubmit={handleSubmit(onSubmit)}>
               <FormInputContainer className=''>
                 <FormInputLabel name='Name' />
                 <input
@@ -85,13 +84,13 @@ function ContactUs() {
                 </div>
               </FormInputContainer>
 
-              <div className='col-span-full row-span-3 row-start-4 md:row-start-3 md:row-span-3 lg:col-span-8 flex flex-col relative'>
+              <div className='form--textarea-container'>
                 <label className='pb-4 pl-2 text-tiny font-normal font-body' htmlFor=''>
                   Message
                 </label>
                 <textarea
                   type='text'
-                  className='h-full p-2 outline outline-1 outline-silver  text--body'
+                  className='form--textarea'
                   {...register("message", { required: true })}
                 />
                 <div className='form--input-error'>
@@ -99,12 +98,8 @@ function ContactUs() {
                 </div>
               </div>
 
-              <button
-                className='min-w-[120px] row-start-7 md:row-start-6 p-2 outline-1 outline flex flex-row justify-center items-center'
-                type='submit'
-              >
+              <button className='form--submit' type='submit'>
                 <span className='text--button pr-2'>SUBMIT</span>
-
                 <Image
                   src='/images/icons/arrow_nopadding.svg'
                   alt='test'

@@ -1,15 +1,15 @@
-import Meta from "../components/Meta";
-import HeaderDefault from "./UIShell/HeaderDefault";
-import Footer from "./Footer/Footer";
+import Meta from "../Meta/Meta";
+import HeaderDefault from "../UIShell/HeaderDefault";
+import Footer from "../Footer/Footer";
 import PropTypes from "prop-types";
 
 export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      
+
       <HeaderDefault />
-      
+
       <div className='min-h-screen text-midnight'>
         <main>{children}</main>
       </div>

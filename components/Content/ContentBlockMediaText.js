@@ -25,7 +25,6 @@ const ContentBlockMediaText = ({
   linkIsCenter,
 }) => {
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     triggerOnce: true,
     threshold: 0.5,
   });
@@ -91,4 +90,3 @@ ContentBlockMediaText.propType = {
 
 export default ContentBlockMediaText;
 
-//to-do - refactor using slot pattern

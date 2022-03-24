@@ -30,10 +30,3 @@ export const HeaderNavBar2 = () => {
 
 export default HeaderNavBar2;
 
-// active link
-//navbar holds active link state, passes current activelink to children
-//children checks if its active link, if so, apply css property, else default
-//updating state...
-//read beta docs
-//state change -> re-render
-//state depends on router as

@@ -1,4 +1,3 @@
-import Card from "./Card";
 import LinkButton from "../Link/LinkButton";
 import Link from "next/link";
 import Image from "next/image";

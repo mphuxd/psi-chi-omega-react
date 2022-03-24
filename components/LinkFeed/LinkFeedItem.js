@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const ContentBlockLinkFeedItem = ({ title, caption, link }) => {
+const LinkFeedItem = ({ title, caption, link }) => {
   return (
     <Link href={link}>
       <a className='theme--grid_inner accordion--item relative py-4 md:py-6'>
@@ -18,4 +18,4 @@ const ContentBlockLinkFeedItem = ({ title, caption, link }) => {
   );
 };
 
-export default ContentBlockLinkFeedItem;
+export default LinkFeedItem;

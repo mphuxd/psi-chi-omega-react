@@ -1,16 +1,17 @@
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import LeaderSimpleMedia from "../../components/Leader/LeaderSimpleMedia";
-import SectionSplitHeaderOffset from "../../components/Heading/SectionSplitHeaderOffset";
-import Grid from "../../components/Grid/Grid";
-import Image from "next/image";
-import GalleryAvatar from "../../components/Gallery/GalleryAvatar";
-import GalleryAvatarItem from "../../components/Gallery/GalleryAvatarItem";
-import GalleryMembers from "../../components/Gallery/GalleryMembers";
-import GalleryMember from "../../components/Gallery/GalleryMember";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
+import {
+  Layout,
+  Wrapper,
+  LeaderSimpleMedia,
+  SectionHeaderSplitOffset,
+  Grid,
+  GalleryAvatar,
+  GalleryAvatarItem,
+  GalleryMembers,
+  GalleryMember,
+  LinkFeed,
+  LinkFeedItem,
+} from "@/components";
 
 function Brothers() {
   return (
@@ -35,7 +36,7 @@ function Brothers() {
 
         <Wrapper className='pb-20 lg:pb-32'>
           <Grid isCenter={true}>
-            <SectionSplitHeaderOffset
+            <SectionHeaderSplitOffset
               className='col-span-full'
               title='Executive Board'
               body='Also known as the “Top 7”, the executive board is the elected governing student body that performs the essential duties required for maintaining our fraternity’s mission and values. Together, the top 7 provides leadership and shapes the fraternity’s agenda and direction.'
@@ -98,7 +99,7 @@ function Brothers() {
 
         <Wrapper className='pb-20 lg:pb-32'>
           <Grid isCenter={true}>
-            <SectionSplitHeaderOffset
+            <SectionHeaderSplitOffset
               className='col-span-full'
               title='Active Members'
               body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, tpraesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa.'
@@ -132,26 +133,26 @@ function Brothers() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

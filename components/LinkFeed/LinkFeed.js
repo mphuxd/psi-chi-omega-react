@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-const ContentBlockLinkFeed = ({ className, children }) => {
+const LinkFeed = ({ className, children }) => {
   let classNames = cx('flex flex-col col-span-full');
   return (
     <div className={classNames}>
@@ -11,4 +11,4 @@ const ContentBlockLinkFeed = ({ className, children }) => {
   );
 };
 
-export default ContentBlockLinkFeed;
+export default LinkFeed;

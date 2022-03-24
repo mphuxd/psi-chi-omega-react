@@ -1,13 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Image from "next/image";
 import FaqFilterDesktop from "./FaqFilterDesktop";
 import FaqFilterMobile from "./FaqFilterMobile";
+import FaqFilterMobileListItem from "./FaqFilterMobileListItem";
+import FaqFilterDesktopListItem from "./FaqFilterDesktopListItem";
+import FaqFilterMobileList from "./FaqFilterMobileList";
 
-function FaqFilter({ mobileList, desktopList }) {
+function FaqFilter({ list, onClick, isActive }) {
+  const mobileList = list.map((item, index) => {
+    return (
+      <FaqFilterMobileListItem label={item} key={index} onClick={onClick} activeFilter={isActive} />
+    );
+  });
+  const desktopList = list.map((item, index) => {
+    return (
+      <FaqFilterDesktopListItem
+        label={item}
+        key={index}
+        onClick={onClick}
+        activeFilter={isActive}
+      />
+    );
+  });
+
   return (
     <div id='filter' className='col-span-full lg:col-span-3'>
-      <FaqFilterMobile filterList={mobileList} />
+      <FaqFilterMobile filterList={<FaqFilterMobileList>{mobileList}</FaqFilterMobileList>} />
       <FaqFilterDesktop filterList={desktopList} />
     </div>
   );
@@ -16,7 +34,3 @@ function FaqFilter({ mobileList, desktopList }) {
 FaqFilter.propTypes = {};
 
 export default FaqFilter;
-
-//how do we generate all filter items from one source
-//prop or children
-//two props for each

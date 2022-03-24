@@ -1,14 +1,15 @@
 import Head from "next/head";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import LeaderSimple from "../../components/Leader/LeaderSimple";
-import Layout from "../../components/Layout";
 import Image from "next/image";
-import ContentBlockLeftRightOffset from "../../components/Content/ContentBlockLeftRightOffset";
-import ContentBlockText from "../../components/Content/ContentBlockText";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
-import Grid from "../../components/Grid/Grid";
-
+import {
+  Layout,
+  Wrapper,
+  Grid,
+  LeaderSimple,
+  ContentBlockLeftRightOffset,
+  ContentBlockText,
+  LinkFeed,
+  LinkFeedItem,
+} from "@/components";
 
 function CommunityInvolvement() {
   return (
@@ -145,26 +146,26 @@ function CommunityInvolvement() {
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='ABOUT OUR ALUMNI NETWORK'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

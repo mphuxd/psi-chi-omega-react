@@ -2,7 +2,7 @@ import cx from "classnames";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import LinkButton from "../Link/LinkButton";
 
-const SectionSplitHeader2 = ({ leftText, rightText, href, alt, label, button = false }) => {
+const SectionHeaderSplit = ({ leftText, rightText, href, alt, label, button = false }) => {
   let dividerCSS;
   let breakPoint = useBreakpointSize();
   let className =
@@ -39,10 +39,20 @@ const SectionSplitHeader2 = ({ leftText, rightText, href, alt, label, button = f
       <h2 className='lg:w-1/2 lg:pr-4 text--headline'>{leftText}</h2>
       <div className='mt-3 md:mt-4 lg:mt-0 lg:w-1/2 lg:pl-4 flex flex-col'>
         <span className='text--body'>{rightText}</span>
-        {button && <LinkButton className='mt-3 lg:mt-6' href={href} alt={alt} label={label} isCenter={false} />}
+        {button && (
+          <LinkButton
+            className='mt-3 lg:mt-6'
+            href={href}
+            alt={alt}
+            label={label}
+            isCenter={false}
+          />
+        )}
       </div>
     </div>
   );
 };
 
-export default SectionSplitHeader2;
+export default SectionHeaderSplit;
+
+//refactor & optimize this

@@ -1,21 +1,24 @@
 import Head from "next/head";
-import Grid from "../../components/Grid/Grid";
-import Layout from "../../components/Layout";
-import Wrapper from "../../components/Wrapper/Wrapper";
 import Image from "next/image";
-import SectionSplitHeader2 from "../../components/Heading/SectionSplitHeader2";
-import ContentBlockLeftRight from "../../components/Content/ContentBlockLeftRight";
-import ContentBlockMedia from "../../components/Content/ContentBlockMedia";
-import ContentBlockMetrics from "../../components/Content/ContentBlockMetrics";
-import ContentBlockMetricItem from "../../components/Content/ContentBlockMetricItem";
-import ContentBlockText from "../../components/Content/ContentBlockText";
-import SectionSplitHeaderOffset from "../../components/Heading/SectionSplitHeaderOffset";
-import Accordion from "../../components/Accordion/Accordion";
-import AccordionItem from "../../components/Accordion/AccordionItem";
-import ContentBlockLinkFeed from "../../components/Content/ContentBlockLinkFeed";
-import ContentBlockLinkFeedItem from "../../components/Content/ContentBlockLinkFeedItem";
-import ContentBlockBody from "../../components/Content/ContentBlockBody";
-import LinkButton from "../../components/Link/LinkButton";
+import {
+  Accordion,
+  AccordionItem,
+  Grid,
+  Layout,
+  Wrapper,
+  SectionHeaderSplit,
+  ContentBlockBody,
+  ContentBlockLeftRight,
+  ContentBlockMedia,
+  ContentBlockMetricItem,
+  ContentBlockMetrics,
+  ContentBlockText,
+  SectionHeaderSplitOffset,
+  LeaderLarge,
+  LinkButton,
+  LinkFeed,
+  LinkFeedItem,
+} from "@/components";
 
 function About() {
   return (
@@ -26,46 +29,21 @@ function About() {
       </Head>
 
       <Layout>
-        <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
-          <Grid className='mx-auto'>
-            <h1 className='col-span-full text--headline xl:col-span-9 uppercase'>About ΨΧΩ</h1>
-            <p className='col-span-full lg:col-span-9 md:text-3xl md:leading-9 lg:text-2xl lg:leading-8 mt-4 md:mt-8 text-base font-medium tracking-[3%] lg:font-medium'>
-              Psi Chi Omega is an Asian-interest fraternity whose traditions promote excellence
-              through integrity, perseverance, and eternal brotherhood. Through shared experiences,
-              we form long-lasting bonds between our brothers and encourage each other to become the
-              best version of themselves.
-            </p>
-            <section className='col-span-full gap-x-8 flex flex-col lg:flex-row xl:mt-10 mt-4 md:mt-8'>
-              <div className='text-tiny md:text-lg md:leading-7 lg:text-base lg:leading-6 leading-5 lg:w-1/2'>
-                <p>
-                  We believe that male camaraderie is necessary in becoming well-rounded, successful
-                  men. By uniting young, ambitious, like-minded men under our values, we’ve
-                  successfully cultivated a growth-focused environment to help our members succeed
-                  both academically and socially.
-                </p>
-                <p className='mt-4'>
-                  Psi Chi Omega builds strong men. For many members, joining a fraternity is the
-                  beginning of a lifelong service to community — learning what it means to be a
-                  brother, how to take care of each other, look after one another, and make sure
-                  everyone stays on track.
-                </p>
-              </div>
-              <div className='mt-6 lg:mt-0 lg:w-1/2'>
-                <Image
-                  src='/images/berlin-trident.jpg'
-                  width={2000}
-                  height={1333}
-                  priority
-                  alt='About us placeholder'
-                ></Image>
-              </div>
-            </section>
-          </Grid>
-        </Wrapper>
+        <LeaderLarge
+          heading='About ΨΧΩ'
+          largeCopy='Psi Chi Omega is an Asian-interest fraternity whose traditions promote excellence through integrity, perseverance, and eternal brotherhood. Through shared experiences, we form long-lasting bonds between our brothers and encourage each other to become the best version of themselves.'
+          copy1='We believe that male camaraderie is necessary in becoming well-rounded, successful men. By uniting young, ambitious, like-minded men under our values, we’ve successfully cultivated a growth-focused environment to help our members succeed both academically and socially.'
+          copy2='Psi Chi Omega builds strong men. For many members, joining a fraternity is the beginning of a lifelong service to community — learning what it means to be a brother, how to take care of each other, look after one another, and make sure everyone stays on track.'
+          imageSrc='/images/berlin-trident.jpg'
+          imageAlt='placeholder'
+          imageWidth={2000}
+          imageHeight={1333}
+          priority={true}
+        />
 
         <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
           <Grid isCenter={true}>
-            <SectionSplitHeader2
+            <SectionHeaderSplit
               leftText={
                 <>
                   We’re a <span className='text-forest'>brotherhood.</span>
@@ -137,7 +115,7 @@ function About() {
 
         <Wrapper className='bg-smoke pt-12 md:mt-20 lg:py-32'>
           <Grid isCenter={true}>
-            <SectionSplitHeader2
+            <SectionHeaderSplit
               leftText='A place to celebrate our culture and heritage'
               rightText='Psi Chi Omega was founded to help students connect through their shared identity, culture and experiences to discover what it means to be Asian American.'
               href='/'
@@ -154,7 +132,7 @@ function About() {
               />
             </Wrapper>
             <Wrapper className='col-span-full mt-20 lg:mt-28'>
-              <SectionSplitHeaderOffset
+              <SectionHeaderSplitOffset
                 title='OUR PILLARS'
                 body='Pillars are the fundamental principles that serve as the foundation for our fraternity. They unite us together as a community, guide us as men to make good decisions, and help us live a life with meaning and purpose.'
               />
@@ -249,26 +227,26 @@ function About() {
         </Wrapper>
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
-            <ContentBlockLinkFeed>
-              <ContentBlockLinkFeedItem
+            <LinkFeed>
+              <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
                 link='/'
               />
-              <ContentBlockLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
                 link='/'
               />
-            </ContentBlockLinkFeed>
+            </LinkFeed>
           </Grid>
         </Wrapper>
       </Layout>

@@ -56,6 +56,22 @@
   .card--2x-layout {
     @apply sm:flex sm:flex-row md:block md:w-1/2 mr-2 ml-2 md:mr-0 md:ml-0;
   }
+  .eyebrow {
+    @apply text--caption mb-3 sm:mb-4 xl:mb-5 uppercase;
+  }
+  .form--container {
+    @apply my-12 md:my-16 lg:mt-0 col-span-full theme--grid_inner grid-rows-6 md:grid-rows-6 gap-y-8 md:gap-y-12 lg:gap-y-16 lg:mb-48;
+  }
+  .form--textarea-container {
+    @apply col-span-full row-span-3 row-start-4 md:row-start-3 md:row-span-3 lg:col-span-8 flex flex-col relative;
+  }
+  .form--textarea {
+    @apply h-full p-2 outline outline-1 outline-silver text--body;
+  }
+  .form--submit {
+    @apply min-w-[120px] h-fit row-start-7 md:row-start-6 p-2 outline-1 outline flex flex-row justify-center items-center;
+  }
+
   .footer--nav {
     @apply px-2 mt-16 grid grid-cols-2 gap-y-12 gap-x-4 col-span-full md:grid-cols-4 md:px-0 md:col-span-9 md:order-4 
     xl:col-span-8 xl:col-start-5 xl:mt-4 lg:px-12 lg:gap-x-8;
@@ -169,6 +185,10 @@
     left: 32.9%;
   }
 
+  .section-header--vertical-dividers {
+    @apply py-20 after:h-12 before:h-12 sm:after:h-16 sm:before:h-16 md:after:h-20 md:before:h-20 md:py-28 xl:py-32 section-header--vertical-divider__top section-header--vertical-divider__bottom;
+  }
+
   .swiper--slide-width {
     @apply w-3/4 lg:w-3/4 xl:w-10/12 2xl:w-3/4 max-w-1120 !important;
   }
@@ -189,64 +209,60 @@
     md:grid-cols-12 md:gap-x-4
     lg:gap-x-8;
   }
-  
+
   .divider::after {
     position: absolute;
-    content: '';
-    background-color:#949494;
-    top:50%;
-    width:100%;
-    height:1px;
-
+    content: "";
+    background-color: #949494;
+    top: 50%;
+    width: 100%;
+    height: 1px;
   }
 
   .form--input-divider::after {
-    position:absolute;
-    width:100%;
-    content: '';
-    height:1px;
-    background-color:#000;
-    top:100%
+    position: absolute;
+    width: 100%;
+    content: "";
+    height: 1px;
+    background-color: #000;
+    top: 100%;
   }
 
   .form--input-error {
-    @apply absolute -bottom-6 left-2 text-tiny font-body font-normal text-red-500
+    @apply absolute -bottom-6 left-2 text-tiny font-body font-normal text-red-500;
   }
 
   .form--input {
-    @apply pl-2 py-1 sm:py-2 text--body
+    @apply pl-2 py-1 sm:py-2 text--body;
   }
 
   .content-block--text-join {
-    @apply lg:w-1/2 text--body space-y-6 mt-2 md:mt-4 lg:mt-0 max-w-3xl
+    @apply lg:w-1/2 text--body space-y-6 mt-2 md:mt-4 lg:mt-0 max-w-3xl;
   }
 
   .section-header--vertical-divider::after {
-    @apply absolute content-none bg-black h-full w-px left-1/2 translate-x-1/2
+    @apply absolute content-none bg-black h-full w-px left-1/2 translate-x-1/2;
   }
 
   .section-header--vertical-divider__top::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: #949494;
     height: 80px;
     width: 1px;
     opacity: 50%;
-    top:0px;
-    left:50%;
-
+    top: 0px;
+    left: 50%;
   }
 
   .section-header--vertical-divider__bottom::after {
     position: absolute;
-    content: '';
-    background-color: #949494 ;
+    content: "";
+    background-color: #949494;
     opacity: 50%;
     height: 80px;
     width: 1px;
-    bottom:0px;
-    left:50%;
-
+    bottom: 0px;
+    left: 50%;
   }
-
 }

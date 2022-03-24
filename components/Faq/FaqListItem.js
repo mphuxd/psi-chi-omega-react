@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-function FaqListItem({ question, answer, category, type }) {
+function FaqListItem({ question, answer, category, label }) {
   let className = cx({
-    ["block"]: category === "all",
-    ["hidden"]: category != type && category != 'all',
-    ["block"]: category === type,
+    ["block"]: category === "All FAQs",
+    ["hidden"]: category != label && category != "All FAQs",
+    ["block"]: category === label,
   });
   return (
     <li id='faq-item' className={className}>
