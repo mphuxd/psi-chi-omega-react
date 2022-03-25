@@ -5,7 +5,7 @@ import cx from "classnames";
 
 export const HeaderSidepanel = ({ callBack, isActive, children }) => {
   let classNames = cx({
-    "header--side-panel": true,
+    "header--side-panel--white": true,
     "header--side-panel--active": isActive,
     "header--side-panel--closed": !isActive,
   });
