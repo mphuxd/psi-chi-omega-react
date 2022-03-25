@@ -195,7 +195,7 @@ function History() {
                 caption='About Little Sis'
                 link='/'
               />
-              <kLinkFeedItem
+              <LinkFeedItem
                 className=''
                 title='WHY PSI CHI OMEGA'
                 caption='READ WHY OUR MEMBERS LOVE PSI CHI OMEGA'

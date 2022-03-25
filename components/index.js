@@ -4,6 +4,7 @@ export * from "./Carousel";
 export * from "./Content";
 export * from "./Eyebrow";
 export * from "./Faq";
+export * from "./Footer";
 export * from "./Form";
 export * from "./Gallery";
 export * from "./Grid";
@@ -15,11 +16,8 @@ export * from "./Link";
 export * from "./LinkFeed";
 export * from "./SectionHeader";
 export * from "./Wrapper";
-export * from "./UIShell"
+export * from "./UIShell";
 
 //implement Meta
-//refactor Link
-//refactor UIShell Header & abstraction
 //refactor Content
-//refactor Footer to be generic
 //refactor SectionHeader abstraction

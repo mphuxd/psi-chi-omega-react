@@ -25,5 +25,5 @@ HeaderSidepanel.propTypes = {
   isActive: PropTypes.bool,
   children: PropTypes.node,
 };
- 
+
 export default HeaderSidepanel;

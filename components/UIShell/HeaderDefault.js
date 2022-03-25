@@ -5,7 +5,6 @@ import HeaderMenuButton from "./HeaderMenuButton";
 import HeaderNavBar from "./HeaderNavBar";
 import HeaderSidepanel from "./HeaderSidepanel";
 import HeaderSideNav from "./HeaderSideNav";
-import HeaderNavBar2 from "./HeaderNavBar2"
 
 export const HeaderDefault = () => (
   <HeaderContainer
@@ -14,7 +13,7 @@ export const HeaderDefault = () => (
       <Header isActive={isSideNavExpanded}>
         <HeaderName isActive={isSideNavExpanded}></HeaderName>
         <HeaderMenuButton onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />
-        <HeaderNavBar2 />
+        <HeaderNavBar />
         <HeaderSidepanel callBack={onClickSideNavExpand} isActive={isSideNavExpanded}>
           <HeaderSideNav isActive={isSideNavExpanded} />
         </HeaderSidepanel>
