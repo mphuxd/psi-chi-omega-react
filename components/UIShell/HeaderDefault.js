@@ -18,7 +18,7 @@ export const HeaderDefault = () => (
         <HeaderSidepanel callBack={onClickSideNavExpand} isActive={isSideNavExpanded}>
           <HeaderSideNav isActive={isSideNavExpanded} />
         </HeaderSidepanel>
-        <HeaderSidepanelBackdrop isActive={isSideNavExpanded} />
+        <HeaderSidepanelBackdrop onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />
       </Header>
     )}
   />
