@@ -1,13 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Layout, Wrapper, Grid } from "@/components";
+import { Layout, Wrapper, Grid, Meta } from "@/components";
 
 function Covid19() {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
         <title>COVID-19 | ΨΧΩ</title>
-        <link rel='icon' href='/favicon.ico' />
+        <Meta
+          description='Psi Chi Omega is an Asian-interest fraternity at UC Davis that provides students with cultural space and community to help them understand and connect with their Asian-American identity. '
+          keywords='Psi, Chi, Omega, Psi Chi Omega, fraternity, Gamma, Chapter, UC Davis, California, Integrity, Perseverance, Eternal Brotherhood'
+          url='/'
+          title='COVID-19 | ΨΧΩ'
+          imgURL=''
+          twitterHandle=''
+          faviconHref='/favicon.ico'
+        />
       </Head>
 
       <Layout>

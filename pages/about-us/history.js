@@ -10,6 +10,7 @@ import {
   HistoryMetricListItem,
   LinkFeed,
   LinkFeedItem,
+  Meta,
 } from "@/components";
 
 function History() {
@@ -17,7 +18,15 @@ function History() {
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
         <title>History | ΨΧΩ</title>
-        <link rel='icon' href='/favicon.ico' />
+        <Meta
+          description='Psi Chi Omega is an Asian-interest fraternity at UC Davis that provides students with cultural space and community to help them understand and connect with their Asian-American identity. '
+          keywords='Psi, Chi, Omega, Psi Chi Omega, fraternity, Gamma, Chapter, UC Davis, California, Integrity, Perseverance, Eternal Brotherhood'
+          url='/'
+          title='History | ΨΧΩ'
+          imgURL=''
+          twitterHandle=''
+          faviconHref='/favicon.ico'
+        />
       </Head>
 
       <Layout>

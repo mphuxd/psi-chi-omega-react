@@ -14,15 +14,13 @@ export * from "./Layout";
 export * from "./Leader";
 export * from "./Link";
 export * from "./LinkFeed";
+export * from "./Meta";
 export * from "./SectionHeader";
 export * from "./Wrapper";
 export * from "./UIShell";
 
-//implement Meta
 //refactor Content
 //refactor SectionHeader abstraction
 //prototype review
 //create tokens & css vars
 //clean css naming
-
-
