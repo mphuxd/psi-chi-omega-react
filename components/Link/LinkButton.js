@@ -8,7 +8,7 @@ const LinkButton = React.forwardRef(
   ({ className, onClick, href, alt, label, isCenter, isUppercase }, ref) => {
     let classNames = cx(
       className,
-      "button--link",
+      "link--button",
       { "mx-auto": isCenter },
       { "uppercase": isUppercase },
     );

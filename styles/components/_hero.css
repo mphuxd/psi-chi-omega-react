@@ -1,0 +1,15 @@
+/*------------------------------------*\
+  #HERO
+\*------------------------------------*/
+
+@layer components {
+  .hero-title {
+    @apply text-4xl font-bold text-center font-body uppercase md:text-7xl md:leading-none xl:leading-[56px] xl:tracking-tight col-span-full;
+  }
+  .hero-subtitle {
+    @apply text-3xl w-auto text-center font-display col-span-full;
+  }
+  .hero-subtext {
+    @apply text-sm font-normal w-auto text-center col-span-full font-body mt-8 md:text-tiny max:text-lg max:mt-12;
+  }
+}

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  #LINK FEED
+\*------------------------------------*/
+
+@layer components {
+  .link-feed-item {
+    @apply theme-grid__inner accordion-item relative py-4 md:py-6;
+  }
+  .link-feed-item__body {
+    @apply grid grid-cols-3 col-span-3 gap-x-4 sm:grid-cols-7 sm:col-span-7 md:grid-cols-11 md:col-span-11 md:gap-x-4 lg:gap-x-8 lg:col-span-11;
+  }
+  .link-feed-item__header {
+    @apply uppercase col-span-full md:col-span-11 lg:col-span-4 font-body text-lg leading-6 font-bold sm:text-2xl md:text-2xl md:leading-tight md:font-bold xl:text-3xl xl:font-bold xl:leading-tight h-fit my-auto;
+  }
+  .link-feed-item__caption {
+    @apply col-span-full uppercase md:col-span-11 lg:col-span-7 text--caption mt-2 md:mt-0 h-fit my-auto;
+  }
+  .link-feed-item__button {
+    @apply pt-2 md:pt-4 lg:pt-0 col-span-1 self-center justify-self-center h-fit;
+  }
+}

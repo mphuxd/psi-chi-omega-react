@@ -1,0 +1,22 @@
+/*------------------------------------*\
+  #accordion
+\*------------------------------------*/
+
+@layer components {
+  .accordion-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0px;
+    background-color: #000;
+  }
+  .accordion-item--end::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    background-color: #000;
+  }
+}

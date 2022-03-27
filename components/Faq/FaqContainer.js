@@ -6,7 +6,7 @@ function FaqContainer({ children }) {
   return (
     <Grid isCenter={true}>
       {/* <FaqSearch /> */}
-      <section className='theme--grid_inner col-span-full mt-12 lg:mt-0'>{children}</section>
+      <section className='theme-grid__inner col-span-full mt-12 lg:mt-0'>{children}</section>
     </Grid>
   );
 }

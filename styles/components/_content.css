@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #CONTENT BLOCK
+\*------------------------------------*/
+
+@layer components {
+  .content-block-quote {
+    @apply col-span-full theme-grid__inner;
+  }
+  .content-block-quote-body {
+    @apply col-span-full flex flex-col mt-4 px-4 pb-4 md:px-2 sm:col-span-4 md:col-span-6 xl:my-auto;
+  }
+  .content-block-quote-body-attributes {
+    @apply flex flex-col text-right mt-8 sm:text-left md:mt-10 xl:mt-16;
+  }
+  .content-block-text {
+    @apply col-span-full flex flex-col mt-4 px-4 pb-4 sm:px-2 sm:col-span-4 md:col-span-6 md:my-auto;
+  }
+  .content-block-media {
+    @apply col-span-full sm:col-span-4 md:col-span-6;
+  }
+  .content-block-text__join {
+    @apply lg:w-1/2 text--body space-y-6 mt-2 md:mt-4 lg:mt-0 max-w-3xl;
+  }
+  .history-metric-list-item__divider::after {
+    position: absolute;
+    content: "";
+    background-color: #949494;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+}

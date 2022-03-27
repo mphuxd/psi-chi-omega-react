@@ -5,7 +5,7 @@ import Grid from "../Grid/Grid";
 function GalleryAvatar({ children }) {
   return (
     <Grid className='mt-16' isCenter={true}>
-      <div className='col-span-full theme--grid_inner grid-rows-3 gap-y-8'>{children}</div>
+      <div className='col-span-full theme-grid__inner grid-rows-3 gap-y-8'>{children}</div>
     </Grid>
   );
 }

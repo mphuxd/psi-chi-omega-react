@@ -173,7 +173,7 @@ function LittleSisProgram() {
                 height={4024}
               />
               <Link href='/'>
-                <a className='theme--grid_inner relative py-4 md:py-6'>
+                <a className='theme-grid__inner relative py-4 md:py-6'>
                   <div className='content-block--feed-item__body'>
                     <span className='content-block--feed-item__header'>Join Little Sis</span>
                     <span className='content-block--feed-item__caption my-auto lg:col-span-5 lg:leading-6'>

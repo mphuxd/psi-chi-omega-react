@@ -51,7 +51,7 @@ const Carousel = React.forwardRef(({ children, inView, entry, className, animate
         {children}
       </Swiper>
 
-      <div className='theme--grid mx-auto'>
+      <div className='theme-grid mx-auto'>
         <div className='mt-10 flex flex-row justify-center col-span-full xl:col-start-11 '>
           <button className='pag-prev mr-2'>
             <Image src='/pag-prev.svg' alt='Move Carousel Back' width={56} height={56} />

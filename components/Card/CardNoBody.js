@@ -17,7 +17,7 @@ const CardNoBody = ({
   linkIsCenter,
   linkIsUppercase,
 }) => {
-  let classNames = cx("card--no-body", className);
+  let classNames = cx("card-no-body", className);
   return (
     <Link href={linkHref} passHref>
       <div className={classNames}>

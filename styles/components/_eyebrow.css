@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  #EYEBROW
+\*------------------------------------*/
+
+@layer components {
+  .eyebrow {
+    @apply text--caption mb-3 sm:mb-4 xl:mb-5 uppercase;
+  }
+}

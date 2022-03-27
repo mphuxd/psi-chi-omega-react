@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #FORM
+\*------------------------------------*/
+
+@layer components {
+  .form-container {
+    @apply my-12 md:my-16 lg:mt-0 col-span-full theme-grid__inner grid-rows-6 md:grid-rows-6 gap-y-8 md:gap-y-12 lg:gap-y-16 lg:mb-48;
+  }
+  .form-texarea-container {
+    @apply col-span-full row-span-3 row-start-4 md:row-start-3 md:row-span-3 lg:col-span-8 flex flex-col relative;
+  }
+  .form-texarea {
+    @apply h-full p-2 outline outline-1 outline-silver text--body;
+  }
+  .form-submit {
+    @apply min-w-[120px] h-fit row-start-7 md:row-start-6 p-2 outline-1 outline flex flex-row justify-center items-center;
+  }
+  .form-input__divider::after {
+    position: absolute;
+    width: 100%;
+    content: "";
+    height: 1px;
+    background-color: #000;
+    top: 100%;
+  }
+  .form-input__error {
+    @apply absolute -bottom-6 left-2 text-tiny font-body font-normal text-red-500;
+  }
+  .form-input {
+    @apply pl-2 py-1 sm:py-2 text--body;
+  }
+}

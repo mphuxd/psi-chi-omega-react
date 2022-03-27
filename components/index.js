@@ -1,5 +1,5 @@
 export * from "./Accordion";
-export * from "./Cards";
+export * from "./Card";
 export * from "./Carousel";
 export * from "./Content";
 export * from "./Eyebrow";

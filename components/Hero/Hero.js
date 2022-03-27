@@ -23,7 +23,7 @@ const Hero = React.forwardRef(
     ref
   ) => {
     let classNames = cx(className, {
-      ["theme--grid"]: true,
+      ["theme-grid"]: true,
       ["animate__animated animate__fadeIn"]: inView,
     });
 

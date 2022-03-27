@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  #LINK
+\*------------------------------------*/
+
+@layer components {
+    .link--button {
+      @apply inline-flex flex-row w-fit;
+    }
+}

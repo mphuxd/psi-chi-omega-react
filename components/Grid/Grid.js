@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Grid = React.forwardRef(
   ({ className = "", isCenter = false, inView, entry, animateClassNames, children }, ref) => {
     let classNames = cx(className, {
-      ["theme--grid"]: true,
+      ["theme-grid"]: true,
       ["mx-auto"]: isCenter,
       [animateClassNames]: inView,
     });

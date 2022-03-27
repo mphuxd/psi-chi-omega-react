@@ -1,10 +1,27 @@
 /* ./styles/styles.css */
+
+/* tailwind */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* utilities */
 @import "_global.css";
 @import "_fonts.css";
 @import "_text.css";
-@import "_components.css";
 @import "_utilities.css";
-@import "animate.css"
+
+/* components */
+@import "components/_accordion.css";
+@import "components/_card.css";
+@import "components/_components.css";
+@import "components/_content.css";
+@import "components/_eyebrow.css";
+@import "components/_footer.css";
+@import "components/_form.css";
+@import "components/_grid.css";
+@import "components/_hero.css";
+@import "components/_link-feed.css";
+@import "components/_link.css";
+@import "components/_section-header.css";
+@import "components/_uishell.css";

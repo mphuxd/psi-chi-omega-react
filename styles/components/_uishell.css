@@ -1,0 +1,59 @@
+/*------------------------------------*\
+  #UISHELL
+\*------------------------------------*/
+
+@layer components {
+  .header-side-nav-group__divider {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 0;
+    padding-right: 8px;
+  }
+  .header-side-nav-group__divider::after {
+    content: "";
+    background: black;
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 100%;
+    width: 100vw;
+    height: 1px;
+  }
+  .header {
+    @apply w-full h-16 flex flex-row flex-wrap justify-between content-center absolute z-50 md:h-20 md:static theme--default-layout;
+  }
+  .header-navbar__list {
+    @apply flex-col absolute top-[100%] left-[50%] -translate-x-1/2 px-4 pt-4 bg-white pb-2 text-tiny whitespace-nowrap drop-shadow-lg rounded-xl 2xl:p-4;
+  }
+  .header-navbar-item {
+    @apply header-menu__dropdown hover:header-menu__divider focus:header-menu__divider z-10;
+  }
+  .header-menu__dropdown {
+    @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-tiny md:relative sm:leading-6 hover:cursor-pointer md:ml-5 2xl:ml-8;
+  }
+  .header-menu__dropdown--active {
+    @apply flex-col absolute top-[100%] left-[50%] -translate-x-1/2 px-4 pt-4 bg-white pb-2 text-tiny whitespace-nowrap drop-shadow-lg rounded-xl 2xl:p-4;
+  }
+  .header-menu__divider::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    width: 50%;
+    height: 2px;
+    background-color: #006341;
+  }
+  .header-side-panel {
+    @apply fixed bg-midnight h-auto min-h-screen w-screen -ml-2 sm:-ml-4 overflow-x-hidden z-30 transition-all ease-out;
+  }
+  .header-side-panel--white {
+    @apply fixed bg-smoke h-auto min-h-screen w-screen -ml-2 sm:-ml-4 overflow-x-hidden z-20 transition-all ease-out;
+  }
+  .header-side-panel--active {
+    @apply opacity-100 translate-x-[15%] z-20;
+  }
+  .header-side-panel--closed {
+    @apply opacity-0 translate-x-full;
+  }
+}

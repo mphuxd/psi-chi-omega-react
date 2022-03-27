@@ -8,9 +8,9 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
   let [isOpenDropdown, setIsOpenDropdown] = useState(false);
   let displayDropdown = isOpenDropdown ? "flex" : "hidden";
 
-  let listClassNames = cx("header-navbarlist", displayDropdown);
-  let itemClassNames = cx("header-navbaritem", {
-    "header-menu--divider": router.pathname.includes(tag),
+  let listClassNames = cx("header-navbar__list", displayDropdown);
+  let itemClassNames = cx("header-navbar-item", {
+    "header-menu__divider": router.pathname.includes(tag),
   });
 
   const handleSetIsOpenDropdownClick = () => setIsOpenDropdown((isOpenDropdown = !isOpenDropdown));

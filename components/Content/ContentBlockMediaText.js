@@ -31,7 +31,7 @@ const ContentBlockMediaText = ({
 
   let classNames = cx(
     className,
-    "content-block--quote",
+    "content-block-quote",
     { "opacity-0": animateInView },
     {
       "animate__animated animate__fadeInUp opacity-100 animate--ease-out-quintic animate--duration-500ms":
@@ -39,12 +39,12 @@ const ContentBlockMediaText = ({
     }
   );
 
-  let imgClassName = cx("content-block--media", {
+  let imgClassName = cx("content-block-media", {
     "sm:order-2": isReversed,
     "sm:order-1": !isReversed,
   });
 
-  let bodyClassName = cx("content-block--text", {
+  let bodyClassName = cx("content-block-text", {
     "sm:order-1": isReversed,
     "sm:order-2": !isReversed,
   });

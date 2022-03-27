@@ -28,7 +28,7 @@ const AccordionItem = ({ title, caption, children, open = false }) => {
   };
 
   return (
-    <li className='theme--grid_inner relative py-4 md:py-6'>
+    <li className='theme-grid__inner relative py-4 md:py-6'>
       <button
         onClick={onClick}
         className='accordion--item col-span-full lg:col-span-4 flex justify-between flex-row lg:hover:cursor-default'

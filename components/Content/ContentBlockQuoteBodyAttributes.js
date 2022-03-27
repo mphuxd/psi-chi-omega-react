@@ -2,7 +2,7 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 const ContentBlockQuoteBodyAttributes = ({ className, quoteAuthor, quoteAuthorSubtext }) => {
-  let classNames = cx(className, "content-block--quote_body-attributes");
+  let classNames = cx(className, "content-block-quote-body-attributes");
   return (
     <div className={classNames}>
       <span className='text--miniheadline'>{quoteAuthor}</span>

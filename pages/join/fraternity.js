@@ -59,7 +59,7 @@ function Fraternity() {
         <Wrapper className='my-8 lg:my-16'>
           <Grid className='mx-auto relative'>
             <SectionHeader
-              className='section-header--vertical-dividers'
+              className='section-header__vertical-dividers'
               heading='Our Selection Process'
               copy='Psi Chi Omega recruits new brothers at the beginning of every fall and spring quarter during rush week — a week of events designed for us to get to know each other.  During this time, our brothers are looking for people who demonstrate behavior consistent with our values — those who display courage to step out of their comfort zone, who are genuine, dependable, and make an effort to get to know our community. If this sounds like you, we encourage you to come find us.'
             />
@@ -71,7 +71,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='Attend Rush Week' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
@@ -96,7 +96,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='Information Night' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
@@ -109,7 +109,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='Application / Interview' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
@@ -122,7 +122,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='Decision / Bid' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
@@ -135,7 +135,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='What’s Next?' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
@@ -148,7 +148,7 @@ function Fraternity() {
             <ContentBlockLeftRight
               left={<ContentHeader className='lg:w-1/2' title='Advice & How to Prepare' />}
               right={
-                <div className='content-block--text-join'>
+                <div className='content-block-text__join'>
                   <p className=''>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
                     suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec

@@ -10,25 +10,25 @@ const SectionHeaderSplit = ({ leftText, rightText, href, alt, label, button = fa
 
   switch (breakPoint) {
     case "default":
-      dividerCSS = "section--split-header-default";
+      dividerCSS = "section-header-split--default";
       break;
     case "sm":
-      dividerCSS = "section--split-header-default";
+      dividerCSS = "section-header-split--default";
       break;
     case "md":
-      dividerCSS = "section--split-header-default";
+      dividerCSS = "section-header-split--default";
       break;
     case "lg":
-      dividerCSS = "section--split-header";
+      dividerCSS = "section-header-split";
       break;
     case "xl":
-      dividerCSS = "section--split-header";
+      dividerCSS = "section-header-split";
       break;
     case "2xl":
-      dividerCSS = "section--split-header";
+      dividerCSS = "section-header-split";
       break;
     case "max":
-      dividerCSS = "section--split-header";
+      dividerCSS = "section-header-split";
       break;
   }
 

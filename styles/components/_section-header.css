@@ -1,0 +1,65 @@
+/*------------------------------------*\
+  #SECTION HEADER
+\*------------------------------------*/
+
+@layer components {
+  .section-header-split::before {
+    content: "";
+    background: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 1px;
+    right: 50%;
+  }
+  .section-header-split--default::before {
+    content: "";
+    background: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 1px;
+    left: 0%;
+  }
+  .section-header-split-offset {
+    @apply w-full relative py-8 theme-grid__inner;
+  }
+  .section-header-split-offset-divider::before {
+    content: "";
+    background: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 1px;
+    left: 32.9%;
+  }
+  .section-header__vertical-dividers {
+    @apply py-20 after:h-12 before:h-12 sm:after:h-16 sm:before:h-16 md:after:h-20 md:before:h-20 md:py-28 xl:py-32 section-header__vertical-divider--top section-header__vertical-divider--bottom;
+  }
+  .section-header--vertical-divider::after {
+    @apply absolute content-none bg-black h-full w-px left-1/2 translate-x-1/2;
+  }
+  .section-header__vertical-divider--top::before {
+    position: absolute;
+    content: "";
+    background-color: #949494;
+    height: 80px;
+    width: 1px;
+    opacity: 50%;
+    top: 0px;
+    left: 50%;
+  }
+  .section-header__vertical-divider--bottom::after {
+    position: absolute;
+    content: "";
+    background-color: #949494;
+    opacity: 50%;
+    height: 80px;
+    width: 1px;
+    bottom: 0px;
+    left: 50%;
+  }
+}

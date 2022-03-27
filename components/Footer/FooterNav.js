@@ -6,7 +6,7 @@ import FooterNavGroup from "./FooterNavGroup";
 import Link from "next/link";
 
 function FooterNav() {
-  let classNames = cx("footer--nav");
+  let classNames = cx("footer-nav");
   let navData = useContext(navContext);
   let footerNav = navData.map((group, index) => {
     return (

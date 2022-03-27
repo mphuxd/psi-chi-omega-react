@@ -1,0 +1,20 @@
+/*------------------------------------*\
+  #GRID
+\*------------------------------------*/
+
+@layer components {
+  .theme-grid {
+    @apply px-2 grid w-screen grid-cols-4 gap-x-4
+    sm:px-4 sm:grid-cols-8 sm:gap-x-4
+    md:px-14 md:grid-cols-12 md:gap-x-4
+    lg:px-12 lg:gap-x-8
+    xl:px-20 max-w-1280;
+  }
+  .theme-grid__inner {
+    @apply grid 
+    grid-cols-4 gap-x-4
+    sm:grid-cols-8 
+    md:grid-cols-12 md:gap-x-4
+    lg:gap-x-8;
+  }
+}

@@ -46,14 +46,14 @@ function ContactUs() {
 
         <Wrapper>
           <Grid isCenter={true}>
-            <form className='form--container' onSubmit={handleSubmit(onSubmit)}>
+            <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
               <FormInputContainer className=''>
                 <FormInputLabel name='Name' />
                 <input
-                  className='form--input'
+                  className='form-input'
                   {...register("name", { required: true, maxLength: 80 })}
                 />
-                <div className='form--input-error'>
+                <div className='form-input__error'>
                   {errors.name?.type === "required" && "A name or alias is required"}
                   {errors.name?.type === "maxLength" && "Input is too long"}
                 </div>
@@ -63,7 +63,7 @@ function ContactUs() {
                 <FormInputLabel name='Your Email Address' />
                 <input
                   type='text'
-                  className='form--input'
+                  className='form-input'
                   {...register("email", {
                     required: true,
                     pattern: {
@@ -71,7 +71,7 @@ function ContactUs() {
                     },
                   })}
                 />
-                <div className='form--input-error'>
+                <div className='form-input__error'>
                   {errors.email?.type === "required" && "Enter a valid e-mail address"}
                   {errors.email?.type === "pattern" && "Enter a valid e-mail address"}
                 </div>
@@ -81,33 +81,33 @@ function ContactUs() {
                 <FormInputLabel name='Subject' />
                 <input
                   type='text'
-                  className='form--input'
+                  className='form-input'
                   {...register("subject", {
                     required: true,
                     maxLength: 100,
                   })}
                 />
-                <div className='form--input-error'>
+                <div className='form-input__error'>
                   {errors.subject?.type === "required" && "Please enter a message subject"}
                   {errors.subject?.type === "maxLength" && "Subject is too long"}
                 </div>
               </FormInputContainer>
 
-              <div className='form--textarea-container'>
+              <div className='form-texarea-container'>
                 <label className='pb-4 pl-2 text-tiny font-normal font-body' htmlFor=''>
                   Message
                 </label>
                 <textarea
                   type='text'
-                  className='form--textarea'
+                  className='form-texarea'
                   {...register("message", { required: true })}
                 />
-                <div className='form--input-error'>
+                <div className='form-input__error'>
                   {errors.message?.type === "required" && "Please enter a message"}
                 </div>
               </div>
 
-              <button className='form--submit' type='submit'>
+              <button className='form-submit' type='submit'>
                 <span className='text--button pr-2'>SUBMIT</span>
                 <Image
                   src='/images/icons/arrow_nopadding.svg'

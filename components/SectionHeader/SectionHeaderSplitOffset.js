@@ -1,26 +1,8 @@
 import cx from "classnames";
-import useBreakpointSize from "../../hooks/useBreakpointSize";
 
 const SectionHeaderSplitOffset = ({ className, title, body, divider = false }) => {
-  let dividerCSS;
-  let breakPoint = useBreakpointSize();
-  switch (breakPoint) {
-    case "lg":
-      dividerCSS = "section--split-header-offset-divider";
-      break;
-    case "xl":
-      dividerCSS = "section--split-header-offset-divider";
-      break;
-    case "2xl":
-      dividerCSS = "section--split-header-offset-divider";
-      break;
-    case "max":
-      dividerCSS = "section--split-header-offset-divider";
-      break;
-  }
   let classNames = cx(className, {
-    ["section--split-header-offset"]: true,
-    [dividerCSS]: divider,
+    ["section-header-split-offset lg:section-header-split-offset-divider"]: true,
   });
 
   return (
