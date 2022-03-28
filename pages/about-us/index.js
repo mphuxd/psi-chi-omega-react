@@ -184,9 +184,9 @@ function About() {
                   />
                   <LinkButton
                     className='mt-3 lg:mt-6'
-                    href='/'
+                    href='/about-us/community-involvement'
                     alt='test'
-                    label='Go Visit Page'
+                    label='Our Commitments'
                     isCenter={false}
                   />
                 </ContentBlockBody>
@@ -224,9 +224,9 @@ function About() {
                   />
                   <LinkButton
                     className='mt-3 lg:mt-6'
-                    href='/'
+                    href='/join/why'
                     alt='test'
-                    label='Go Visit Page'
+                    label='Why ΨΧΩ'
                     isCenter={false}
                   />
                 </ContentBlockBody>

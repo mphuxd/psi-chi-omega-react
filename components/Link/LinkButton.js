@@ -5,17 +5,18 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 const LinkButton = React.forwardRef(
-  ({ className, onClick, href, alt, label, isCenter, isUppercase }, ref) => {
+  ({ className, onClick, href, alt, label, isCenter, isUppercase, underline = false }, ref) => {
     let classNames = cx(
       className,
       "link--button",
       { "mx-auto": isCenter },
-      { "uppercase": isUppercase },
+      { uppercase: isUppercase },
+      { "hover:underline": underline }
     );
     return (
       <Link href={href} passHref>
         <a className={classNames} href={href} onClick={onClick} ref={ref} alt={alt}>
-          <Image src='/link-arrow.svg' width={48} height={48} alt="Arrow" />
+          <Image src='/link-arrow.svg' width={48} height={48} alt='Arrow' />
           <span className='text--button my-auto'>{label}</span>
         </a>
       </Link>

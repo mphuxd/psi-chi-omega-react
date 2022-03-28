@@ -12,7 +12,7 @@ import {
 } from "@/components";
 
 function Faq() {
-  const [isActive, setActive] = useState("All FAQs");
+  let [isActive, setActive] = useState("All FAQs");
   const filterList = ["All FAQs", "Pledging", "Little Sis", "Fraternity"];
 
   function getLabel(label) {

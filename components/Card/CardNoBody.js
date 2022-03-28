@@ -20,7 +20,7 @@ const CardNoBody = ({
   let classNames = cx("card-no-body", className);
   return (
     <Link href={linkHref} passHref>
-      <div className={classNames}>
+      <a className={classNames}>
         <Image src={srcImg} alt={altImg} width={widthImg} height={heightImg} layout='responsive' />
         <div className='flex flex-col justify-between p-4'>
           <LinkButton
@@ -30,9 +30,10 @@ const CardNoBody = ({
             label={label}
             isCenter={linkIsCenter}
             isUppercase={linkIsUppercase}
+            underline={true}
           />
         </div>
-      </div>
+      </a>
     </Link>
   );
 };

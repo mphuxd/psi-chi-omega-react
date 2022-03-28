@@ -117,9 +117,9 @@ function LittleSisProgram() {
                   />
                   <LinkButton
                     className='mt-3 md:mt-6 lg:mt-6'
-                    href='/'
+                    href='/about-us/history'
                     alt='test'
-                    label='Go Visit Page'
+                    label='Our History'
                     isCenter={false}
                   />
                 </ContentBlockBody>
@@ -174,9 +174,9 @@ function LittleSisProgram() {
               />
               <Link href='/'>
                 <a className='theme-grid__inner relative py-4 md:py-6'>
-                  <div className='content-block--feed-item__body'>
-                    <span className='content-block--feed-item__header'>Join Little Sis</span>
-                    <span className='content-block--feed-item__caption my-auto lg:col-span-5 lg:leading-6'>
+                  <div className='link-feed-item__body'>
+                    <span className='link-feed-item__header'>Join Little Sis</span>
+                    <span className='link-feed-item__caption mt-2 md:mt-4 lg:my-auto lg:col-span-5 lg:leading-6'>
                       Interested in joining? Learn how to apply and become a part of our community.
                     </span>
                   </div>

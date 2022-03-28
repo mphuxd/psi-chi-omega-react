@@ -110,8 +110,8 @@ function ContactUs() {
               <button className='form-submit' type='submit'>
                 <span className='text--button pr-2'>SUBMIT</span>
                 <Image
-                  src='/images/icons/arrow_nopadding.svg'
-                  alt='test'
+                  src='/images/icons/arrow_nopadding.png'
+                  alt='Arrow'
                   width={16}
                   height={16}
                   layout='fixed'

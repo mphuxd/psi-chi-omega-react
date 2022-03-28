@@ -27,7 +27,7 @@
     @apply flex-col absolute top-[100%] left-[50%] -translate-x-1/2 px-4 pt-4 bg-white pb-2 text-tiny whitespace-nowrap drop-shadow-lg rounded-xl 2xl:p-4;
   }
   .header-navbar-item {
-    @apply header-menu__dropdown hover:header-menu__divider focus:header-menu__divider z-10;
+    @apply header-menu__dropdown hover:header-menu__divider--hover focus:header-menu__divider z-10;
   }
   .header-menu__dropdown {
     @apply my-auto p-2 font-body text-tiny font-light leading-5 sm:text-tiny md:relative sm:leading-6 hover:cursor-pointer md:ml-5 2xl:ml-8;
@@ -36,6 +36,17 @@
     @apply flex-col absolute top-[100%] left-[50%] -translate-x-1/2 px-4 pt-4 bg-white pb-2 text-tiny whitespace-nowrap drop-shadow-lg rounded-xl 2xl:p-4;
   }
   .header-menu__divider::after {
+    z-index: 100;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    width: 50%;
+    height: 2px;
+    background-color: #006341;
+  }
+  .header-menu__divider--hover::after {
+    z-index: 0;
     content: "";
     position: absolute;
     top: 100%;

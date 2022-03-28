@@ -120,7 +120,7 @@ export default function Home() {
               heightImg={450}
               heading='Our Brothers'
               body='The brothers are responsible for maintaining the fraternity and most importantly, taking care of our community.'
-              linkHref='/'
+              linkHref='/members/brothers'
               linkAlt='Meet the brothers'
               linkLabel='Meet the brothers'
               linkClassName='mt-10'
@@ -132,7 +132,7 @@ export default function Home() {
               heightImg={450}
               heading='Our History'
               body='Founded in 1992, Psi Chi Omega was formed to address the need for a space for Asian American men.'
-              linkHref='/'
+              linkHref='/about-us/history'
               linkAlt='About our history'
               linkLabel='About our history'
               linkClassName='mt-10'
@@ -144,7 +144,7 @@ export default function Home() {
               heightImg={450}
               heading='Our Commitments'
               body='See what we’re doing to get involved and make a difference in our community.'
-              linkHref='/'
+              linkHref='/about-us/community-involvement'
               linkAlt='View all of our commitments'
               linkLabel='View all of our commitments'
               linkClassName='mt-10'
@@ -164,7 +164,7 @@ export default function Home() {
                 altImg='placeholder'
                 widthImg={364}
                 heightImg={252}
-                linkHref='/'
+                linkHref='/join/fraternity'
                 linkAlt='placeholder'
                 label='Join the Fraternity'
                 linkIsCenter={false}

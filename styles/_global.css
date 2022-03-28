@@ -6,6 +6,6 @@ p {
   @apply font-body;
 }
 
-a:any-link {
-  @apply hover:underline;
+a {
+  @apply hover:no-underline;
 }

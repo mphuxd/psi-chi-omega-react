@@ -4,7 +4,10 @@
 
 @layer components {
   .card-default {
-    @apply col-span-full flex flex-col sm:col-span-4 md:col-span-6 lg:col-span-4 md:block mx-2 sm:mx-0;
+    @apply col-span-full flex flex-col bg-mist hover:bg-[#e5e5e5] transition-colors no-underline sm:col-span-4 md:col-span-6 lg:col-span-4 md:block mx-2 sm:mx-0;
+  }
+  .card-default__body {
+    @apply flex flex-col justify-between p-4 h-60 sm:h-[260px] md:w-full md:h-72 lg:h-64;
   }
   .card-no-body {
     @apply flex flex-col mx-2 sm:mx-0 sm:w-1/2;
