@@ -4,7 +4,7 @@
 
 @layer components {
   .footer-nav {
-    @apply px-2 mt-16 grid grid-cols-2 gap-y-12 gap-x-4 col-span-full md:grid-cols-4 md:px-0 md:col-span-9 md:order-4 
+    @apply px-2 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-y-12 gap-x-4 col-span-full md:grid-cols-4 md:px-0 md:col-span-9 md:order-4 
       xl:col-span-8 xl:col-start-5 xl:mt-4 lg:px-12 lg:gap-x-8;
   }
 }
