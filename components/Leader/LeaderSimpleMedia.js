@@ -11,9 +11,10 @@ function LeaderSimpleMedia({
   imageWidth,
   imageHeight,
   imageLayout = "responsive",
+  isUppercase = false,
 }) {
   return (
-    <LeaderSimple heading={heading} body={body}>
+    <LeaderSimple heading={heading} body={body} upperCase={isUppercase}>
       <div className='mt-4 md:mt-6 lg:mt-8 col-span-full'>
         <Image
           src={imageSrc}

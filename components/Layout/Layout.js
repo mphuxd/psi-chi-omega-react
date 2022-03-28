@@ -14,9 +14,9 @@ export default function Layout({ children }) {
     <>
       <NextNProgress
         color='#29D'
-        startPosition={0.2}
+        startPosition={0.3}
         stopDelayMs={200}
-        height={5}
+        height={6}
         showOnShallow={true}
         options={{ showSpinner: false }}
       />

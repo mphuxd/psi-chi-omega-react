@@ -33,6 +33,7 @@ function CommunityInvolvement() {
           <LeaderSimple
             heading='Our Commitments'
             body="Psi Chi Omega is committed to making a difference for our community. Asian Americans face complex socio-economic issues that can be difficult to face and navigate alone. By advocating for change, volunteering for meaningful causes, tackling difficult issues, we're trying to realize a better future for everyone."
+            upperCase={false}
           />
         </Wrapper>
 
