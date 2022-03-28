@@ -40,10 +40,10 @@ const CardDefault = React.forwardRef(
             layout='responsive'
           />
         </div>
-        <div className='flex flex-col h-60 sm:h-[260px] md:w-full md:h-72 justify-between bg-mist 2xl:h-80 p-4'>
+        <div className='flex flex-col justify-between bg-mist p-4 h-60 sm:h-[260px] md:w-full md:h-72 lg:h-64'>
           <div>
             <h3 className='text--minorheadline'>{heading}</h3>
-            <p className='text--body mt-3'>{body}</p>
+            <p className='text--body mt-3 md:mt-4'>{body}</p>
           </div>
           <LinkButton
             className={linkClassName}

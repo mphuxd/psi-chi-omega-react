@@ -9,9 +9,9 @@ const SectionHeader = ({ className, heading, copy, href = null, alt, label }) =>
 
   return (
     <div className={classNames}>
-      <ContentHeader title={heading} isUppercase={true} isCenter={true} />
+      <ContentHeader title={heading} isUppercase={false} isCenter={true} />
       <ContentBody isCenter={true} text={copy} />
-      {href && <LinkButton className='mt-10' href={href} alt={alt} label={label} isCenter={true} />}
+      {href && <LinkButton className='mt-4 md:mt-10' href={href} alt={alt} label={label} isCenter={true} />}
     </div>
   );
 };

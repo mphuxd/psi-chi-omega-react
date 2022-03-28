@@ -7,6 +7,6 @@
     @apply col-span-full flex flex-col sm:col-span-4 md:col-span-6 lg:col-span-4 md:block mx-2 sm:mx-0;
   }
   .card-no-body {
-    @apply flex flex-col -mx-2 sm:mx-0 sm:w-1/2;
+    @apply flex flex-col mx-2 sm:mx-0 sm:w-1/2;
   }
 }

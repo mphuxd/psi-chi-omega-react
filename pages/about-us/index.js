@@ -50,7 +50,7 @@ function About() {
           priority={true}
         />
 
-        <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
+        <Wrapper className='my-12 md:my-20 lg:my-[144px]'>
           <Grid isCenter={true}>
             <SectionHeaderSplit
               leftText={
@@ -65,7 +65,7 @@ function About() {
               label='Meet the brothers'
             />
             <ContentBlockLeftRight
-              className='mt-20 md:mt-20 lg:mt-24 lg:gap-x-8'
+              className='mt-12 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockMedia className='lg:w-1/2'>
                   <Image
@@ -99,7 +99,7 @@ function About() {
               }
             />
             <ContentBlockLeftRight
-              className='flex-col-reverse my-20 lg:mt-24 lg:gap-x-8'
+              className='flex-col-reverse mt-12 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockText
                   className='mt-4 px-2 md:px-0 md:mt-8 lg:w-1/2 lg:my-auto'
@@ -145,7 +145,7 @@ function About() {
                 title='OUR PILLARS'
                 body='Pillars are the fundamental principles that serve as the foundation for our fraternity. They unite us together as a community, guide us as men to make good decisions, and help us live a life with meaning and purpose.'
               />
-              <Accordion className='w-full relative mt-4 mb-20 accordion--item--end'>
+              <Accordion className='w-full relative mt-4 mb-20 accordion-item--end'>
                 <AccordionItem title='Integrity' caption='in·teg·ri·ty'>
                   <div className='mt-4 lg:mt-0'>
                     1. the quality of being honest and having strong moral principles; moral

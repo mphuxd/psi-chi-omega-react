@@ -47,7 +47,7 @@ export default function Home() {
           subtext='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD ∙ GAMMA CHAPTER ∙ UC DAVIS'
         />
 
-        <Wrapper className='my-20 md:mt-32 md:mb-32 max:mt-24 max:mb-44'>
+        <Wrapper className='my-20 md:my-32'>
           <Grid className='mx-auto'>
             <SectionHeader
               heading='Who We Are'
@@ -114,10 +114,10 @@ export default function Home() {
 
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 mx-auto'>
             <CardDefault
-              srcImg='/card.png'
+              srcImg='/images/16-9_placeholder--small.jpg'
               altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
+              widthImg={800}
+              heightImg={450}
               heading='Our Brothers'
               body='The brothers are responsible for maintaining the fraternity and most importantly, taking care of our community.'
               linkHref='/'
@@ -126,10 +126,10 @@ export default function Home() {
               linkClassName='mt-10'
             />
             <CardDefault
-              srcImg='/card.png'
+              srcImg='/images/16-9_placeholder--small.jpg'
               altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
+              widthImg={800}
+              heightImg={450}
               heading='Our History'
               body='Founded in 1992, Psi Chi Omega was formed to address the need for a space for Asian American men.'
               linkHref='/'
@@ -138,10 +138,10 @@ export default function Home() {
               linkClassName='mt-10'
             />
             <CardDefault
-              srcImg='/card.png'
+              srcImg='/images/16-9_placeholder--small.jpg'
               altImg='placeholder'
-              widthImg={352}
-              heightImg={264}
+              widthImg={800}
+              heightImg={450}
               heading='Our Commitments'
               body='See what we’re doing to get involved and make a difference in our community.'
               linkHref='/'
@@ -152,13 +152,13 @@ export default function Home() {
           </Grid>
         </Wrapper>
 
-        <Wrapper className='bg-mist items-center pt-20 md:py-28 lg:pt-32 lg:pb-44'>
+        <Wrapper className='bg-mist items-center py-20 md:py-28 lg:py-32'>
           <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-12'>
             <SectionHeader
               heading='Start a new journey'
               copy='At Psi Chi Omega, you’ll have opportunities to make the most of your college experience, redefine your identity, experience personal growth, and form meaningful relationships.'
             />
-            <div className='col-span-full sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
+            <div className='col-span-full space-y-12 sm:space-y-0 sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
               <CardNoBody
                 srcImg='/card.png'
                 altImg='placeholder'
@@ -185,7 +185,7 @@ export default function Home() {
           </Grid>
         </Wrapper>
 
-        <Wrapper className='bg-smoke items-center pt-20 pb-20 md:pt-28 lg:pt-32 lg:pb-44'>
+        <Wrapper className='bg-smoke items-center py-20 md:pt-28 lg:py-32'>
           <Grid className='mx-auto'>
             <SectionHeader
               heading='Our Community'
@@ -193,7 +193,7 @@ export default function Home() {
             />
 
             <ContentBlockQuote
-              className='mt-12 sm:mt-12 md:mt-28 xl:mt-20'
+              className='mt-12 sm:mt-12 md:mt-32'
               isReversed={false}
               animateInView={false}
               imgSrc='/images/4-3_placeholder.jpg'
@@ -211,7 +211,7 @@ export default function Home() {
               linkIsCenter={false}
             />
             <ContentBlockMediaText
-              className='mt-12 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32 max:mt-64'
+              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
               isReversed={true}
               animateInView={false}
               imgSrc='/images/4-3_placeholder.jpg'
@@ -228,7 +228,7 @@ export default function Home() {
               linkIsCenter={false}
             />
             <ContentBlockMediaText
-              className='mt-12 sm:mt-12 md:mt-16 xl:mt-24 2xl:mt-32 max:mt-64'
+              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
               isReversed={false}
               animateInView={false}
               imgSrc='/images/4-3_placeholder.jpg'
@@ -249,7 +249,7 @@ export default function Home() {
 
         <Wrapper className='items-center py-20 md:py-24 lg:py-32 xl:py-40'>
           <Grid className='mx-auto sm:gap-x-4 md:gap-x-4 lg:gap-x-8'>
-            <ContentHeader className='col-span-full' title='Upcoming Events' isCenter={false} />
+            <ContentHeader className='col-span-full mx-auto lg:mx-0 mb-8' title='Upcoming Events' isCenter={false} />
             <ContentEvent
               date='Tuesday, March 22, 2021'
               time='3:00 PST'

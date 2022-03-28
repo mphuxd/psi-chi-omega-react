@@ -29,7 +29,7 @@ const Carousel = React.forwardRef(({ children, inView, entry, className, animate
       break;
   }
   let classNames = cx(
-    "mt-20 xl:mt-32 2xl:mt-48 hover:cursor-grab active:cursor-grabbing ",
+    "mt-20 md:mt-32 hover:cursor-grab active:cursor-grabbing ",
     {
       "animate__animated animate__fadeIn ": inView,
     },

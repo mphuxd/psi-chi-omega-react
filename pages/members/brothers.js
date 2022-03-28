@@ -43,7 +43,7 @@ function Brothers() {
           />
         </Wrapper>
 
-        <Wrapper className='pb-20 lg:pb-32'>
+        <Wrapper className='pb-20 lg:pb-20 '>
           <Grid isCenter={true}>
             <SectionHeaderSplitOffset
               className='col-span-full'
@@ -106,7 +106,7 @@ function Brothers() {
           </GalleryAvatar>
         </Wrapper>
 
-        <Wrapper className='pb-20 lg:pb-32'>
+        <Wrapper className='pb-20 md:mt-20 lg:pb-32'>
           <Grid isCenter={true}>
             <SectionHeaderSplitOffset
               className='col-span-full'

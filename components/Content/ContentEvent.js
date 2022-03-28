@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ContentEvent = ({ date, time, location, eventName, eventDescription }) => {
   return (
-    <div className='flex flex-col col-span-full sm:col-span-4 md:col-span-6 px-4 py-8 bg-mist mt-4 font-body xl:px-6 xl:py-12'>
+    <div className='flex flex-col col-span-full mx-2 sm:col-span-4 md:col-span-6 px-4 py-8 bg-mist mt-4 font-body xl:px-6 xl:py-12'>
       <span className='leading-6 font-semibold pt-1 md:font-semibold lg:leading-7 lg:text-lg lg:font-bold xl:text-xl '>
         {date}
       </span>

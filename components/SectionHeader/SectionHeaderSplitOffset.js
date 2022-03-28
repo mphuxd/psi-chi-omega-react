@@ -2,7 +2,8 @@ import cx from "classnames";
 
 const SectionHeaderSplitOffset = ({ className, title, body, divider = false }) => {
   let classNames = cx(className, {
-    ["section-header-split-offset lg:section-header-split-offset-divider"]: true,
+    ["section-header-split-offset"]: true,
+    ["lg:section-header-split-offset-divider"]: divider,
   });
 
   return (
