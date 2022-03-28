@@ -43,7 +43,7 @@ function Alumni() {
           />
         </Wrapper>
 
-        <Wrapper className='mt-24 md:mt-20 lg:mt-0 pb-20 lg:pb-32 gap-y-16 md:gap-y-24 lg:gap-y-32'>
+        <Wrapper className='mt-8 md:mt-20 lg:mt-0 pb-20 lg:pb-32 gap-y-16 md:gap-y-24 lg:gap-y-32'>
           <ContentBlockLeftRightOffset
             center={true}
             reverse={true}
