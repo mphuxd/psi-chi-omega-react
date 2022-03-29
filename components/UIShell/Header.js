@@ -1,20 +1,40 @@
 import cx from "classnames";
 import PropTypes from "prop-types";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 const Header = ({ isActive, children }) => {
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true,
-    threshold: 0,
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const showHeader = () => {
+    if (window) {
+      if (window.scrollY > lastScrollY && window.scrollY) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", showHeader);
+      console.log(window.scrollY)
+      return () => {
+        window.removeEventListener("scroll", showHeader);
+      };
+    }
   });
+
   let classNames = cx(
     { header: true },
-    { fixed: isActive },
-    { "animate__animated animate__fadeInDown animate__faster": false }
-    //disabled for now
+    { "fixed opacity-100 md:static": isActive },
+    { "fixed opacity-100 md:static": show },
+    { "opacity-0 md:opacity-100 md:static": !show && !isActive }
   );
   return (
-    <header ref={ref}>
+    <header>
       <div className={classNames}>{children}</div>
     </header>
   );
