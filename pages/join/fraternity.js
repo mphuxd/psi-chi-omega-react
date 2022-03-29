@@ -51,6 +51,7 @@ function Fraternity() {
                 width={2100}
                 height={900}
                 layout='responsive'
+                priority={true}
               />
             </div>
           </Grid>

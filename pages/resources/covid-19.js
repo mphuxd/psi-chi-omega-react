@@ -31,6 +31,7 @@ function Covid19() {
                 width={860}
                 height={344}
                 layout='responsive'
+                priority={true}
               />
             </div>
           </Grid>

@@ -13,7 +13,7 @@ function LeaderLarge({
   imageAlt,
   imageWidth,
   imageHeight,
-  priority = false,
+  priority = true,
 }) {
   return (
     <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
@@ -34,7 +34,9 @@ function LeaderLarge({
               height={imageHeight}
               priority={priority}
               alt={imageAlt}
-            ></Image>
+              layout='responsive'
+              sizes={100}
+            />
           </div>
         </section>
       </Grid>

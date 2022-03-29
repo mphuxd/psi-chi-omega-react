@@ -12,6 +12,7 @@ function ContentBlockHistory({
   imageLayout,
   imageMetricList,
   bodyObject,
+  priority = false,
 }) {
   return (
     <Grid isCenter={true}>
@@ -25,6 +26,7 @@ function ContentBlockHistory({
           width={imageWidth}
           height={imageHeight}
           layout={imageLayout}
+          priority={priority}
         />
         {imageMetricList}
       </aside>

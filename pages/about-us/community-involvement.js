@@ -54,6 +54,7 @@ function CommunityInvolvement() {
                 width={1200}
                 height={900}
                 layout='responsive'
+                priority={true}
               />
             }
           />

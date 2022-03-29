@@ -46,6 +46,7 @@ function History() {
             imageWidth={1100}
             imageHeight={811}
             layout='responsive'
+            priority={true}
             imageMetricList={
               <HistoryMetricList>
                 <HistoryMetricListItem label='CHAPTER' metric='ALPHA CHAPTER' />

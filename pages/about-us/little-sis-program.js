@@ -49,30 +49,6 @@ function LittleSisProgram() {
           imageWidth={2000}
           imageHeight={1333}
         />
-
-        {/* <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
-          <Grid isCenter={true}>
-            <h1 className='col-span-full text--headline xl:col-span-9 uppercase'>
-              Little Sister Program
-            </h1>
-            <p className='col-span-full lg:col-span-9 mt-4 md:mt-8 text--body'>
-              Little sis is an organization for women within the Psi Chi Omega fraternity. It was
-              created to officially invite college women into Psi Chi Omega and their greek social
-              space. After a decade of little sisters, it was recognized by UC Davis as it’s own
-              independent organization. These women continue to be an integral part of the Psi Chi
-              Omega family.
-            </p>
-            <div className='col-span-full xl:mt-10 mt-4 md:mt-8'>
-              <Image
-                src='/images/berlin-trident.jpg'
-                alt='Psi Chi Little Sisters'
-                width={2000}
-                height={1333}
-              />
-            </div>
-          </Grid>
-        </Wrapper> */}
-
         <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
           <Grid isCenter={true}>
             <SectionHeaderSplit
@@ -222,13 +198,7 @@ function LittleSisProgram() {
         <Wrapper className='py-12 md:py-20 lg:py-[128px] bg-midnight'>
           <Grid isCenter={true}>
             <Gallery>
-              <GalleryItemLarge
-                src='/images/4-3_placeholder.jpg'
-                alt='test'
-                width={1200}
-                height={900}
-                layout='fill'
-              />
+              <GalleryItemLarge src='/images/4-3_placeholder.jpg' alt='test' layout='fill' />
               <GalleryItemDefault
                 src='/images/4-3_placeholder.jpg'
                 alt='test'
