@@ -20,7 +20,6 @@ const Header = ({ isActive, children }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", showHeader);
-      console.log(window.scrollY)
       return () => {
         window.removeEventListener("scroll", showHeader);
       };
