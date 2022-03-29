@@ -1,12 +1,12 @@
 import { Swiper } from "swiper/react";
 import { Navigation } from "swiper";
 import React from "react";
-import Image from "next/image";
 import PropTypes from "prop-types";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import cx from "classnames";
 import { useState } from "react";
-import { useSwiper } from 'swiper/react';
+import CarouselPagNext from "./CarouselPagNext";
+import CarouselPagPrev from "./CarouselPagPrev";
 
 const Carousel = React.forwardRef(
   ({ children, inView, entry, className, animateClassNames }, ref) => {
@@ -19,6 +19,21 @@ const Carousel = React.forwardRef(
       spaceBetween: 16,
       effect: "fade",
     };
+
+    function handleChange() {
+      isEnd = false;
+      isStart = false;
+
+      if (this.isEnd) {
+        isEnd = true;
+      }
+      if (this.isBeginning) {
+        isStart = true;
+      }
+
+      setIsEnd(isEnd);
+      setIsStart(isStart);
+    }
 
     switch (breakPoint) {
       case "default":
@@ -52,18 +67,15 @@ const Carousel = React.forwardRef(
             prevEl: ".pag-prev",
             nextEl: ".pag-next",
           }}
+          onActiveIndexChange={handleChange}
         >
           {children}
         </Swiper>
 
         <div className='theme-grid mx-auto'>
           <div className='mt-10 flex flex-row justify-center col-span-full xl:col-start-11 '>
-            <button className='pag-prev mr-2'>
-              <Image src='/pag-prev.svg' alt='Move Carousel Back' width={56} height={56} />
-            </button>
-            <button className='pag-next ml-2'>
-              <Image src='/pag-next.svg' alt='Move Carousel Forward' width={56} height={56} />
-            </button>
+            <CarouselPagPrev isStart={isStart} />
+            <CarouselPagNext isEnd={isEnd} />
           </div>
         </div>
       </div>
