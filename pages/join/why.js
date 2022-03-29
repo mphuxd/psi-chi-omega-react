@@ -42,7 +42,7 @@ function Why(props) {
           />
         </Wrapper>
 
-        <Wrapper className='pb-12 sm:pb-8 md:pb-16 lg:pb-20'>
+        <Wrapper className='pt-8 lg:pt-0 pb-12 sm:pb-8 md:pb-16 lg:pb-20'>
           <Grid className='mx-auto space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-32 '>
             <ContentBlockCenteredText
               heading='The People'

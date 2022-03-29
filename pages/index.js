@@ -249,7 +249,7 @@ export default function Home() {
 
         <Wrapper className='items-center py-20 md:py-24 lg:py-32 xl:py-40'>
           <Grid className='mx-auto sm:gap-x-4 md:gap-x-4 lg:gap-x-8'>
-            <ContentHeader className='col-span-full mx-auto lg:mx-0 mb-8' title='Upcoming Events' isCenter={false} />
+            <ContentHeader className='col-span-full mx-auto lg:mx-0 mb-4 md:mb-8' title='Upcoming Events' isCenter={false} />
             <ContentEvent
               date='Tuesday, March 22, 2021'
               time='3:00 PST'
@@ -269,7 +269,7 @@ export default function Home() {
 
         <Wrapper className='pb-12 md:py-20 xl:pt-32 xl:pb-64'>
           <Grid className='mx-auto'>
-            <span className='text--subheadline col-span-full justify-self-center '>
+            <span className='text-center text--subheadline col-span-full justify-self-center '>
               Need help? Check out our{" "}
               <Link href='/'>
                 <a className='underline decoration-midnight'>FAQ</a>

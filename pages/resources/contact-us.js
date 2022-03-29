@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import {
   Layout,
@@ -40,7 +41,18 @@ function ContactUs() {
           <LeaderSimple
             upperCase={false}
             heading='Contact Us'
-            body='If you have any questions or concerns, you might find answers in our FAQ, or you can contact us here. After submiting your message, we’ll get back to you within 4-5 business days. If you’d like to remain anonymous, please let us know and we’ll keep your information confidential. All hazing reports are taken seriously and handled by our alumni and national board for investigation. '
+            body={
+              <>
+                If you have any questions or concerns, you might find answers in our{" "}
+                <Link href='/resources/faq'>
+                  <a className='underline'>FAQ</a>
+                </Link>
+                , or you can contact us here. After submiting your message, we’ll get back to you
+                within 4-5 business days. If you’d like to remain anonymous, please let us know and
+                we’ll keep your information confidential. All hazing reports are taken seriously and
+                handled by our alumni and national board for investigation.
+              </>
+            }
           />
         </Wrapper>
 

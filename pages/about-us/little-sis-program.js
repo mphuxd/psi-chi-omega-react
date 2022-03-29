@@ -138,7 +138,7 @@ function LittleSisProgram() {
                       big sis and pick your own littles too.
                     </p>
                   </div>
-                  <div className='mt-4'>
+                  <div className='mt-6'>
                     <h3 className='font-semibold text-lg'>FREEDOM</h3>
                     <p className='mt-2'>
                       Little sisters are free to enjoy the benefits of greek life without the

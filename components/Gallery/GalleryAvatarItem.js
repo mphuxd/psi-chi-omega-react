@@ -24,9 +24,9 @@ function GalleryAvatarItem({
         />
       </div>
       <div className='flex flex-col basis-3/4 sm:basis-2/3'>
-        <span className="text--miniheadline">{avatarName}</span>
-        <span className="text--body pt-1">{avatarTitle}</span>
-        <span className="text--caption pt-2">{avatarClass}</span>
+        <span className="text--miniheadline md:font-medium">{avatarName}</span>
+        <span className="text--body pt-0 lg:pt-0">{avatarTitle}</span>
+        <span className="text--caption pt-1 lg:pt-2">{avatarClass}</span>
       </div>
     </div>
   );

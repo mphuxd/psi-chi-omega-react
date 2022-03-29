@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import cx from "classnames";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import Image from "next/image";
+import AccordionButton from "./AccordionButton";
 
 const AccordionItem = ({ title, caption, children, open = false }) => {
   const [isOpen, setIsOpen] = useState(open);
@@ -39,9 +40,7 @@ const AccordionItem = ({ title, caption, children, open = false }) => {
           </h3>
           <p className={captionClass}>{caption}</p>
         </div>
-        <div className='inline-block lg:hidden'>
-          <Image src='/images/icons/expand_more.svg' alt='Expand More' width={32} height={32} />
-        </div>
+        <AccordionButton isActive={isOpen}></AccordionButton>
       </button>
 
       <div className={className}>{children}</div>

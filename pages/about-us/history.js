@@ -196,7 +196,7 @@ function History() {
               <LinkFeedItem
                 className=''
                 title='Our Commitments'
-                caption='SEE HOW WE’RE GIVING BACK TO OUR COMMUNITY'
+                caption="See how we're giving back to our community"
                 link='/'
               />
               <LinkFeedItem
@@ -207,8 +207,8 @@ function History() {
               />
               <LinkFeedItem
                 className=''
-                title='WHY PSI CHI OMEGA'
-                caption='READ WHY OUR MEMBERS LOVE PSI CHI OMEGA'
+                title='Why Psi Chi Omega'
+                caption='Read why our members joined Psi Chi Omega'
                 link='/'
               />
             </LinkFeed>

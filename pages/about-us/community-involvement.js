@@ -172,7 +172,7 @@ function CommunityInvolvement() {
               <LinkFeedItem
                 className=''
                 title='Alumni'
-                caption='ABOUT OUR ALUMNI NETWORK'
+                caption='About our alumni network'
                 link='/'
               />
             </LinkFeed>

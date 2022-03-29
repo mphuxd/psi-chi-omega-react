@@ -99,7 +99,7 @@ function About() {
               }
             />
             <ContentBlockLeftRight
-              className='flex-col-reverse mt-12 md:mt-20 lg:mt-24 lg:gap-x-8'
+              className='flex-col-reverse my-12 md:mb-0 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockText
                   className='mt-4 px-2 md:px-0 md:mt-8 lg:w-1/2 lg:my-auto'
@@ -142,7 +142,7 @@ function About() {
             </Wrapper>
             <Wrapper className='col-span-full mt-20 lg:mt-28'>
               <SectionHeaderSplitOffset
-                title='OUR PILLARS'
+                title='Our Pillars'
                 body='Pillars are the fundamental principles that serve as the foundation for our fraternity. They unite us together as a community, guide us as men to make good decisions, and help us live a life with meaning and purpose.'
               />
               <Accordion className='w-full relative mt-4 mb-20 accordion-item--end'>

@@ -14,7 +14,7 @@ function FooterNav() {
         {group.links.map((link, index) => {
           return (
             <Link href={link.href} key={index}>
-              {link.name}
+              <a className="w-fit">{link.name}</a>
             </Link>
           );
         })}

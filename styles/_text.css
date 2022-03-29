@@ -20,7 +20,7 @@
   }
 
   .text--miniheadline {
-    @apply font-body text-tiny font-medium leading-5 sm:text-base sm:leading-6 xl:text-lg xl:leading-7;
+    @apply font-body text-tiny font-bold leading-5 sm:text-base sm:leading-6 xl:text-lg xl:leading-7;
   }
 
   .text--largebody {
@@ -36,7 +36,7 @@
   }
 
   .text--caption {
-    @apply font-body text-sm font-light leading-4 md:text-tiny;
+    @apply font-body text-tiny font-light leading-4 md:text-tiny;
   }
 
   .text--button {

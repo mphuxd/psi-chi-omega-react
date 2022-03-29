@@ -1,37 +1,19 @@
-import LinkButton from "../Link/LinkButton";
 import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
 import PropTypes from "prop-types";
 
-const CardNoBody = ({
-  className,
-  srcImg,
-  altImg,
-  widthImg,
-  heightImg,
-  linkClassname,
-  linkHref,
-  linkAlt,
-  label,
-  linkIsCenter,
-  linkIsUppercase,
-}) => {
+const CardNoBody = ({ className, srcImg, altImg, widthImg, heightImg, linkHref, label }) => {
   let classNames = cx("card-no-body", className);
   return (
     <Link href={linkHref} passHref>
       <a className={classNames}>
         <Image src={srcImg} alt={altImg} width={widthImg} height={heightImg} layout='responsive' />
         <div className='flex flex-col justify-between p-4'>
-          <LinkButton
-            className={linkClassname}
-            href={linkHref}
-            alt={linkAlt}
-            label={label}
-            isCenter={linkIsCenter}
-            isUppercase={linkIsUppercase}
-            underline={true}
-          />
+          <div className='link--button'>
+            <Image src='/link-arrow.svg' width={48} height={48} alt='Arrow' />
+            <span className='text--button my-auto'>{label}</span>
+          </div>
         </div>
       </a>
     </Link>

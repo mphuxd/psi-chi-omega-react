@@ -18,7 +18,7 @@ function LeaderLarge({
   return (
     <Wrapper className='justify-center mt-24 md:mt-20 lg:mt-24'>
       <Grid className='mx-auto'>
-        <h1 className='col-span-full text--headline xl:col-span-9 uppercase'>{heading}</h1>
+        <h1 className='col-span-full text--headline xl:col-span-9'>{heading}</h1>
         <p className='col-span-full lg:col-span-9 md:text-3xl md:leading-9 lg:text-2xl lg:leading-8 mt-4 md:mt-8 text-base font-medium tracking-[3%] lg:font-medium'>
           {largeCopy}
         </p>

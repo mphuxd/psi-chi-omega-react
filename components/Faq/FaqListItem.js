@@ -10,8 +10,9 @@ function FaqListItem({ question, answer, category, label }) {
   });
   return (
     <li id='faq-item' className={className}>
-      <span className='text--minorheadline'>{question}</span>
-      <p className='mt-1 sm:max-w-2xl lg:max-w-none lg:mt-2'>{answer}</p>
+      <span className='text--minorheadline'>{question}</span> 
+      {/* change minor to text-xl but check for breaking changes */}
+      <p className='mt-1 sm:max-w-2xl lg:max-w-none lg:mt-2 text--body'>{answer}</p>
     </li>
   );
 }
