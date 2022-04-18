@@ -192,7 +192,7 @@ export default function Home() {
               copy='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, tpraesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis.'
             />
 
-            <ContentBlockQuote
+            {/* <ContentBlockQuote
               className='mt-12 sm:mt-12 md:mt-32'
               isReversed={false}
               animateInView={false}
@@ -208,6 +208,23 @@ export default function Home() {
               linkClassName=''
               linkAlt='Placeholder'
               label='Meet the Brothers'
+              linkIsCenter={false}
+            /> */}
+            <ContentBlockMediaText
+              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
+              isReversed={false}
+              animateInView={false}
+              imgSrc='/images/4-3_placeholder.jpg'
+              imgAlt='placeholder'
+              imgWidth={1200}
+              imgHeight={900}
+              eyebrowLabel=''
+              header='Why Psi Chi Omega'
+              text='Everyone has different reasons for joining, but we stay for the same reasons — the people, experiences, and memories. Read what our members, who were once in your shoes, have to say about us.'
+              linkHref='/join/why'
+              linkClassName=''
+              linkAlt='Why Join Psi Chi Omega'
+              label='Read More'
               linkIsCenter={false}
             />
             <ContentBlockMediaText

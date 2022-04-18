@@ -7,14 +7,12 @@ const ContentEvent = ({ date, time, location, eventName, eventDescription }) => 
       <span className='leading-6 font-semibold pt-1 md:font-semibold lg:leading-7 lg:text-lg lg:font-bold xl:text-xl '>
         {date}
       </span>
-      <span className='leading-6 font-light pt-1 xl:text-lg xl:pt-2 '>{time}</span>
-      <span className='leading-6 font-light pt-1 xl:text-lg xl:pt-2'>{location}</span>
+      <span className='text--body pt-1 xl:pt-2 '>{time}</span>
+      <span className='text--body pt-1  xl:pt-2'>{location}</span>
       <h3 className='leading-6 text-lg font-bold mt-8 md:text-2xl md:leading-8 xl:text-4xl'>
         {eventName}
       </h3>
-      <p className='leading-6 font-light mt-3 xl:w-11/12 lg:text-lg lg:leading-7 xl:mt-5'>
-        {eventDescription}
-      </p>
+      <p className='text--body mt-3 xl:w-11/12 xl:mt-5'>{eventDescription}</p>
     </div>
   );
 };

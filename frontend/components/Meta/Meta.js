@@ -33,7 +33,7 @@ function Meta({ description, keywords, url, title, imgURL, twitterHandle, favico
       <meta
         id='viewport-tag'
         name='viewport'
-        content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
+        content='width=device-width, minimum-scale=1.0, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
     </>
   );
