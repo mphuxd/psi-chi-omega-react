@@ -20,8 +20,11 @@ import {
   LinkFeedItem,
   Meta,
 } from "@/components";
+import { fetchAPI } from "../api/strapi";
 
-function About() {
+
+
+function About({ homepage }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -262,4 +265,5 @@ function About() {
     </div>
   );
 }
+
 export default About;

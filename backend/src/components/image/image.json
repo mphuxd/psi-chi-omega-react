@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_image_images",
+  "info": {
+    "displayName": "image",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "text"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "layout": {
+      "type": "string"
+    }
+  }
+}

@@ -20,6 +20,7 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   // Merge default and user options
   const mergedOptions = {
     headers: {
+      Authorization: `Bearer ${process.env.STRAPI_KEY}`,
       "Content-Type": "application/json",
     },
     ...options,
@@ -28,6 +29,9 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   // Build request URL
   const queryString = qs.stringify(urlParamsObject);
   const requestUrl = `${getStrapiURL(`/api${path}${queryString ? `?${queryString}` : ""}`)}`;
+
+  // For Testing
+  console.log(requestUrl);
 
   // Trigger API call
   const response = await fetch(requestUrl, mergedOptions);

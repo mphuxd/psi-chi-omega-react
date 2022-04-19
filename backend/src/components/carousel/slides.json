@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_carousel_slides",
+  "info": {
+    "displayName": "slide",
+    "icon": "th-large",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "href": {
+      "type": "string"
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "linkAlt": {
+      "type": "string"
+    }
+  }
+}

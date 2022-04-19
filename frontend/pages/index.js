@@ -20,8 +20,28 @@ import {
   IsInView,
   Meta,
 } from "@/components";
+import { fetchAPI } from "./api/strapi";
 
-export default function Home() {
+export async function getStaticProps({ params }) {
+  const homepageRes = await fetchAPI("/homepage", {
+    populate: {
+      "*": { populate: "*" },
+      hero: { populate: "*" },
+      carousel: { populate: { slide: { populate: { image: { populate: "*" } } } } },
+    },
+  });
+
+  return {
+    props: {
+      homepage: homepageRes.data,
+      hero: homepageRes.data.attributes.hero,
+      carousel: homepageRes.data.attributes.carousel.data,
+    },
+    revalidate: 1,
+  };
+}
+
+export default function Home({ homepage, hero, carousel }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -39,12 +59,12 @@ export default function Home() {
 
       <Layout className=''>
         <Hero
-          title='Psi Chi Omega'
+          title={homepage.attributes.hero.title}
           imageSrc='/images/placeholder.jpg'
           imageAlt='placeholder'
           imageWidth={1400}
           imageHeight={600}
-          subtext='INTEGRITY ∙ PERSERVERANCE ∙ ETERNAL BROTHERHOOD ∙ GAMMA CHAPTER ∙ UC DAVIS'
+          subtext={homepage.attributes.hero.subtext}
         />
 
         <Wrapper className='my-20 md:my-32'>
@@ -60,6 +80,31 @@ export default function Home() {
 
           <IsInView toggleOnce={true} animateClassNames='animate__fast'>
             <Carousel>
+              {carousel.attributes.slide.map((slide, i) => {
+                return (
+                  <SwiperSlide key={i} className='swiper--slide-width'>
+                    {({ isActive }) => (
+                      <CarouselSlideContainer
+                        src='/images/rona.png'
+                        alt={slide.image.alt}
+                        width={slide.image.width}
+                        height={slide.image.height}
+                        heading={slide.heading}
+                        copy={slide.copy}
+                        href={slide.href}
+                        linkAlt={slide.linkAlt}
+                        label={slide.linkLabel}
+                        isActive={isActive}
+                      />
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+            </Carousel>
+          </IsInView>
+
+          {/* <IsInView toggleOnce={true} animateClassNames='animate__fast'>
+            <Carousel>
               <SwiperSlide className='swiper--slide-width'>
                 {({ isActive }) => (
                   <CarouselSlideContainer
@@ -67,7 +112,7 @@ export default function Home() {
                     alt='Coronavirus-19'
                     width={1600}
                     height={900}
-                    heading='COVID-19 Response'
+                    heading={carousel.attributes.slide[0].heading}
                     copy='The health, safety, and well-being of our community, on and off campus, is our top
                     priority'
                     href='/resources/covid-19'
@@ -110,7 +155,7 @@ export default function Home() {
                 )}
               </SwiperSlide>
             </Carousel>
-          </IsInView>
+          </IsInView> */}
 
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 mx-auto'>
             <CardDefault
@@ -266,7 +311,11 @@ export default function Home() {
 
         <Wrapper className='items-center py-20 md:py-24 lg:py-32 xl:py-40'>
           <Grid className='mx-auto sm:gap-x-4 md:gap-x-4 lg:gap-x-8'>
-            <ContentHeader className='col-span-full mx-auto lg:mx-0 mb-4 md:mb-8' title='Upcoming Events' isCenter={false} />
+            <ContentHeader
+              className='col-span-full mx-auto lg:mx-0 mb-4 md:mb-8'
+              title='Upcoming Events'
+              isCenter={false}
+            />
             <ContentEvent
               date='Tuesday, March 22, 2021'
               time='3:00 PST'
