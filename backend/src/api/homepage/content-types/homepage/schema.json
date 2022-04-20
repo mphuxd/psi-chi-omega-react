@@ -21,6 +21,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::carousel.carousel"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-header.default"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::card.card"
     }
   }
 }

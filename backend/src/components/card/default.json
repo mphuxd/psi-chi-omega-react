@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_card_defaults",
+  "info": {
+    "displayName": "default",
+    "icon": "square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "href": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

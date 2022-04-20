@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
   const homepageRes = await fetchAPI("/homepage", {
     populate: {
       "*": { populate: "*" },
-      hero: { populate: "*" },
+      hero: { populate: { image: { populate: "*" } } },
       carousel: { populate: { slide: { populate: { image: { populate: "*" } } } } },
     },
   });
@@ -59,12 +59,12 @@ export default function Home({ homepage, hero, carousel }) {
 
       <Layout className=''>
         <Hero
-          title={homepage.attributes.hero.title}
-          imageSrc='/images/placeholder.jpg'
+          title={hero.title}
+          imageSrc={hero.image.src.data.attributes.url}
           imageAlt='placeholder'
           imageWidth={1400}
           imageHeight={600}
-          subtext={homepage.attributes.hero.subtext}
+          subtext={hero.subtext}
         />
 
         <Wrapper className='my-20 md:my-32'>
