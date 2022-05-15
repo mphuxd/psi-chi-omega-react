@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_member_members",
+  "info": {
+    "displayName": "member",
+    "icon": "baby",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "memberName": {
+      "type": "string"
+    },
+    "memberClass": {
+      "type": "string"
+    }
+  }
+}

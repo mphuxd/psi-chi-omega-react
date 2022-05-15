@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_community_communities",
+  "info": {
+    "displayName": "community",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.default"
+    },
+    "content": {
+      "displayName": "media-text",
+      "type": "component",
+      "repeatable": true,
+      "component": "content-block.media-text"
+    }
+  }
+}

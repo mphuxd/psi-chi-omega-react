@@ -14,6 +14,39 @@ import {
   Meta,
 } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const brotherRes = await fetchAPI("/brother", {
+//     populate: {
+//       "*": { populate: "*" },
+//       brother: { populate: "*" },
+//       leader: { populate: "*" },
+//       executiveBoard: {
+//         populate: {
+//           executive_boards: { populate: "*" },
+//         },
+//       },
+//       brothers: {
+//         populate: {
+//           members: { populate: "*" },
+//         },
+//       },
+//     },
+//   });
+
+//   console.log(brotherRes.data);
+//   return {
+//     props: {
+//       brother: brotherRes.data,
+//       leader: brotherRes.data.attributes.leader,
+//       executiveBoard: brotherRes.data.attributes.executiveBoard,
+//       brothers: brotherRes.data.attributes.brothers,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function Brothers() {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>

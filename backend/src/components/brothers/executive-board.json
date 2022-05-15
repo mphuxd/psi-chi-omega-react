@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_brothers_executive_boards",
+  "info": {
+    "displayName": "executiveBoard",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "executive_boards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::executive-board.executive-board"
+    }
+  }
+}

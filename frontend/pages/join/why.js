@@ -10,6 +10,25 @@ import {
   Meta,
 } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const whyRes = await fetchAPI("/why", {
+//     populate: {
+//       "*": { populate: "*" },
+//       reason: { populate: "*" },
+//     },
+//   });
+
+//   return {
+//     props: {
+//       why: whyRes.data,
+//       reasons: whyRes.data.attributes.reason,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function Why(props) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>

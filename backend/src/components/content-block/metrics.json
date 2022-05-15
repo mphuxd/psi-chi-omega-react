@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_content_block_metrics",
+  "info": {
+    "displayName": "metrics",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "metric": {
+      "displayName": "metric",
+      "type": "component",
+      "repeatable": true,
+      "component": "metric.metric"
+    }
+  }
+}

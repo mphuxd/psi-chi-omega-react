@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_block_media_texts",
+  "info": {
+    "displayName": "media-text",
+    "icon": "medal",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "header": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}

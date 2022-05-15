@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_faq_filter_labels",
+  "info": {
+    "displayName": "filterLabels",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

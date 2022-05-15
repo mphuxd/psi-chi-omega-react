@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_header_splits",
+  "info": {
+    "displayName": "split",
+    "icon": "grip-lines-vertical"
+  },
+  "options": {},
+  "attributes": {
+    "left": {
+      "type": "richtext"
+    },
+    "right": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "linkAlt": {
+      "type": "string"
+    }
+  }
+}

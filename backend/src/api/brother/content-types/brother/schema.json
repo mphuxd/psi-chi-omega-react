@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "brothers",
+  "info": {
+    "singularName": "brother",
+    "pluralName": "brothers",
+    "displayName": "Brother"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "leader.leader-large"
+    },
+    "executiveBoard": {
+      "displayName": "executiveBoard",
+      "type": "component",
+      "repeatable": false,
+      "component": "brothers.executive-board"
+    },
+    "brothers": {
+      "displayName": "members",
+      "type": "component",
+      "repeatable": false,
+      "component": "brothers.members"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_us_pillars",
+  "info": {
+    "displayName": "pillars",
+    "icon": "dizzy"
+  },
+  "options": {},
+  "attributes": {
+    "splitheader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.split"
+    },
+    "pillar": {
+      "displayName": "pillar",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.pillar"
+    }
+  }
+}

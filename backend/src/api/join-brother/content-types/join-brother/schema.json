@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "join_brothers",
+  "info": {
+    "singularName": "join-brother",
+    "pluralName": "join-brothers",
+    "displayName": "join-brother"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "process": {
+      "displayName": "process",
+      "type": "component",
+      "repeatable": false,
+      "component": "join.process"
+    },
+    "steps": {
+      "displayName": "steps",
+      "type": "component",
+      "repeatable": true,
+      "component": "join.steps"
+    }
+  }
+}

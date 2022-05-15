@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_us_cultures",
+  "info": {
+    "displayName": "culture",
+    "icon": "arrow-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.split"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

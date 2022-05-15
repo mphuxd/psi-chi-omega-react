@@ -13,6 +13,34 @@ import {
   ContentBlockLogoGridItem,
   Meta,
 } from "@/components";
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const alumniRes = await fetchAPI("/alumni", {
+//     populate: {
+//       "*": { populate: "*" },
+//       alumni: { populate: "*" },
+//       leader: { populate: "*" },
+//       work: { populate: "*" },
+//       help: { populate: "*" },
+//       getInvolved: { populate: "*" },
+//       letter: { populate: "*" },
+//     },
+//   });
+
+//   console.log(alumniRes.data);
+//   return {
+//     props: {
+//       alumni: alumniRes.data,
+//       leader: alumniRes.data.attributes.leader,
+//       work: alumniRes.data.attributes.work,
+//       help: alumniRes.data.attributes.help,
+//       getInvolved: alumniRes.data.attributes.getInvolved,
+//       letter: alumniRes.data.attributes.letter,
+//     },
+//     revalidate: 1,
+//   };
+// }
 
 function Alumni() {
   return (

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_covid_19_links",
+  "info": {
+    "displayName": "links",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

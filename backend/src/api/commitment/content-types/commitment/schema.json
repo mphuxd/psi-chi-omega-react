@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commitments",
+  "info": {
+    "singularName": "commitment",
+    "pluralName": "commitments",
+    "displayName": "commitment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "commitment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.media-text"
+    }
+  }
+}

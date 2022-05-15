@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "covid_19s",
+  "info": {
+    "singularName": "covid-19",
+    "pluralName": "covid-19s",
+    "displayName": "covid-19"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "leader.leadersimple"
+    },
+    "copy": {
+      "type": "richtext"
+    },
+    "links": {
+      "displayName": "links",
+      "type": "component",
+      "repeatable": true,
+      "component": "covid-19.links"
+    }
+  }
+}

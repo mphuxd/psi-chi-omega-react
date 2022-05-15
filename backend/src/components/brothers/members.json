@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_brothers_members",
+  "info": {
+    "displayName": "members",
+    "icon": "ambulance"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member"
+    }
+  }
+}

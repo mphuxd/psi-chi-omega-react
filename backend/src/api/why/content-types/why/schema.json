@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "whies",
+  "info": {
+    "singularName": "why",
+    "pluralName": "whies",
+    "displayName": "why",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "reason": {
+      "displayName": "why",
+      "type": "component",
+      "repeatable": true,
+      "component": "why.why"
+    }
+  }
+}

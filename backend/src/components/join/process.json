@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_join_processes",
+  "info": {
+    "displayName": "process",
+    "icon": "arrow-right"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    }
+  }
+}

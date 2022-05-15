@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_alumni_works",
+  "info": {
+    "displayName": "work",
+    "icon": "angry"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "richtext"
+    },
+    "logos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

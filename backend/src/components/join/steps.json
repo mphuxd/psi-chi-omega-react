@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_join_steps",
+  "info": {
+    "displayName": "steps",
+    "icon": "angle-down"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "richtext"
+    }
+  }
+}

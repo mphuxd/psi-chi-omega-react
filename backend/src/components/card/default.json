@@ -9,7 +9,7 @@
   "attributes": {
     "image": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "image.image"
     },
     "heading": {

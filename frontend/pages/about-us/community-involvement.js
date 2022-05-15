@@ -11,6 +11,30 @@ import {
   LinkFeedItem,
   Meta,
 } from "@/components";
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const communityRes = await fetchAPI("/community-involvement", {
+//     populate: {
+//       "*": { populate: "*" },
+//       "community-involvement": { populate: "*" },
+//       leader: { populate: "*" },
+//       commitments: {
+//         populate: "*",
+//       },
+//     },
+//   });
+
+//   console.log(communityRes.data);
+//   return {
+//     props: {
+//       community: communityRes.data,
+//       leader: communityRes.data.attributes.leader,
+//       commitments: communityRes.data.attributes.milestones,
+//     },
+//     revalidate: 1,
+//   };
+// }
 
 function CommunityInvolvement() {
   return (

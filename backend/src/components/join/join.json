@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_join_joins",
+  "info": {
+    "displayName": "join",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.default"
+    },
+    "brothers": {
+      "displayName": "brothers",
+      "type": "component",
+      "repeatable": false,
+      "component": "card.brothers"
+    },
+    "sisters": {
+      "type": "component",
+      "repeatable": false,
+      "component": "card.brothers"
+    }
+  }
+}

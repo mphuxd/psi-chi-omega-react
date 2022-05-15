@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_history_facts",
+  "info": {
+    "displayName": "facts",
+    "icon": "anchor"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "metric": {
+      "type": "string"
+    }
+  }
+}

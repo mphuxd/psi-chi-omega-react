@@ -11,6 +11,27 @@ import {
   Meta,
 } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const faqRes = await fetchAPI("/faq", {
+//     populate: {
+//       "*": { populate: "*" },
+//       filterLabels: { populate: "*" },
+//       faq_questions: { populate: "*" },
+//     },
+//   });
+
+//   return {
+//     props: {
+//       faq: faqRes.data,
+//       filterLabels: faqRes.data.attributes.filterLabels,
+//       faq_questions: faqRes.data.attributes.faq_questions,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function Faq() {
   let [isActive, setActive] = useState("All FAQs");
   const filterList = ["All FAQs", "Pledging", "Little Sis", "Fraternity"];

@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "faq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "filterLabels": {
+      "displayName": "filterLabels",
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.filter-labels"
+    },
+    "faq_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-question.faq-question"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

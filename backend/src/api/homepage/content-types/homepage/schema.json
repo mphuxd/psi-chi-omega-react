@@ -24,13 +24,31 @@
     },
     "about": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "section-header.default"
     },
     "cards": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::card.card"
+    },
+    "join": {
+      "displayName": "join",
+      "type": "component",
+      "repeatable": false,
+      "component": "join.join"
+    },
+    "community": {
+      "displayName": "community",
+      "type": "component",
+      "repeatable": false,
+      "component": "community.community"
+    },
+    "events": {
+      "displayName": "events",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.events"
     }
   }
 }

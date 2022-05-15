@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_content_block_eventcards",
+  "info": {
+    "displayName": "eventcard",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "eventName": {
+      "type": "string"
+    },
+    "eventDescription": {
+      "type": "string"
+    }
+  }
+}

@@ -12,6 +12,32 @@ import {
   LinkFeedItem,
   Meta,
 } from "@/components";
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const historyRes = await fetchAPI("/history", {
+//     populate: {
+//       "*": { populate: "*" },
+//       history: { populate: "*" },
+//       leader: { populate: "*" },
+//       milestones: {
+//         populate: {
+//           fact: { populate: "*" },
+//         },
+//       },
+//     },
+//   });
+
+//   console.log(historyRes.data);
+//   return {
+//     props: {
+//       history: historyRes.data,
+//       leader: historyRes.data.attributes.leader,
+//       milestones: historyRes.data.attributes.milestones,
+//     },
+//     revalidate: 1,
+//   };
+// }
 
 function History() {
   return (

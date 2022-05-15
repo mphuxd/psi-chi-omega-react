@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "alumnis",
+  "info": {
+    "singularName": "alumni",
+    "pluralName": "alumnis",
+    "displayName": "alumni"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "leader.leadersimple"
+    },
+    "work": {
+      "displayName": "work",
+      "type": "component",
+      "repeatable": false,
+      "component": "alumni.work"
+    },
+    "help": {
+      "displayName": "help",
+      "type": "component",
+      "repeatable": false,
+      "component": "alumni.help"
+    },
+    "getInvolved": {
+      "displayName": "get-involved",
+      "type": "component",
+      "repeatable": false,
+      "component": "alumni.get-involved"
+    },
+    "letter": {
+      "displayName": "letter",
+      "type": "component",
+      "repeatable": false,
+      "component": "alumni.letter"
+    }
+  }
+}

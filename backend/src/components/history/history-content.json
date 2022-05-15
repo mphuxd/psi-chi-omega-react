@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_history_history_contents",
+  "info": {
+    "displayName": "history-content",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "milestone": {
+      "displayName": "milestone",
+      "type": "component",
+      "repeatable": true,
+      "component": "history.milestone"
+    }
+  }
+}

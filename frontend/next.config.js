@@ -3,5 +3,6 @@ module.exports = {
   images: {
     loader: "default",
     domains: ["localhost", "res.cloudinary.com"],
+    formats: ["image/webp"],
   },
 };

@@ -2,6 +2,31 @@ import Head from "next/head";
 import Image from "next/image";
 import { Layout, Wrapper, Grid, Meta } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const covidRes = await fetchAPI("/covid-19", {
+//     populate: {
+//       "*": { populate: "*" },
+//       covid: { populate: "*" },
+//       leader: { populate: "*" },
+//       copy: { populate: "*" },
+//       links: { populate: "*" },
+//     },
+//   });
+
+//   console.log(covidRes.data);
+//   return {
+//     props: {
+//       covid: covidRes.data,
+//       leader: covidRes.data.attributes.leader,
+//       copy: covidRes.data.attributes.copy,
+//       links: covidRes.data.attributes.links,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function Covid19() {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>

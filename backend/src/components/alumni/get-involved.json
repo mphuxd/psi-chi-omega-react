@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_alumni_get_involveds",
+  "info": {
+    "displayName": "get-involved",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

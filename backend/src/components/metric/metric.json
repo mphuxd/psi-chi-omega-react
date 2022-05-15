@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_metric_metrics",
+  "info": {
+    "displayName": "metric",
+    "icon": "chart-bar"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "metric": {
+      "type": "integer"
+    }
+  }
+}

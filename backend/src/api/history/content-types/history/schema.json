@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "histories",
+  "info": {
+    "singularName": "history",
+    "pluralName": "histories",
+    "displayName": "History",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "leader.leadersimple"
+    },
+    "milestones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "history.milestone"
+    }
+  }
+}

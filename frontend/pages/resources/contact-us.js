@@ -12,6 +12,22 @@ import {
   Meta,
 } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const contactRes = await fetchAPI("/contact-us", {
+//     populate: "*",
+//   });
+
+//   console.log(contactRes.data);
+//   return {
+//     props: {
+//       contact: contactRes.data,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function ContactUs() {
   const {
     register,

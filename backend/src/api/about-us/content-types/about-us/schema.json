@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "about-us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leader": {
+      "displayName": "leader-large",
+      "type": "component",
+      "repeatable": false,
+      "component": "leader.leader-large"
+    },
+    "sectionheader": {
+      "displayName": "split",
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.split"
+    },
+    "metrics": {
+      "displayName": "metrics",
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.metrics"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.media-text"
+    },
+    "culture": {
+      "displayName": "culture",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.culture"
+    },
+    "pillars": {
+      "displayName": "pillars",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.pillars"
+    },
+    "commitments": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.media-text"
+    },
+    "why": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.media-text"
+    }
+  }
+}

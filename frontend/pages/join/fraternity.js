@@ -12,6 +12,28 @@ import {
   Meta,
 } from "@/components";
 
+import { fetchAPI } from "../api/strapi";
+
+// export async function getStaticProps({ params }) {
+//   const joinRes = await fetchAPI("/join-brother", {
+//     populate: {
+//       "*": { populate: "*" },
+//       process: { populate: "*" },
+//       steps: { populate: "*" },
+//     },
+//   });
+
+//   console.log(joinRes.data);
+//   return {
+//     props: {
+//       join: joinRes.data,
+//       process: joinRes.data.attributes.process,
+//       steps: joinRes.data.attributes.steps,
+//     },
+//     revalidate: 1,
+//   };
+// }
+
 function Fraternity() {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>

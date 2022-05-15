@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_homepage_events",
+  "info": {
+    "displayName": "events",
+    "icon": "table"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "eventcard": {
+      "displayName": "eventcard",
+      "type": "component",
+      "repeatable": true,
+      "component": "content-block.eventcard"
+    }
+  }
+}

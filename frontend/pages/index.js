@@ -27,21 +27,30 @@ export async function getStaticProps({ params }) {
     populate: {
       "*": { populate: "*" },
       hero: { populate: { image: { populate: "*" } } },
-      carousel: { populate: { slide: { populate: { image: { populate: "*" } } } } },
+      about: { populate: "*" },
+      carousel: {
+        populate: {
+          slide: { populate: { image: { populate: "*" } } },
+        },
+      },
+      cards: { populate: { card: { populate: { image: { populate: "*" } } } } },
     },
   });
 
+  console.log(homepageRes.data.attributes.about);
   return {
     props: {
       homepage: homepageRes.data,
+      about: homepageRes.data.attributes.about,
       hero: homepageRes.data.attributes.hero,
       carousel: homepageRes.data.attributes.carousel.data,
+      cards: homepageRes.data.attributes.cards.data,
     },
     revalidate: 1,
   };
 }
 
-export default function Home({ homepage, hero, carousel }) {
+export default function Home({ hero, about, carousel, cards }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -70,11 +79,11 @@ export default function Home({ homepage, hero, carousel }) {
         <Wrapper className='my-20 md:my-32'>
           <Grid className='mx-auto'>
             <SectionHeader
-              heading='Who We Are'
-              copy='Founded in 1992 at UCSD, Psi Chi Omega is the largest and fastest growing Asian-American social fraternity in California. Our success comes from bringing like-minded people together under shared values, traditions, community, and experiences. We provide members with a social environment that encourages mutual growth and cultural acceptance.'
-              href='/about-us/'
-              alt='About Psi Chi Omega'
-              label='About ΨΧΩ'
+              heading={about.heading}
+              copy={about.copy}
+              href={about.href}
+              alt={about.alt}
+              label={about.label}
             />
           </Grid>
 
@@ -103,97 +112,24 @@ export default function Home({ homepage, hero, carousel }) {
             </Carousel>
           </IsInView>
 
-          {/* <IsInView toggleOnce={true} animateClassNames='animate__fast'>
-            <Carousel>
-              <SwiperSlide className='swiper--slide-width'>
-                {({ isActive }) => (
-                  <CarouselSlideContainer
-                    src='/images/rona.png'
-                    alt='Coronavirus-19'
-                    width={1600}
-                    height={900}
-                    heading={carousel.attributes.slide[0].heading}
-                    copy='The health, safety, and well-being of our community, on and off campus, is our top
-                    priority'
-                    href='/resources/covid-19'
-                    linkAlt='Covid-19 Information'
-                    label='Learn More'
-                    isActive={isActive}
-                  />
-                )}
-              </SwiperSlide>
-              <SwiperSlide className='swiper--slide-width'>
-                {({ isActive }) => (
-                  <CarouselSlideContainer
-                    src='/images/16-9_placeholder.jpg'
-                    alt='Placeholder Image'
-                    width={1600}
-                    height={900}
-                    heading='Featured Article'
-                    copy='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.'
-                    href='/'
-                    linkAlt='placeholder'
-                    label='Learn More'
-                    isActive={isActive}
-                  />
-                )}
-              </SwiperSlide>
-              <SwiperSlide className='swiper--slide-width'>
-                {({ isActive }) => (
-                  <CarouselSlideContainer
-                    src='/images/16-9_placeholder.jpg'
-                    alt='Placeholder Image'
-                    width={1600}
-                    height={900}
-                    heading='Featured Article'
-                    copy='Integer ullamcorper nulla in quam mattis urna in interdum in auctor natoque rhoncus cursus nulla viverra tincidunt pharetra consectetur enim iaculis pulvinar lacus.'
-                    href='/'
-                    linkAlt='placeholder'
-                    label='Learn More'
-                    isActive={isActive}
-                  />
-                )}
-              </SwiperSlide>
-            </Carousel>
-          </IsInView> */}
-
           <Grid className='mt-32 pb-6 gap-y-5 sm:gap-y-8 mx-auto'>
-            <CardDefault
-              srcImg='/images/16-9_placeholder--small.jpg'
-              altImg='placeholder'
-              widthImg={800}
-              heightImg={450}
-              heading='Our Brothers'
-              body='The brothers are responsible for maintaining the fraternity and most importantly, taking care of our community.'
-              linkHref='/members/brothers'
-              linkAlt='Meet the brothers'
-              linkLabel='Meet the brothers'
-              linkClassName='mt-10'
-            />
-            <CardDefault
-              srcImg='/images/16-9_placeholder--small.jpg'
-              altImg='placeholder'
-              widthImg={800}
-              heightImg={450}
-              heading='Our History'
-              body='Founded in 1992, Psi Chi Omega was formed to address the need for a space for Asian American men.'
-              linkHref='/about-us/history'
-              linkAlt='About our history'
-              linkLabel='About our history'
-              linkClassName='mt-10'
-            />
-            <CardDefault
-              srcImg='/images/16-9_placeholder--small.jpg'
-              altImg='placeholder'
-              widthImg={800}
-              heightImg={450}
-              heading='Our Commitments'
-              body='See what we’re doing to get involved and make a difference in our community.'
-              linkHref='/about-us/community-involvement'
-              linkAlt='View all of our commitments'
-              linkLabel='View all of our commitments'
-              linkClassName='mt-10'
-            />
+            {cards.attributes.card.map((card, i) => {
+              return (
+                <CardDefault
+                  key={i}
+                  srcImg={card.image.src.data.attributes.url}
+                  altImg={card.image.alt}
+                  widthImg={card.image.width}
+                  heightImg={card.image.height}
+                  heading={card.heading}
+                  body={card.body}
+                  linkHref={card.href}
+                  linkAlt={card.alt}
+                  linkLabel={card.label}
+                  linkClassName='mt-10'
+                />
+              );
+            })}
           </Grid>
         </Wrapper>
 
