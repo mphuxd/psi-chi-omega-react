@@ -9,27 +9,29 @@ import {
   LeaderSimpleMedia,
   Meta,
 } from "@/components";
+import ReactMarkdown from "react-markdown";
 
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const whyRes = await fetchAPI("/why", {
-//     populate: {
-//       "*": { populate: "*" },
-//       reason: { populate: "*" },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const whyRes = await fetchAPI("/why", {
+    populate: {
+      "*": { populate: "*" },
+      image: { populate: "*" },
+      reason: { populate: "*" },
+    },
+  });
 
-//   return {
-//     props: {
-//       why: whyRes.data,
-//       reasons: whyRes.data.attributes.reason,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      why: whyRes.data.attributes,
+      reasons: whyRes.data.attributes.reason,
+    },
+    revalidate: 1,
+  };
+}
 
-function Why(props) {
+function Why({ why, reasons }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -48,98 +50,31 @@ function Why(props) {
       <Layout>
         <Wrapper>
           <LeaderSimpleMedia
-            heading='Why Psi Chi Omega'
-            body='Step out of your comfort zone and join the best fraternity on campus. In your new
-              journey, you will have many opportunities to create meaningful, long-lasting
-              experiences, memories, and friendships as well as develop skills to prepare you for
-              any obstacle in life.'
-            imageSrc='/images/21-9_placeholder.png'
-            imageAlt='placeholder1600x900'
-            imageWidth={2100}
-            imageHeight={900}
+            heading={why.heading}
+            body={why.body}
+            imageSrc={why.image.data.attributes.url}
+            imageAlt={why.image.data.attributes.alternativeText}
+            imageWidth={why.image.data.attributes.width}
+            imageHeight={why.image.data.attributes.height}
             imageLayout='responsive'
           />
         </Wrapper>
 
         <Wrapper className='pt-8 lg:pt-0 pb-12 sm:pb-8 md:pb-16 lg:pb-20'>
           <Grid className='mx-auto space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-32 '>
-            <ContentBlockCenteredText
-              heading='The People'
-              body={
-                <>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </>
-              }
-            />
-
-            <ContentBlockCenteredText
-              heading='The People'
-              body={
-                <>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </>
-              }
-            />
-
-            <ContentBlockCenteredText
-              heading='The People'
-              body={
-                <>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </>
-              }
-            />
+            {reasons.map((reason, i) => {
+              return (
+                <ContentBlockCenteredText
+                  key={i}
+                  heading={reason.heading}
+                  body={
+                    <ReactMarkdown parserOptions={{ commonmark: true }}>
+                      {reason.body}
+                    </ReactMarkdown>
+                  }
+                />
+              );
+            })}
           </Grid>
         </Wrapper>
 

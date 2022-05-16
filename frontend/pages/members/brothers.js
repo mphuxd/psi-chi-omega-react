@@ -16,38 +16,38 @@ import {
 
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const brotherRes = await fetchAPI("/brother", {
-//     populate: {
-//       "*": { populate: "*" },
-//       brother: { populate: "*" },
-//       leader: { populate: "*" },
-//       executiveBoard: {
-//         populate: {
-//           executive_boards: { populate: "*" },
-//         },
-//       },
-//       brothers: {
-//         populate: {
-//           members: { populate: "*" },
-//         },
-//       },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const brotherRes = await fetchAPI("/brother", {
+    populate: {
+      "*": { populate: "*" },
+      brother: { populate: "*" },
+      leader: { populate: "*" },
+      executiveBoard: {
+        populate: {
+          executive_boards: { populate: "*" },
+        },
+      },
+      brothers: {
+        populate: {
+          members: {
+            populate: "*",
+          },
+        },
+      },
+    },
+  });
+  return {
+    props: {
+      brother: brotherRes.data.attributes,
+      leader: brotherRes.data.attributes.leader,
+      executiveBoard: brotherRes.data.attributes.executiveBoard,
+      brothers: brotherRes.data.attributes.brothers,
+    },
+    revalidate: 1,
+  };
+}
 
-//   console.log(brotherRes.data);
-//   return {
-//     props: {
-//       brother: brotherRes.data,
-//       leader: brotherRes.data.attributes.leader,
-//       executiveBoard: brotherRes.data.attributes.executiveBoard,
-//       brothers: brotherRes.data.attributes.brothers,
-//     },
-//     revalidate: 1,
-//   };
-// }
-
-function Brothers() {
+function Brothers({ brother, leader, executiveBoard, brothers }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -66,12 +66,12 @@ function Brothers() {
       <Layout>
         <Wrapper>
           <LeaderSimpleMedia
-            heading='The Brothers'
-            body='The brothers are the heart of the fraternity. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo'
-            imageSrc='/images/21-9_placeholder.png'
-            imageAlt='placeholder1600x900'
-            imageWidth={2100}
-            imageHeight={900}
+            heading={leader.heading}
+            body={leader.copy}
+            imageSrc={leader.image.data.attributes.url}
+            imageAlt={leader.image.data.attributes.alternativeText}
+            imageWidth={leader.image.data.attributes.width}
+            imageHeight={leader.image.data.attributes.height}
             imageLayout='responsive'
           />
         </Wrapper>
@@ -80,62 +80,25 @@ function Brothers() {
           <Grid isCenter={true}>
             <SectionHeaderSplitOffset
               className='col-span-full'
-              title='Executive Board'
-              body='Also known as the “Top 7”, the executive board is the elected governing student body that performs the essential duties required for maintaining our fraternity’s mission and values. Together, the top 7 provides leadership and shapes the fraternity’s agenda and direction.'
+              title={executiveBoard.heading}
+              body={executiveBoard.body}
               divider={true}
             />
           </Grid>
 
           <GalleryAvatar>
-            <GalleryAvatarItem
-              avatarName='Matthew Pham'
-              avatarTitle='Alumni'
-              avatarClass='Alpha Mu Spring 2014'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
-            <GalleryAvatarItem
-              avatarName='Test'
-              avatarTitle='Test2'
-              avatarClass='Test3'
-              imageSrc='/images/icons/avatar.png'
-              imageAlt='Test'
-            />
+            {executiveBoard.executive_boards.data.map((member, i) => {
+              return (
+                <GalleryAvatarItem
+                  key={i}
+                  avatarName={member.attributes.member.memberName}
+                  avatarTitle='Alumni'
+                  avatarClass={member.attributes.member.memberClass}
+                  imageSrc='/images/icons/avatar.png'
+                  imageAlt='Test'
+                />
+              );
+            })}
           </GalleryAvatar>
         </Wrapper>
 
@@ -143,13 +106,23 @@ function Brothers() {
           <Grid isCenter={true}>
             <SectionHeaderSplitOffset
               className='col-span-full'
-              title='Active Members'
-              body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, tpraesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa.'
+              title={brothers.heading}
+              body={brothers.body}
               divider={true}
             />
           </Grid>
 
           <GalleryMembers>
+            {brothers.members.data.map((member, i) => {
+              return (
+                <GalleryMember
+                  key={i}
+                  memberName={member.attributes.member.memberName}
+                  memberClass={member.attributes.member.memberClass}
+                />
+              );
+            })}
+            {/* <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
@@ -168,8 +141,7 @@ function Brothers() {
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
             <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
+            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' /> */}
           </GalleryMembers>
         </Wrapper>
 

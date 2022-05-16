@@ -12,6 +12,19 @@
     },
     "memberClass": {
       "type": "string"
+    },
+    "memberAvatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "memberTitle": {
+      "type": "string"
     }
   }
 }

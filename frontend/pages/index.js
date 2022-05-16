@@ -37,7 +37,6 @@ export async function getStaticProps({ params }) {
     },
   });
 
-  console.log(homepageRes.data.attributes.about);
   return {
     props: {
       homepage: homepageRes.data,

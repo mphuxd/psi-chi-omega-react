@@ -1,33 +1,30 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Layout, Wrapper, Grid, Meta } from "@/components";
-
+import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const covidRes = await fetchAPI("/covid-19", {
-//     populate: {
-//       "*": { populate: "*" },
-//       covid: { populate: "*" },
-//       leader: { populate: "*" },
-//       copy: { populate: "*" },
-//       links: { populate: "*" },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const covidRes = await fetchAPI("/covid-19", {
+    populate: {
+      "*": { populate: "*" },
+      covid: { populate: "*" },
+      leader: { populate: "*" },
+      links: { populate: "*" },
+    },
+  });
 
-//   console.log(covidRes.data);
-//   return {
-//     props: {
-//       covid: covidRes.data,
-//       leader: covidRes.data.attributes.leader,
-//       copy: covidRes.data.attributes.copy,
-//       links: covidRes.data.attributes.links,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      covid: covidRes.data.attributes,
+      leader: covidRes.data.attributes.leader,
+      links: covidRes.data.attributes.links,
+    },
+    revalidate: 1,
+  };
+}
 
-function Covid19() {
+function Covid19({ leader, links }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -46,15 +43,13 @@ function Covid19() {
       <Layout>
         <Wrapper>
           <Grid className='mt-24 md:mt-20 lg:mt-24' isCenter={true}>
-            <h1 className='col-span-full text-center text--headline'>
-              COVID-19 Information for Students
-            </h1>
+            <h1 className='col-span-full text-center text--headline'>{leader.title}</h1>
             <div className='col-span-full mt-4 md:mt-6 lg:mt-8'>
               <Image
-                src='/images/davis-water-tower.jpg'
+                src={leader.image.data[0].attributes.url}
                 alt='Placeholder'
-                width={860}
-                height={344}
+                width={leader.image.data[0].attributes.width}
+                height={leader.image.data[0].attributes.height}
                 layout='responsive'
                 priority={true}
               />
@@ -64,6 +59,7 @@ function Covid19() {
         <Wrapper className='my-6 md:my-12 lg:my-20'>
           <Grid className='' isCenter={true}>
             <div className='col-span-full lg:col-start-3 lg:col-span-7 text--body space-y-8'>
+              {/* <ReactMarkdown children={covid.copy} /> */}
               <p className='font-bold'>
                 The health, safety, and well-being of our community, on and off campus, is our top
                 priority.
@@ -100,21 +96,13 @@ function Covid19() {
             <div className='col-span-full lg:col-start-3 lg:col-span-7  text--body space-y-8'>
               <h2 className='text--subheadline'>Resources</h2>
               <ol className='underline space-y-4'>
-                <li className=''>
-                  <a href=''>UC Davis COVID-19 Website</a>
-                </li>
-                <li>
-                  <a href=''>Information for Students and Families</a>
-                </li>
-                <li>
-                  <a href=''>COVID-19 Testing</a>
-                </li>
-                <li>
-                  <a href=''>UC Davis COVID-19 Vaccine Program</a>
-                </li>
-                <li>
-                  <a href=''>UC Davis Campus Ready Plan</a>
-                </li>
+                {links.map((link, i) => {
+                  return (
+                    <li key={i} className=''>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  );
+                })}
               </ol>
             </div>
           </Grid>

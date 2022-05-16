@@ -11,30 +11,31 @@ import {
   LinkFeedItem,
   Meta,
 } from "@/components";
+import ReactMarkdown from "react-markdown";
 
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const joinRes = await fetchAPI("/join-brother", {
-//     populate: {
-//       "*": { populate: "*" },
-//       process: { populate: "*" },
-//       steps: { populate: "*" },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const joinRes = await fetchAPI("/join-brother", {
+    populate: {
+      "*": { populate: "*" },
+      image: { populate: "*" },
+      process: { populate: "*" },
+      steps: { populate: "*" },
+    },
+  });
 
-//   console.log(joinRes.data);
-//   return {
-//     props: {
-//       join: joinRes.data,
-//       process: joinRes.data.attributes.process,
-//       steps: joinRes.data.attributes.steps,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      join: joinRes.data.attributes,
+      process: joinRes.data.attributes.process,
+      steps: joinRes.data.attributes.steps,
+    },
+    revalidate: 1,
+  };
+}
 
-function Fraternity() {
+function Fraternity({ join, process, steps }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -57,21 +58,15 @@ function Fraternity() {
             isCenter={true}
           >
             <h1 className='text--superheadline col-span-full mx-auto text-center'>
-              Join the brotherhood
+              {join.heading}
             </h1>
-            <p className='col-span-full lg:col-span-8 lg:col-start-3 text-center'>
-              {" "}
-              Step out of your comfort zone and join the best fraternity on campus. In your new
-              journey, you will have many opportunities to create meaningful, long-lasting
-              experiences, memories, and friendships as well as develop skills to prepare you for
-              any obstacle in life.
-            </p>
+            <p className='col-span-full lg:col-span-8 lg:col-start-3 text-center'>{join.copy}</p>
             <div className='col-span-full'>
               <Image
-                src='/images/21-9_placeholder.png'
-                alt='test'
-                width={2100}
-                height={900}
+                src={join.image.data.attributes.url}
+                alt={join.image.data.attributes.alternativeText}
+                width={join.image.data.attributes.width}
+                height={join.image.data.attributes.height}
                 layout='responsive'
                 priority={true}
               />
@@ -83,104 +78,31 @@ function Fraternity() {
           <Grid className='mx-auto relative'>
             <SectionHeader
               className='section-header__vertical-dividers'
-              heading='Our Selection Process'
-              copy='Psi Chi Omega recruits new brothers at the beginning of every fall and spring quarter during rush week — a week of events designed for us to get to know each other.  During this time, our brothers are looking for people who demonstrate behavior consistent with our values — those who display courage to step out of their comfort zone, who are genuine, dependable, and make an effort to get to know our community. If this sounds like you, we encourage you to come find us.'
+              heading={process.heading}
+              copy={process.copy}
             />
           </Grid>
         </Wrapper>
 
         <Wrapper className='py-12 sm:py-8 md:py-16 lg:py-20'>
           <Grid className='mx-auto space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-32 '>
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='Attend Rush Week' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='Information Night' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='Application / Interview' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='Decision / Bid' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='What’s Next?' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
-            <ContentBlockLeftRight
-              left={<ContentHeader className='lg:w-1/2' title='Advice & How to Prepare' />}
-              right={
-                <div className='content-block-text__join'>
-                  <p className=''>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mattis
-                    suscipit est congue nec netus amet in. Erat morbi mattis orci viverra donec
-                    ornare amet ut tincidunt. Eget lectus et faucibus at odio sed condimentum
-                    tincidunt.
-                  </p>
-                </div>
-              }
-            />
+            {steps.map((step, i) => {
+              return (
+                <ContentBlockLeftRight
+                  key={i}
+                  left={<ContentHeader className='lg:w-1/2' title={step.heading} />}
+                  right={
+                    <div className='content-block-text__join'>
+                      <p className=''>
+                        <ReactMarkdown parserOptions={{ commonmark: true }}>
+                          {step.copy}
+                        </ReactMarkdown>
+                      </p>
+                    </div>
+                  }
+                />
+              );
+            })}
           </Grid>
         </Wrapper>
 

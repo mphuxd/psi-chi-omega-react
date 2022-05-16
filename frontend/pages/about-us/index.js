@@ -22,7 +22,21 @@ import {
 } from "@/components";
 import { fetchAPI } from "../api/strapi";
 
-
+// export async function getStaticProps({ params }) {
+//   const historyRes = await fetchAPI("/about-us", {
+//     populate: {
+//       "*": { populate: "*" },
+//       leader: { populate: "*" },
+//     },
+//   });
+//   return {
+//     props: {
+//       leader: historyRes.data.attributes.leader,
+//       milestones: historyRes.data.attributes.milestones,
+//     },
+//     revalidate: 1,
+//   };
+// }
 
 function About({ homepage }) {
   return (

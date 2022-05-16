@@ -14,21 +14,20 @@ import {
 
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const contactRes = await fetchAPI("/contact-us", {
-//     populate: "*",
-//   });
+export async function getStaticProps({ params }) {
+  const contactRes = await fetchAPI("/contact-us", {
+    populate: "*",
+  });
 
-//   console.log(contactRes.data);
-//   return {
-//     props: {
-//       contact: contactRes.data,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      contact: contactRes.data.attributes,
+    },
+    revalidate: 1,
+  };
+}
 
-function ContactUs() {
+function ContactUs({ contact }) {
   const {
     register,
     handleSubmit,
@@ -56,17 +55,14 @@ function ContactUs() {
         <Wrapper>
           <LeaderSimple
             upperCase={false}
-            heading='Contact Us'
+            heading={contact.heading}
             body={
               <>
                 If you have any questions or concerns, you might find answers in our{" "}
                 <Link href='/resources/faq'>
                   <a className='underline'>FAQ</a>
                 </Link>
-                , or you can contact us here. After submiting your message, we’ll get back to you
-                within 4-5 business days. If you’d like to remain anonymous, please let us know and
-                we’ll keep your information confidential. All hazing reports are taken seriously and
-                handled by our alumni and national board for investigation.
+                , or you can contact us here. {contact.body}
               </>
             }
           />

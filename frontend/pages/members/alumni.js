@@ -14,35 +14,35 @@ import {
   Meta,
 } from "@/components";
 import { fetchAPI } from "../api/strapi";
+import ReactMarkdown from "react-markdown";
 
-// export async function getStaticProps({ params }) {
-//   const alumniRes = await fetchAPI("/alumni", {
-//     populate: {
-//       "*": { populate: "*" },
-//       alumni: { populate: "*" },
-//       leader: { populate: "*" },
-//       work: { populate: "*" },
-//       help: { populate: "*" },
-//       getInvolved: { populate: "*" },
-//       letter: { populate: "*" },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const alumniRes = await fetchAPI("/alumni", {
+    populate: {
+      "*": { populate: "*" },
+      alumni: { populate: "*" },
+      leader: { populate: "*" },
+      work: { populate: "*" },
+      help: { populate: "*" },
+      getInvolved: { populate: "*" },
+      letter: { populate: "*" },
+    },
+  });
 
-//   console.log(alumniRes.data);
-//   return {
-//     props: {
-//       alumni: alumniRes.data,
-//       leader: alumniRes.data.attributes.leader,
-//       work: alumniRes.data.attributes.work,
-//       help: alumniRes.data.attributes.help,
-//       getInvolved: alumniRes.data.attributes.getInvolved,
-//       letter: alumniRes.data.attributes.letter,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      alumni: alumniRes.data,
+      leader: alumniRes.data.attributes.leader,
+      work: alumniRes.data.attributes.work,
+      help: alumniRes.data.attributes.help,
+      getInvolved: alumniRes.data.attributes.getInvolved,
+      letter: alumniRes.data.attributes.letter,
+    },
+    revalidate: 1,
+  };
+}
 
-function Alumni() {
+function Alumni({ leader, work, help, getInvolved, letter }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -61,12 +61,12 @@ function Alumni() {
       <Layout>
         <Wrapper>
           <LeaderSimpleMedia
-            heading='Our Alumni'
-            body='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo'
-            imageSrc='/images/21-9_placeholder.png'
-            imageAlt='placeholder1600x900'
-            imageWidth={2100}
-            imageHeight={900}
+            heading={leader.title}
+            body={leader.copy}
+            imageSrc={leader.image.data[0].attributes.url}
+            imageAlt={leader.image.data[0].attributes.alternativeText}
+            imageWidth={leader.image.data[0].attributes.width}
+            imageHeight={leader.image.data[0].attributes.height}
             imageLayout='responsive'
           />
         </Wrapper>
@@ -75,93 +75,33 @@ function Alumni() {
           <ContentBlockLeftRightOffset
             center={true}
             reverse={true}
-            left={
-              <ContentBlockText
-                className='my-auto'
-                header='Where we are now'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl orci scelerisque mi nec feugiat facilisis eget in elementum. Neque lacinia dolor, quam arcu, dis.'
-              />
-            }
+            left={<ContentBlockText className='my-auto' header={work.heading} text={work.copy} />}
             right={
               <ContentBlockLogoGrid>
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
-
-                <ContentBlockLogoGridItem
-                  src='/images/4-3_placeholder.jpg'
-                  alt='placeholder'
-                  width={1200}
-                  height={900}
-                />
+                {work.logos.data.map((logo, i) => {
+                  return (
+                    <ContentBlockLogoGridItem
+                      key={i}
+                      src={logo.attributes.url}
+                      alt={logo.attributes.alternativeText}
+                      width={logo.attributes.width}
+                      height={logo.attributes.height}
+                    />
+                  );
+                })}
               </ContentBlockLogoGrid>
             }
           />
           <ContentBlockLeftRightOffset
             center={true}
             reverse={true}
-            left={
-              <ContentBlockText
-                className='my-auto'
-                header='How We Help'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque donec et neque ultrices etiam tristique. Lectus vitae velit tellus leo eget aliquam mauris amet. Amet, malesuada tincidunt pellentesque sit diam facilisis pulvinar laoreet. Vivamus porttitor pharetra id eget amet.'
-              />
-            }
+            left={<ContentBlockText className='my-auto' header={help.heading} text={help.copy} />}
             right={
               <Image
-                src='/images/4-3_placeholder.jpg'
-                alt='test'
-                width={1200}
-                height={900}
+                src={help.image.data.attributes.url}
+                alt={help.image.data.attributes.alternativeText}
+                width={help.image.data.attributes.width}
+                height={help.image.data.attributes.height}
                 layout='responsive'
               />
             }
@@ -172,16 +112,16 @@ function Alumni() {
             left={
               <ContentBlockText
                 className='my-auto'
-                header='Get Involved'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque donec et neque ultrices etiam tristique. Lectus vitae velit tellus leo eget aliquam mauris amet. Amet, malesuada tincidunt pellentesque sit diam facilisis pulvinar laoreet. Vivamus porttitor pharetra id eget amet.'
+                header={getInvolved.heading}
+                text={getInvolved.copy}
               />
             }
             right={
               <Image
-                src='/images/4-3_placeholder.jpg'
-                alt='test'
-                width={1200}
-                height={900}
+                src={getInvolved.image.data.attributes.url}
+                alt={getInvolved.image.data.attributes.alternativeText}
+                width={getInvolved.image.data.attributes.width}
+                height={getInvolved.image.data.attributes.height}
                 layout='responsive'
               />
             }
@@ -191,35 +131,19 @@ function Alumni() {
         <Wrapper className='bg-smoke'>
           <Grid className='pt-12 md:py-20 lg:py-40' isCenter={true}>
             <div className='col-span-full lg:col-start-3 lg:col-span-8 space-y-8 text--body'>
-              <h2 className='text--subheadline'>A message from our founding fathers</h2>
+              <h2 className='text--subheadline'>{letter.heading}</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim purus viverra tellus
-                amet. Eu turpis et a lorem tortor. Molestie luctus ac eget at viverra in tortor,
-                consequat. Mauris dis arcu quam mi, amet scelerisque condimentum pharetra purus. Non
-                faucibus pellentesque at nisi mattis ullamcorper. Nunc sed nisl posuere praesent
-                consequat sagittis. Cras aliquet vel curabitur massa. Cras odio pellentesque donec.
+                <ReactMarkdown parserOptions={{ commonmark: true }}>{letter.copy}</ReactMarkdown>
               </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim purus viverra tellus
-                amet. Eu turpis et a lorem tortor. Molestie luctus ac eget at viverra in tortor,
-                consequat. Mauris dis arcu quam mi, amet scelerisque condimentum pharetra purus. Non
-                faucibus pellentesque at nisi mattis ullamcorper. Nunc sed nisl posuere praesent
-                consequat sagittis. Cras aliquet vel curabitur massa. Cras odio pellentesque donec.
-              </p>
-              <p className='pb-8'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim purus viverra tellus
-                amet. Eu turpis et a lorem tortor. Molestie luctus ac eget at viverra in tortor,
-                consequat. Mauris dis arcu quam mi, amet scelerisque condimentum pharetra purus. Non
-                faucibus pellentesque at nisi mattis ullamcorper. Nunc sed nisl posuere praesent
-                consequat sagittis. Cras aliquet vel curabitur massa. Cras odio pellentesque donec.
-              </p>
-              <Image
-                src='/images/4-3_placeholder.jpg'
-                alt='test'
-                width={1200}
-                height={900}
-                layout='responsive'
-              />
+              <div className='pt-8'>
+                <Image
+                  src={letter.image.data.attributes.url}
+                  alt={letter.image.data.attributes.alternativeText}
+                  width={letter.image.data.attributes.width}
+                  height={letter.image.data.attributes.height}
+                  layout='responsive'
+                />
+              </div>
             </div>
           </Grid>
         </Wrapper>
