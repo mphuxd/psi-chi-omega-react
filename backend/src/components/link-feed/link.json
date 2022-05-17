@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_link_feed_links",
+  "info": {
+    "displayName": "link",
+    "icon": "audio-description"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "text"
+    }
+  }
+}

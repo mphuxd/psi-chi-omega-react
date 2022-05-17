@@ -65,6 +65,10 @@ export const navData = {
           href: "/join/fraternity",
         },
         {
+          name: "Little Sis",
+          href: "/join/little-sis",
+        },
+        {
           name: "Why Psi Chi Omega",
           href: "/join/why",
         },

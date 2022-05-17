@@ -20,25 +20,41 @@ import {
   LinkFeedItem,
   Meta,
 } from "@/components";
+import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const historyRes = await fetchAPI("/about-us", {
-//     populate: {
-//       "*": { populate: "*" },
-//       leader: { populate: "*" },
-//     },
-//   });
-//   return {
-//     props: {
-//       leader: historyRes.data.attributes.leader,
-//       milestones: historyRes.data.attributes.milestones,
-//     },
-//     revalidate: 1,
-//   };
-// }
+export async function getStaticProps({ params }) {
+  const aboutRes = await fetchAPI("/about-us", {
+    populate: {
+      "*": { populate: "*" },
+      leader: { populate: "*" },
+      sectionheader: { populate: "*" },
+      metrics: {
+        populate: "*",
+      },
+      content: { populate: "*" },
+      culture: { populate: "*" },
+      pillars: { populate: "*" },
+      commitments: { populate: "*" },
+      why: { populate: "*" },
+    },
+  });
+  return {
+    props: {
+      leader: aboutRes.data.attributes.leader,
+      sectionHeader: aboutRes.data.attributes.sectionheader,
+      metrics: aboutRes.data.attributes.metrics,
+      content: aboutRes.data.attributes.content,
+      culture: aboutRes.data.attributes.culture,
+      pillars: aboutRes.data.attributes.pillars,
+      commitments: aboutRes.data.attributes.commitments,
+      why: aboutRes.data.attributes.why,
+    },
+    revalidate: 1,
+  };
+}
 
-function About({ homepage }) {
+function About({ leader, sectionHeader, metrics, content, culture, pillars, commitments, why }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -56,14 +72,15 @@ function About({ homepage }) {
 
       <Layout>
         <LeaderLarge
-          heading='About ΨΧΩ'
-          largeCopy='Psi Chi Omega is an Asian-interest fraternity whose traditions promote excellence through integrity, perseverance, and eternal brotherhood. Through shared experiences, we form long-lasting bonds between our brothers and encourage each other to become the best version of themselves.'
-          copy1='We believe that male camaraderie is necessary in becoming well-rounded, successful men. By uniting young, ambitious, like-minded men under our values, we’ve successfully cultivated a growth-focused environment to help our members succeed both academically and socially.'
-          copy2='Psi Chi Omega builds strong men. For many members, joining a fraternity is the beginning of a lifelong service to community — learning what it means to be a brother, how to take care of each other, look after one another, and make sure everyone stays on track.'
-          imageSrc='/images/berlin-trident.jpg'
-          imageAlt='placeholder'
-          imageWidth={2000}
-          imageHeight={1333}
+          heading={leader.heading}
+          largeCopy={leader.copy}
+          copy1={
+            <ReactMarkdown parserOptions={{ commonmark: true }}>{leader.subcopy}</ReactMarkdown>
+          }
+          imageSrc={leader.image.data.attributes.url}
+          imageAlt={leader.image.data.attributes.alternativeText}
+          imageWidth={leader.image.data.attributes.width}
+          imageHeight={leader.image.data.attributes.height}
           priority={true}
         />
 
@@ -75,43 +92,36 @@ function About({ homepage }) {
                   We’re a <span className='text-forest'>brotherhood.</span>
                 </>
               }
-              rightText='Brothers keep each other accountable, lift them up in their time of need, and push each other forward. No one gets left behind.'
+              rightText={sectionHeader.right}
               button={true}
-              href='/members/brothers'
-              alt='Link to the brothers webpage'
-              label='Meet the brothers'
+              href={sectionHeader.href}
+              alt={sectionHeader.linkAlt}
+              label={sectionHeader.linkLabel}
             />
             <ContentBlockLeftRight
               className='mt-12 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockMedia className='lg:w-1/2'>
                   <Image
-                    src='/images/berlin-trident.jpg'
-                    alt='temp'
-                    width={2000}
-                    height={1333}
+                    src={metrics.image.data.attributes.url}
+                    alt={metrics.image.data.attributes.alternativeText}
+                    width={metrics.image.data.attributes.width}
+                    height={metrics.image.data.attributes.height}
                     layout='responsive'
                   />
                 </ContentBlockMedia>
               }
               right={
-                <ContentBlockMetrics className='mt-4 md:mt-6 lg:w-1/2 gap-4'>
-                  <ContentBlockMetricItem className='' metric='20' caption='active brothers' />
-                  <ContentBlockMetricItem
-                    className='mt-4 md:mt-0 lg:mt-3'
-                    metric='35'
-                    caption='active little sisters'
-                  />
-                  <ContentBlockMetricItem
-                    className='mt-4 md:mt-2 lg:mt-3'
-                    metric='713'
-                    caption='total members ever'
-                  />
-                  <ContentBlockMetricItem
-                    className='mt-4 md:mt-2 lg:mt-3'
-                    metric='25'
-                    caption='years old'
-                  />
+                <ContentBlockMetrics className='mt-4 md:mt-6 lg:w-1/2 gap-4 space-y-4 md:space-y-2 lg:space-y-3'>
+                  {metrics.metric.map((metric, i) => {
+                    return (
+                      <ContentBlockMetricItem
+                        key={i}
+                        metric={metric.metric}
+                        caption={metric.caption}
+                      />
+                    );
+                  })}
                 </ContentBlockMetrics>
               }
             />
@@ -120,17 +130,17 @@ function About({ homepage }) {
               left={
                 <ContentBlockText
                   className='mt-4 px-2 md:px-0 md:mt-8 lg:w-1/2 lg:my-auto'
-                  header='Our Chapters'
-                  text='Founded in UCSD, Psi Chi Omega established six chapters in universities throughout California including UCR, UCD, UCSC, SJSU, and most recently, a new chapter at SFSU. '
+                  header={content.header}
+                  text={content.body}
                 />
               }
               right={
                 <ContentBlockMedia className='lg:w-1/2'>
                   <Image
-                    src='/images/berlin-trident.jpg'
-                    alt='temp'
-                    width={2000}
-                    height={1333}
+                    src={content.image.data.attributes.url}
+                    alt={content.image.data.attributes.alternativeText}
+                    width={content.image.data.attributes.width}
+                    height={content.image.data.attributes.height}
                     layout='responsive'
                   />
                 </ContentBlockMedia>
@@ -142,49 +152,37 @@ function About({ homepage }) {
         <Wrapper className='bg-smoke pt-12 md:mt-20 lg:py-32'>
           <Grid isCenter={true}>
             <SectionHeaderSplit
-              leftText='A place to celebrate our culture and heritage'
-              rightText='Psi Chi Omega was founded to help students connect through their shared identity, culture and experiences to discover what it means to be Asian American.'
+              leftText={culture.sectionheader.left}
+              rightText={culture.sectionheader.right}
               href='/'
-              alt='Our History'
-              label='Learn about our history'
+              alt={culture.sectionheader.linkAlt}
+              label={culture.sectionheader.linkLabel}
             />
             <Wrapper className='col-span-full mt-12 lg:mt-24'>
               <Image
-                src='/images/berlin-trident.jpg'
-                alt='temp'
-                width={2000}
-                height={1333}
+                src={culture.image.data.attributes.url}
+                alt={culture.image.data.attributes.alternativeText}
+                width={culture.image.data.attributes.width}
+                height={culture.image.data.attributes.height}
                 layout='responsive'
               />
             </Wrapper>
             <Wrapper className='col-span-full mt-20 lg:mt-28'>
               <SectionHeaderSplitOffset
-                title='Our Pillars'
-                body='Pillars are the fundamental principles that serve as the foundation for our fraternity. They unite us together as a community, guide us as men to make good decisions, and help us live a life with meaning and purpose.'
+                title={pillars.splitheader.left}
+                body={pillars.splitheader.right}
               />
               <Accordion className='w-full relative mt-4 mb-20 accordion-item--end'>
-                <AccordionItem title='Integrity' caption='in·teg·ri·ty'>
-                  <div className='mt-4 lg:mt-0'>
-                    1. the quality of being honest and having strong moral principles; moral
-                    uprightness.
-                  </div>
-                  <div className='mt-2'>2. the state of being whole and undivided.</div>
-                </AccordionItem>
-                <AccordionItem title='Perseverance' caption='per·se·ver·ance'>
-                  <div className='mt-4 lg:mt-0'>
-                    1. persistence in doing something despite difficulty or delay in achieving
-                    success.
-                  </div>
-                </AccordionItem>
-                <AccordionItem title='Eternal Brotherhood' caption='eter·​nal broth·​er·​hood'>
-                  <div className='mt-4 lg:mt-0'>
-                    1. lasting or existing forever; without end or beginning;
-                  </div>
-                  <div className='mt-2'>
-                    2. an association, society, or community of people linked by a common interest,
-                    religion, or trade.
-                  </div>
-                </AccordionItem>
+                {pillars.pillar.map((pillar, i) => {
+                  return (
+                    <AccordionItem key={i} title={pillar.title} caption={pillar.caption}>
+                      <div className='mt-4 lg:mt-0'>
+                        <div className='mt-4 lg:mt-0'>{pillar.definition1}</div>
+                        {pillar.definiton2 && <div className='mt-2'>{pillar.definiton2}</div>}
+                      </div>
+                    </AccordionItem>
+                  );
+                })}
               </Accordion>
             </Wrapper>
           </Grid>
@@ -195,14 +193,11 @@ function About({ homepage }) {
               className='flex-col-reverse md:flex-col my-20 md:gap-y-8 md:mt-20 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockBody className='mt-8 px-2 md:px-0 md:mt-0 lg:w-1/2 lg:my-auto flex flex-col'>
-                  <ContentBlockText
-                    header='Committed to our Community'
-                    text='We fight by taking on hard topics: substance abuse, mental health awareness, AAPI hate, and more. '
-                  />
+                  <ContentBlockText header={commitments.header} text={commitments.body} />
                   <LinkButton
                     className='mt-3 lg:mt-6'
                     href='/about-us/community-involvement'
-                    alt='test'
+                    alt='Our Commitments'
                     label='Our Commitments'
                     isCenter={false}
                   />
@@ -211,10 +206,10 @@ function About({ homepage }) {
               right={
                 <ContentBlockMedia noPaddingMobile={true} className='lg:w-1/2'>
                   <Image
-                    src='/images/berlin-trident.jpg'
-                    alt='temp'
-                    width={2000}
-                    height={1333}
+                    src={commitments.image.data.attributes.url}
+                    alt={commitments.image.data.attributes.alternativeText}
+                    width={commitments.image.data.attributes.width}
+                    height={commitments.image.data.attributes.height}
                     layout='responsive'
                   />
                 </ContentBlockMedia>
@@ -225,24 +220,21 @@ function About({ homepage }) {
               left={
                 <ContentBlockMedia noPaddingMobile={true} className='lg:w-1/2'>
                   <Image
-                    src='/images/berlin-trident.jpg'
-                    alt='temp'
-                    width={2000}
-                    height={1333}
+                    src={why.image.data.attributes.url}
+                    alt={why.image.data.attributes.alternativeText}
+                    width={why.image.data.attributes.width}
+                    height={why.image.data.attributes.height}
                     layout='responsive'
                   />
                 </ContentBlockMedia>
               }
               right={
                 <ContentBlockBody className='mt-8 px-2 md:px-0 md:mt-0 lg:w-1/2 lg:my-auto flex flex-col'>
-                  <ContentBlockText
-                    header='Why Psi Chi Omega'
-                    text='Everyone has different reasons for joining, but we stay for the same reasons — the people, experiences, and memories. Read what our members, who were once in your shoes, have to say about us.'
-                  />
+                  <ContentBlockText header={why.header} text={why.body} />
                   <LinkButton
                     className='mt-3 lg:mt-6'
                     href='/join/why'
-                    alt='test'
+                    alt='Why Join Psi Chi Omega'
                     label='Why ΨΧΩ'
                     isCenter={false}
                   />

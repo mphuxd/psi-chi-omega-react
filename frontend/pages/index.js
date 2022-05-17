@@ -26,30 +26,66 @@ export async function getStaticProps({ params }) {
   const homepageRes = await fetchAPI("/homepage", {
     populate: {
       "*": { populate: "*" },
-      hero: { populate: { image: { populate: "*" } } },
+      hero: { populate: { image: { fields: ["alternativeText", "width", "height", "url"] } } },
       about: { populate: "*" },
       carousel: {
         populate: {
-          slide: { populate: { image: { populate: "*" } } },
+          slide: { populate: { image: { fields: ["alternativeText", "width", "height", "url"] } } },
         },
       },
-      cards: { populate: { card: { populate: { image: { populate: "*" } } } } },
+      cards: {
+        populate: {
+          card: {
+            populate: {
+              image: { fields: ["alternativeText", "width", "height", "url"] },
+            },
+          },
+        },
+      },
+      join: {
+        populate: {
+          header: { populate: "*" },
+          brothers: {
+            populate: {
+              image: { fields: ["alternativeText", "width", "height", "url"] },
+            },
+          },
+          sisters: {
+            populate: {
+              image: { fields: ["alternativeText", "width", "height", "url"] },
+            },
+          },
+        },
+      },
+      community: {
+        populate: {
+          header: { populate: "*" },
+          content: {
+            populate: {
+              image: { fields: ["alternativeText", "width", "height", "url"] },
+            },
+          },
+        },
+      },
+      events: { populate: "*" },
     },
   });
 
   return {
     props: {
-      homepage: homepageRes.data,
       about: homepageRes.data.attributes.about,
       hero: homepageRes.data.attributes.hero,
       carousel: homepageRes.data.attributes.carousel.data,
       cards: homepageRes.data.attributes.cards.data,
+      join: homepageRes.data.attributes.join,
+      community: homepageRes.data.attributes.community,
+      events: homepageRes.data.attributes.events,
     },
     revalidate: 1,
   };
 }
 
-export default function Home({ hero, about, carousel, cards }) {
+export default function Home({ hero, about, carousel, cards, join, community, events }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -68,7 +104,7 @@ export default function Home({ hero, about, carousel, cards }) {
       <Layout className=''>
         <Hero
           title={hero.title}
-          imageSrc={hero.image.src.data.attributes.url}
+          imageSrc={hero.image.data.attributes.url}
           imageAlt='placeholder'
           imageWidth={1400}
           imageHeight={600}
@@ -93,10 +129,10 @@ export default function Home({ hero, about, carousel, cards }) {
                   <SwiperSlide key={i} className='swiper--slide-width'>
                     {({ isActive }) => (
                       <CarouselSlideContainer
-                        src='/images/rona.png'
-                        alt={slide.image.alt}
-                        width={slide.image.width}
-                        height={slide.image.height}
+                        src={slide.image.data.attributes.url}
+                        alt={slide.image.data.attributes.alternativeText}
+                        width={slide.image.data.attributes.width}
+                        height={slide.image.data.attributes.height}
                         heading={slide.heading}
                         copy={slide.copy}
                         href={slide.href}
@@ -116,10 +152,10 @@ export default function Home({ hero, about, carousel, cards }) {
               return (
                 <CardDefault
                   key={i}
-                  srcImg={card.image.src.data.attributes.url}
-                  altImg={card.image.alt}
-                  widthImg={card.image.width}
-                  heightImg={card.image.height}
+                  srcImg={card.image.data.attributes.url}
+                  altImg={card.image.data.attributes.alternativeText}
+                  widthImg={card.image.data.attributes.width}
+                  heightImg={card.image.data.attributes.height}
                   heading={card.heading}
                   body={card.body}
                   linkHref={card.href}
@@ -134,30 +170,27 @@ export default function Home({ hero, about, carousel, cards }) {
 
         <Wrapper className='bg-mist items-center py-20 md:py-28 lg:py-32'>
           <Grid className='gap-y-6 md:gap-y-8 lg:gap-y-12'>
-            <SectionHeader
-              heading='Start a new journey'
-              copy='At Psi Chi Omega, you’ll have opportunities to make the most of your college experience, redefine your identity, experience personal growth, and form meaningful relationships.'
-            />
+            <SectionHeader heading={join.header.heading} copy={join.header.copy} />
             <div className='col-span-full space-y-12 sm:space-y-0 sm:flex sm:flex-row sm:gap-x-4 md:gap-x-4 lg:gap-x-8 lg:col-span-10 lg:col-start-2'>
               <CardNoBody
-                srcImg='/card.png'
-                altImg='placeholder'
-                widthImg={364}
-                heightImg={252}
+                srcImg={join.brothers.image.data.attributes.url}
+                altImg={join.brothers.image.data.attributes.alternativeText}
+                widthImg={join.brothers.image.data.attributes.width}
+                heightImg={join.brothers.image.data.attributes.height}
                 linkHref='/join/fraternity'
-                linkAlt='placeholder'
-                label='Join the Fraternity'
+                linkAlt={join.brothers.label}
+                label={join.brothers.label}
                 linkIsCenter={false}
                 linkIsUppercase={false}
               />
               <CardNoBody
-                srcImg='/card.png'
-                altImg='placeholder'
-                widthImg={364}
-                heightImg={252}
+                srcImg={join.brothers.image.data.attributes.url}
+                altImg={join.sisters.image.data.attributes.alternativeText}
+                widthImg={join.sisters.image.data.attributes.width}
+                heightImg={join.sisters.image.data.attributes.height}
                 linkHref='/'
-                linkAlt='placeholder'
-                label='Join Little Sis'
+                linkAlt={join.sisters.label}
+                label={join.sisters.label}
                 linkIsCenter={false}
                 linkIsUppercase={false}
               />
@@ -167,10 +200,7 @@ export default function Home({ hero, about, carousel, cards }) {
 
         <Wrapper className='bg-smoke items-center py-20 md:pt-28 lg:py-32'>
           <Grid className='mx-auto'>
-            <SectionHeader
-              heading='Our Community'
-              copy='Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, tpraesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis.'
-            />
+            <SectionHeader heading={community.header.heading} copy={community.header.copy} />
 
             {/* <ContentBlockQuote
               className='mt-12 sm:mt-12 md:mt-32'
@@ -190,57 +220,27 @@ export default function Home({ hero, about, carousel, cards }) {
               label='Meet the Brothers'
               linkIsCenter={false}
             /> */}
-            <ContentBlockMediaText
-              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
-              isReversed={false}
-              animateInView={false}
-              imgSrc='/images/4-3_placeholder.jpg'
-              imgAlt='placeholder'
-              imgWidth={1200}
-              imgHeight={900}
-              eyebrowLabel=''
-              header='Why Psi Chi Omega'
-              text='Everyone has different reasons for joining, but we stay for the same reasons — the people, experiences, and memories. Read what our members, who were once in your shoes, have to say about us.'
-              linkHref='/join/why'
-              linkClassName=''
-              linkAlt='Why Join Psi Chi Omega'
-              label='Read More'
-              linkIsCenter={false}
-            />
-            <ContentBlockMediaText
-              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
-              isReversed={true}
-              animateInView={false}
-              imgSrc='/images/4-3_placeholder.jpg'
-              imgAlt='placeholder'
-              imgWidth={1200}
-              imgHeight={900}
-              eyebrowLabel=''
-              header='Little Sis Program'
-              text='The little sis program was created to allow college women to officially join and become a part of the Psi Chi Omega community.'
-              linkHref='/'
-              linkClassName=''
-              linkAlt='Go to About Little Sis page'
-              label='Read More'
-              linkIsCenter={false}
-            />
-            <ContentBlockMediaText
-              className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
-              isReversed={false}
-              animateInView={false}
-              imgSrc='/images/4-3_placeholder.jpg'
-              imgAlt='placeholder'
-              imgWidth={1200}
-              imgHeight={900}
-              eyebrowLabel=''
-              header='Alumni'
-              text='Our alumni network connects members with mentors, establish professional connections with people in their field, and maintain relationships after college.'
-              linkHref='/'
-              linkClassName=''
-              linkAlt='Go to Our Alumni webpage'
-              label='Read More'
-              linkIsCenter={false}
-            />
+            {community.content.map((content, i) => {
+              return (
+                <ContentBlockMediaText
+                  key={i}
+                  className='mt-12 sm:mt-12 md:mt-16 lg:mt-32'
+                  isReversed={content.reverse}
+                  animateInView={false}
+                  imgSrc={content.image.data.attributes.url}
+                  imgAlt={content.image.data.attributes.alternativeText}
+                  imgWidth={content.image.data.attributes.width}
+                  imgHeight={content.image.data.attributes.height}
+                  eyebrowLabel=''
+                  header={content.header}
+                  text={content.body}
+                  linkHref={content.href}
+                  linkAlt={content.linkAlt}
+                  label={content.linkLabel}
+                  linkIsCenter={false}
+                />
+              );
+            })}
           </Grid>
         </Wrapper>
 
@@ -248,23 +248,21 @@ export default function Home({ hero, about, carousel, cards }) {
           <Grid className='mx-auto sm:gap-x-4 md:gap-x-4 lg:gap-x-8'>
             <ContentHeader
               className='col-span-full mx-auto lg:mx-0 mb-4 md:mb-8'
-              title='Upcoming Events'
+              title={events.header}
               isCenter={false}
             />
-            <ContentEvent
-              date='Tuesday, March 22, 2021'
-              time='3:00 PST'
-              location='Dolores Park, San Francisco'
-              eventName="Founder's Day"
-              eventDescription='Psi Chi Omega offers our members the tools, guidance, and environment that allow our members create meaningful, longlasting experiences, memories, and relationships.'
-            />
-            <ContentEvent
-              date='Tuesday, March 22, 2021'
-              time='3:00 PST'
-              location='Dolores Park, San Francisco'
-              eventName="Founder's Day"
-              eventDescription='Psi Chi Omega offers our members the tools, guidance, and environment that allow our members create meaningful, longlasting experiences, memories, and relationships.'
-            />
+            {events.eventcard.map((event, i) => {
+              return (
+                <ContentEvent
+                  key={i}
+                  date={event.date}
+                  time={event.time}
+                  location={event.location}
+                  eventName={event.eventName}
+                  eventDescription={event.eventDescription}
+                />
+              );
+            })}
           </Grid>
         </Wrapper>
 

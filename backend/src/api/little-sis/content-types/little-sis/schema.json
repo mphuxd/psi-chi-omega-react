@@ -1,0 +1,72 @@
+{
+  "kind": "singleType",
+  "collectionName": "little_sises",
+  "info": {
+    "singularName": "little-sis",
+    "pluralName": "little-sises",
+    "displayName": "little-sis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-header.split"
+    },
+    "history": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.media-text"
+    },
+    "benefits": {
+      "displayName": "benefits",
+      "type": "component",
+      "repeatable": false,
+      "component": "content-block.benefits"
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "displayName": "link",
+      "type": "component",
+      "repeatable": true,
+      "component": "link-feed.link"
+    },
+    "gallery": {
+      "displayName": "gallery",
+      "type": "component",
+      "repeatable": false,
+      "component": "gallery.gallery"
+    },
+    "copy": {
+      "type": "richtext"
+    }
+  }
+}

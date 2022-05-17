@@ -13,28 +13,30 @@ import {
 
 import { fetchAPI } from "../api/strapi";
 
-// export async function getStaticProps({ params }) {
-//   const faqRes = await fetchAPI("/faq", {
-//     populate: {
-//       "*": { populate: "*" },
-//       filterLabels: { populate: "*" },
-//       faq_questions: { populate: "*" },
-//     },
-//   });
+export async function getStaticProps({ params }) {
+  const faqRes = await fetchAPI("/faq", {
+    populate: {
+      "*": { populate: "*" },
+      filterLabels: { populate: "*" },
+      faq_questions: { populate: "*" },
+    },
+  });
 
-//   return {
-//     props: {
-//       faq: faqRes.data,
-//       filterLabels: faqRes.data.attributes.filterLabels,
-//       faq_questions: faqRes.data.attributes.faq_questions,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      faq: faqRes.data.attributes,
+      filterLabels: faqRes.data.attributes.filterLabels,
+      faqQuestions: faqRes.data.attributes.faq_questions.data,
+    },
+    revalidate: 1,
+  };
+}
 
-function Faq() {
+function Faq({ faq, filterLabels, faqQuestions }) {
   let [isActive, setActive] = useState("All FAQs");
-  const filterList = ["All FAQs", "Pledging", "Little Sis", "Fraternity"];
+  const filterList = [];
+
+  filterLabels.forEach((label) => filterList.push(label.label));
 
   function getLabel(label) {
     return label;
@@ -62,18 +64,40 @@ function Faq() {
 
       <Layout>
         <Wrapper>
-          <LeaderSimple
-            upperCase={false}
-            heading='Frequently Asked Questions'
-            body='Joining a fraternity can be an overwhelming experience. If you have questions, we’ll do our best to answer them here. If you don’t see your question, feel free to reach out to any of our members or contact us. '
-          />
+          <LeaderSimple upperCase={false} heading={faq.heading} body={faq.body} />
         </Wrapper>
 
         <Wrapper className='mb-12 md:mb-20 lg:mb-32'>
           <FaqContainer>
             <FaqFilter list={filterList} onClick={handleClick} isActive={isActive} />
             <FaqList category={isActive}>
-              <FaqListItem
+              {faqQuestions.map((question, i) => {
+                if (isActive === "All FAQs") {
+                  return (
+                    <FaqListItem
+                      key={i}
+                      category={isActive}
+                      label={question.attributes.question.label}
+                      question={question.attributes.question.question}
+                      answer={question.attributes.question.answer}
+                    />
+                  );
+                } else if (isActive === question.attributes.question.label) {
+                  return (
+                    <FaqListItem
+                      key={i}
+                      category={isActive}
+                      label={question.attributes.question.label}
+                      question={question.attributes.question.question}
+                      answer={question.attributes.question.answer}
+                    />
+                  );
+                } else {
+                  return null;
+                }
+              })}
+
+              {/* <FaqListItem
                 category={isActive}
                 label='Pledging'
                 question='What is rush week?'
@@ -136,7 +160,7 @@ function Faq() {
                 answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-              />
+              /> */}
             </FaqList>
           </FaqContainer>
         </Wrapper>

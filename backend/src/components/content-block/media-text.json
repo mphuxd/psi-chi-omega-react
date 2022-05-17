@@ -23,6 +23,18 @@
     },
     "body": {
       "type": "text"
+    },
+    "reverse": {
+      "type": "boolean"
+    },
+    "href": {
+      "type": "string"
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "linkAlt": {
+      "type": "string"
     }
   }
 }

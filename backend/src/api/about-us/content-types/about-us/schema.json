@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "leader": {
-      "displayName": "leader-large",
-      "type": "component",
-      "repeatable": false,
-      "component": "leader.leader-large"
-    },
     "sectionheader": {
       "displayName": "split",
       "type": "component",
@@ -56,6 +50,11 @@
       "type": "component",
       "repeatable": false,
       "component": "content-block.media-text"
+    },
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.leader"
     }
   }
 }

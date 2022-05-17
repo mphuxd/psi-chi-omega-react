@@ -14,9 +14,14 @@
       "type": "richtext"
     },
     "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "image.image"
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

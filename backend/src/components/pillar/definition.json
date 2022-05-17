@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_pillar_definitions",
+  "info": {
+    "displayName": "definition",
+    "icon": "angle-double-up"
+  },
+  "options": {},
+  "attributes": {
+    "defintion": {
+      "type": "string"
+    }
+  }
+}

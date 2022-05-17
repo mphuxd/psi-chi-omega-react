@@ -7,11 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "image.image"
-    },
     "heading": {
       "type": "string"
     },
@@ -26,6 +21,16 @@
     },
     "label": {
       "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

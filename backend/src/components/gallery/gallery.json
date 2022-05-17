@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_gallery_galleries",
+  "info": {
+    "displayName": "gallery",
+    "icon": "object-ungroup"
+  },
+  "options": {},
+  "attributes": {
+    "imageLarge": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imageSmall": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

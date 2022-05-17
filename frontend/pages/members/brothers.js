@@ -24,9 +24,18 @@ export async function getStaticProps({ params }) {
       leader: { populate: "*" },
       executiveBoard: {
         populate: {
-          executive_boards: { populate: "*" },
+          executive_boards: {
+            populate: {
+              member: {
+                populate: {
+                  memberAvatar: { fields: ["alternativeText", "width", "height", "url"] },
+                },
+              },
+            },
+          },
         },
       },
+
       brothers: {
         populate: {
           members: {
@@ -92,10 +101,10 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
                 <GalleryAvatarItem
                   key={i}
                   avatarName={member.attributes.member.memberName}
-                  avatarTitle='Alumni'
+                  avatarTitle={member.attributes.member.memberTitle}
                   avatarClass={member.attributes.member.memberClass}
-                  imageSrc='/images/icons/avatar.png'
-                  imageAlt='Test'
+                  imageSrc={member.attributes.member.memberAvatar.data.attributes.url}
+                  imageAlt={member.attributes.member.memberAvatar.data.attributes.alternativeText}
                 />
               );
             })}
@@ -122,26 +131,6 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
                 />
               );
             })}
-            {/* <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' />
-            <GalleryMember memberName='Matthew Pham' memberClass='Alpha Mu Spring 2014' /> */}
           </GalleryMembers>
         </Wrapper>
 

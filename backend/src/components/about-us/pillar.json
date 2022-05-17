@@ -2,7 +2,8 @@
   "collectionName": "components_about_us_pillar",
   "info": {
     "displayName": "pillar",
-    "icon": "angle-double-down"
+    "icon": "angle-double-down",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,8 +13,11 @@
     "caption": {
       "type": "string"
     },
-    "definition": {
-      "type": "richtext"
+    "definition1": {
+      "type": "text"
+    },
+    "definiton2": {
+      "type": "text"
     }
   }
 }

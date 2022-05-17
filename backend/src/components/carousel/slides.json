@@ -13,11 +13,6 @@
     "copy": {
       "type": "text"
     },
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "image.image"
-    },
     "href": {
       "type": "string"
     },
@@ -26,6 +21,17 @@
     },
     "linkAlt": {
       "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

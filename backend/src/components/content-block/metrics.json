@@ -2,19 +2,21 @@
   "collectionName": "components_content_block_metrics",
   "info": {
     "displayName": "metrics",
-    "icon": "align-left"
+    "icon": "align-left",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "metric": {
       "displayName": "metric",
