@@ -47,7 +47,7 @@ function LittleSis({ join, process, steps }) {
           title='Join Little Sis | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

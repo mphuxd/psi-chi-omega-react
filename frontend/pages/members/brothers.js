@@ -68,7 +68,7 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
           title='Brothers | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

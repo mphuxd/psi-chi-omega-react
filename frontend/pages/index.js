@@ -97,7 +97,7 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           title='Psi Chi Omega Fraternity | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

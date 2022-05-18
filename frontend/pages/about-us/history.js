@@ -49,7 +49,7 @@ function History({ leader, milestones }) {
           title='History | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

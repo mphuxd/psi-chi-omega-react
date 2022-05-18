@@ -47,7 +47,6 @@ function Fraternity({ join, process, steps }) {
           title='Join Psi Chi Omega | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
         />
       </Head>
 

@@ -53,7 +53,7 @@ function CommunityInvolvement({ leader, commitments }) {
           title='Community Involvement | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

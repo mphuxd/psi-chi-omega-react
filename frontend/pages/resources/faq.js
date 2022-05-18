@@ -58,7 +58,7 @@ function Faq({ faq, filterLabels, faqQuestions }) {
           title='FAQ | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

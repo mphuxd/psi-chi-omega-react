@@ -42,7 +42,7 @@ function Covid19({ covid, leader, links }) {
           title='COVID-19 | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

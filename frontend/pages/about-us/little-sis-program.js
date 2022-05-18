@@ -70,7 +70,7 @@ function LittleSisProgram({ littleSis, image, about, history, benefits, imageTwo
           title='About Little Sis | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

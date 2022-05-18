@@ -77,7 +77,7 @@ function Alumni({ leader, work, help, getInvolved, letter }) {
           title='Alumni | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

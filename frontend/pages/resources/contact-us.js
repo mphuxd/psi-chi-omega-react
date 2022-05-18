@@ -47,7 +47,7 @@ function ContactUs({ contact }) {
           title='Contact Us | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

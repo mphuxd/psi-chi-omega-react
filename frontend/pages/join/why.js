@@ -43,7 +43,7 @@ function Why({ why, reasons }) {
           title='Why Psi Chi Omega | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 

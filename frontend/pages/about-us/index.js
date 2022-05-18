@@ -66,7 +66,7 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
           title='About Us | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          faviconHref='/favicon.ico'
+          
         />
       </Head>
 
