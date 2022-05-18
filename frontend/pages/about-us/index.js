@@ -93,6 +93,7 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
                 </>
               }
               rightText={sectionHeader.right}
+              divider={true}
               button={true}
               href={sectionHeader.href}
               alt={sectionHeader.linkAlt}
@@ -154,7 +155,9 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
             <SectionHeaderSplit
               leftText={culture.sectionheader.left}
               rightText={culture.sectionheader.right}
-              href='/'
+              button={true}
+              divider={true}
+              href={culture.sectionheader.href}
               alt={culture.sectionheader.linkAlt}
               label={culture.sectionheader.linkLabel}
             />
@@ -171,6 +174,7 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
               <SectionHeaderSplitOffset
                 title={pillars.splitheader.left}
                 body={pillars.splitheader.right}
+                isUppercase={false}
               />
               <Accordion className='w-full relative mt-4 mb-20 accordion-item--end'>
                 {pillars.pillar.map((pillar, i) => {
@@ -187,18 +191,18 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
             </Wrapper>
           </Grid>
         </Wrapper>
-        <Wrapper className='md:pt-20 lg:pt-[128px]'>
+        <Wrapper className='pb-12 md:pb-20 lg:pb-32'>
           <Grid isCenter={true}>
             <ContentBlockLeftRight
-              className='flex-col-reverse md:flex-col my-20 md:gap-y-8 md:mt-20 lg:mt-24 lg:gap-x-8'
+              className='flex-col-reverse md:flex-col mt-20 md:gap-y-8 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockBody className='mt-8 px-2 md:px-0 md:mt-0 lg:w-1/2 lg:my-auto flex flex-col'>
                   <ContentBlockText header={commitments.header} text={commitments.body} />
                   <LinkButton
                     className='mt-3 lg:mt-6'
-                    href='/about-us/community-involvement'
-                    alt='Our Commitments'
-                    label='Our Commitments'
+                    href={commitments.href}
+                    alt={commitments.linkAlt}
+                    label={commitments.linkLabel}
                     isCenter={false}
                   />
                 </ContentBlockBody>
@@ -216,7 +220,7 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
               }
             />
             <ContentBlockLeftRight
-              className='flex-col md:flex-col-reverse my-20 md:gap-y-8 lg:mt-24 lg:gap-x-8'
+              className='flex-col md:flex-col-reverse mt-20 md:gap-y-8 lg:mt-24 lg:gap-x-8'
               left={
                 <ContentBlockMedia noPaddingMobile={true} className='lg:w-1/2'>
                   <Image
@@ -233,9 +237,9 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
                   <ContentBlockText header={why.header} text={why.body} />
                   <LinkButton
                     className='mt-3 lg:mt-6'
-                    href='/join/why'
-                    alt='Why Join Psi Chi Omega'
-                    label='Why ΨΧΩ'
+                    href={why.href}
+                    alt={why.linkAlt}
+                    label={why.linkLabel}
                     isCenter={false}
                   />
                 </ContentBlockBody>
@@ -250,19 +254,19 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
-                link='/'
+                link='/join/fraternity'
               />
               <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
-                link='/'
+                link='/about-us/little-sis-program'
               />
               <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
-                link='/'
+                link='/members/alumni'
               />
             </LinkFeed>
           </Grid>

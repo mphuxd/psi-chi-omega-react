@@ -93,11 +93,9 @@ function Fraternity({ join, process, steps }) {
                   left={<ContentHeader className='lg:w-1/2' title={step.heading} />}
                   right={
                     <div className='content-block-text__join'>
-                      <p className=''>
-                        <ReactMarkdown parserOptions={{ commonmark: true }}>
-                          {step.copy}
-                        </ReactMarkdown>
-                      </p>
+                      <ReactMarkdown parserOptions={{ commonmark: true }}>
+                        {step.copy}
+                      </ReactMarkdown>
                     </div>
                   }
                 />
@@ -111,21 +109,21 @@ function Fraternity({ join, process, steps }) {
             <LinkFeed>
               <LinkFeedItem
                 className=''
-                title='Join Psi Chi Omega'
-                caption='Become a brother'
-                link='/'
+                title='About Psi Chi Omega'
+                caption='DISCOVER OUR MISSION, PURPOSE, AND BROTHERHOOD'
+                link='/about-us/'
               />
               <LinkFeedItem
                 className=''
-                title='Little Sis Program'
-                caption='About Little Sis'
-                link='/'
+                title='Why Psi Chi Omega'
+                caption='READ WHY OUR MEMBERS LOVE PSI CHI OMEGA'
+                link='/join/why'
               />
               <LinkFeedItem
                 className=''
-                title='Alumni'
-                caption='About our alumni network'
-                link='/'
+                title='FAQ'
+                caption='QUESTIONS? CHECK OUT OUR FAQ'
+                link='/resources/faq'
               />
             </LinkFeed>
           </Grid>

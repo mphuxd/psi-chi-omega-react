@@ -7,8 +7,8 @@ const LinkFeedItem = ({ title, caption, link }) => {
     <Link href={link}>
       <a className='link-feed-item'>
         <div className='link-feed-item__body'>
-          <span className='link-feed-item__header'>{title}</span>
-          <span className='link-feed-item__caption'>{caption}</span>
+          <span className='link-feed-item__header uppercase'>{title}</span>
+          <span className='link-feed-item__caption uppercase'>{caption}</span>
         </div>
         <div className='link-feed-item__button'>
           <Image src='/images/icons/arrow_filled.svg' alt='Link Arrow' width={48} height={48} />

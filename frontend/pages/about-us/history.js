@@ -58,39 +58,41 @@ function History({ leader, milestones }) {
           <LeaderSimple heading={leader.title} body={leader.copy} upperCase={false} />
         </Wrapper>
 
-        {milestones.map((milestone, i) => {
-          return (
-            <Wrapper key={i} className='mt-12 md:mt-20 lg:pb-10'>
-              <ContentBlockHistory
-                heading={milestone.heading}
-                imageSrc={milestone.image.data.attributes.url}
-                imageAlt={milestone.image.data.attributes.alternativeText}
-                imageWidth={milestone.image.data.attributes.width}
-                imageHeight={milestone.image.data.attributes.height}
-                layout='responsive'
-                priority={true}
-                imageMetricList={
-                  <HistoryMetricList>
-                    {milestone.fact.data.attributes.fact.map((fact, j) => {
-                      return (
-                        <HistoryMetricListItem key={j} label={fact.label} metric={fact.metric} />
-                      );
-                    })}
-                  </HistoryMetricList>
-                }
-                bodyObject={
-                  <HistoryBody>
-                    <p>
-                      <ReactMarkdown parserOptions={{ commonmark: true }}>
-                        {milestone.body}
-                      </ReactMarkdown>
-                    </p>
-                  </HistoryBody>
-                }
-              />
-            </Wrapper>
-          );
-        })}
+        <div className='pb-12 md:pb-20 lg:pb-[128px]'>
+          {milestones.map((milestone, i) => {
+            return (
+              <Wrapper key={i} className='mt-12 md:mt-20 lg:pb-10'>
+                <ContentBlockHistory
+                  heading={milestone.heading}
+                  imageSrc={milestone.image.data.attributes.url}
+                  imageAlt={milestone.image.data.attributes.alternativeText}
+                  imageWidth={milestone.image.data.attributes.width}
+                  imageHeight={milestone.image.data.attributes.height}
+                  layout='responsive'
+                  priority={true}
+                  imageMetricList={
+                    <HistoryMetricList>
+                      {milestone.fact.data.attributes.fact.map((fact, j) => {
+                        return (
+                          <HistoryMetricListItem key={j} label={fact.label} metric={fact.metric} />
+                        );
+                      })}
+                    </HistoryMetricList>
+                  }
+                  bodyObject={
+                    <HistoryBody>
+                      <p>
+                        <ReactMarkdown parserOptions={{ commonmark: true }}>
+                          {milestone.body}
+                        </ReactMarkdown>
+                      </p>
+                    </HistoryBody>
+                  }
+                />
+              </Wrapper>
+            );
+          })}
+        </div>
 
         <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
           <Grid isCenter={true}>
@@ -99,19 +101,19 @@ function History({ leader, milestones }) {
                 className=''
                 title='Our Commitments'
                 caption="See how we're giving back to our community"
-                link='/'
+                link='/about-us/community-involvement'
               />
               <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
-                link='/'
+                link='/about-us/little-sis-program'
               />
               <LinkFeedItem
                 className=''
                 title='Why Psi Chi Omega'
                 caption='Read why our members joined Psi Chi Omega'
-                link='/'
+                link='/join/why'
               />
             </LinkFeed>
           </Grid>

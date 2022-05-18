@@ -85,19 +85,19 @@ function Why({ why, reasons }) {
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
-                link='/'
+                link='/join/fraternity'
               />
               <LinkFeedItem
                 className=''
                 title='Little Sis Program'
                 caption='About Little Sis'
-                link='/'
+                link='/about-us/little-sis-program'
               />
               <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
-                link='/'
+                link='/members/alumni'
               />
             </LinkFeed>
           </Grid>

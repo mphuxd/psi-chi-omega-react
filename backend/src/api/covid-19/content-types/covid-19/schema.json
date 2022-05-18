@@ -4,7 +4,8 @@
   "info": {
     "singularName": "covid-19",
     "pluralName": "covid-19s",
-    "displayName": "covid-19"
+    "displayName": "covid-19",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,12 @@
       "type": "component",
       "repeatable": true,
       "component": "covid-19.links"
+    },
+    "bullet": {
+      "displayName": "bullet",
+      "type": "component",
+      "repeatable": true,
+      "component": "bullets.bullet"
     }
   }
 }

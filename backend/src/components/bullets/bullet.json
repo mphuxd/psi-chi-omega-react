@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_bullets_bullets",
+  "info": {
+    "displayName": "bullet",
+    "icon": "bomb"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

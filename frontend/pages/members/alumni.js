@@ -21,11 +21,34 @@ export async function getStaticProps({ params }) {
     populate: {
       "*": { populate: "*" },
       alumni: { populate: "*" },
-      leader: { populate: "*" },
-      work: { populate: "*" },
-      help: { populate: "*" },
-      getInvolved: { populate: "*" },
-      letter: { populate: "*" },
+      leader: {
+        populate: {
+          image: { fields: ["alternativeText", "width", "height", "url"] },
+        },
+      },
+      work: {
+        populate: {
+          logos: {
+            fields: ["alternativeText", "width", "height", "url"],
+          },
+        },
+      },
+
+      help: {
+        populate: {
+          image: { fields: ["alternativeText", "width", "height", "url"] },
+        },
+      },
+      getInvolved: {
+        populate: {
+          image: { fields: ["alternativeText", "width", "height", "url"] },
+        },
+      },
+      letter: {
+        populate: {
+          image: { fields: ["alternativeText", "width", "height", "url"] },
+        },
+      },
     },
   });
 
@@ -63,10 +86,10 @@ function Alumni({ leader, work, help, getInvolved, letter }) {
           <LeaderSimpleMedia
             heading={leader.title}
             body={leader.copy}
-            imageSrc={leader.image.data[0].attributes.url}
-            imageAlt={leader.image.data[0].attributes.alternativeText}
-            imageWidth={leader.image.data[0].attributes.width}
-            imageHeight={leader.image.data[0].attributes.height}
+            imageSrc={leader.image.data.attributes.url}
+            imageAlt={leader.image.data.attributes.alternativeText}
+            imageWidth={leader.image.data.attributes.width}
+            imageHeight={leader.image.data.attributes.height}
             imageLayout='responsive'
           />
         </Wrapper>
@@ -153,21 +176,21 @@ function Alumni({ leader, work, help, getInvolved, letter }) {
             <LinkFeed>
               <LinkFeedItem
                 className=''
+                title='Our commitments'
+                caption='SEE HOW WE’RE GIVING BACK TO OUR COMMUNITY'
+                link='/about-us/community-involvement'
+              />
+              <LinkFeedItem
+                className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
-                link='/'
+                link='/join/fraternity'
               />
               <LinkFeedItem
                 className=''
-                title='Little Sis Program'
-                caption='About Little Sis'
-                link='/'
-              />
-              <LinkFeedItem
-                className=''
-                title='Alumni'
-                caption='About our alumni network'
-                link='/'
+                title='Why Psi Chi Omega'
+                caption='READ WHY OUR MEMBERS LOVE PSI CHI OMEGA'
+                link='/join/why'
               />
             </LinkFeed>
           </Grid>

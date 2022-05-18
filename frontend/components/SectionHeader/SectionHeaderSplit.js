@@ -2,7 +2,7 @@ import cx from "classnames";
 import useBreakpointSize from "../../hooks/useBreakpointSize";
 import LinkButton from "../Link/LinkButton";
 
-const SectionHeaderSplit = ({ leftText, rightText, href, alt, label, button = false }) => {
+const SectionHeaderSplit = ({ leftText, rightText, href, alt, label, divider, button = false }) => {
   let dividerCSS;
   let breakPoint = useBreakpointSize();
   let className =
@@ -32,7 +32,7 @@ const SectionHeaderSplit = ({ leftText, rightText, href, alt, label, button = fa
       break;
   }
 
-  let classNames = cx(className, dividerCSS);
+  let classNames = cx(className, { [dividerCSS]: divider });
 
   return (
     <div className={classNames}>

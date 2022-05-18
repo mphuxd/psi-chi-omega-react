@@ -90,26 +90,26 @@ function CommunityInvolvement({ leader, commitments }) {
           })}
         </Wrapper>
 
-        <Wrapper className='py-12 md:py-20 lg:py-[128px]'>
+        <Wrapper className='py-12 md:py-20 lg:py-32'>
           <Grid isCenter={true}>
             <LinkFeed>
               <LinkFeedItem
                 className=''
                 title='Join Psi Chi Omega'
                 caption='Become a brother'
-                link='/'
+                link='/join/fraternity'
               />
               <LinkFeedItem
                 className=''
-                title='Little Sis Program'
-                caption='About Little Sis'
-                link='/'
+                title='Brothers'
+                caption='Meet the brothers'
+                link='/members/brothers'
               />
               <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
-                link='/'
+                link='/members/alumni'
               />
             </LinkFeed>
           </Grid>

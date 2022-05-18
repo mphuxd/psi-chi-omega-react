@@ -105,9 +105,9 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
         <Hero
           title={hero.title}
           imageSrc={hero.image.data.attributes.url}
-          imageAlt='placeholder'
-          imageWidth={1400}
-          imageHeight={600}
+          imageAlt={hero.image.data.attributes.alternativeText}
+          imageWidth={hero.image.data.attributes.width}
+          imageHeight={hero.image.data.attributes.height}
           subtext={hero.subtext}
         />
 
@@ -188,7 +188,7 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
                 altImg={join.sisters.image.data.attributes.alternativeText}
                 widthImg={join.sisters.image.data.attributes.width}
                 heightImg={join.sisters.image.data.attributes.height}
-                linkHref='/'
+                linkHref='/join/little-sis'
                 linkAlt={join.sisters.label}
                 label={join.sisters.label}
                 linkIsCenter={false}
@@ -201,25 +201,6 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
         <Wrapper className='bg-smoke items-center py-20 md:pt-28 lg:py-32'>
           <Grid className='mx-auto'>
             <SectionHeader heading={community.header.heading} copy={community.header.copy} />
-
-            {/* <ContentBlockQuote
-              className='mt-12 sm:mt-12 md:mt-32'
-              isReversed={false}
-              animateInView={false}
-              imgSrc='/images/4-3_placeholder.jpg'
-              imgAlt='placeholder'
-              imgWidth={1200}
-              imgHeight={900}
-              header='Our President'
-              quote='“Nunc, diam imperdiet gravida mauris, ac faucibus interdum proin nibh erat id mauris lectus amet feugiat ipsum quis dignissim imperdiet.”'
-              quoteAuthor='John Smith'
-              quoteAuthorSubtext='Alpha Mu Class, Spring 2014'
-              linkHref='/'
-              linkClassName=''
-              linkAlt='Placeholder'
-              label='Meet the Brothers'
-              linkIsCenter={false}
-            /> */}
             {community.content.map((content, i) => {
               return (
                 <ContentBlockMediaText
@@ -270,11 +251,11 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           <Grid className='mx-auto'>
             <span className='text-center text--subheadline col-span-full justify-self-center '>
               Need help? Check out our{" "}
-              <Link href='/'>
+              <Link href='/resources/faq'>
                 <a className='underline decoration-midnight'>FAQ</a>
               </Link>{" "}
               or{" "}
-              <Link className='underline' href='/'>
+              <Link className='underline' href='/resources/contact-us'>
                 <a className='underline decoration-midnight'>Contact Us</a>
               </Link>
               .

@@ -91,7 +91,7 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
               className='col-span-full'
               title={executiveBoard.heading}
               body={executiveBoard.body}
-              divider={true}
+              divider={false}
             />
           </Grid>
 
@@ -117,7 +117,7 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
               className='col-span-full'
               title={brothers.heading}
               body={brothers.body}
-              divider={true}
+              divider={false}
             />
           </Grid>
 
@@ -139,21 +139,21 @@ function Brothers({ brother, leader, executiveBoard, brothers }) {
             <LinkFeed>
               <LinkFeedItem
                 className=''
-                title='Join Psi Chi Omega'
-                caption='Become a brother'
-                link='/'
-              />
-              <LinkFeedItem
-                className=''
-                title='Little Sis Program'
-                caption='About Little Sis'
-                link='/'
-              />
-              <LinkFeedItem
-                className=''
                 title='Alumni'
                 caption='About our alumni network'
-                link='/'
+                link='/members/alumni'
+              />
+              <LinkFeedItem
+                className=''
+                title='Our History'
+                caption='LEARN ABOUT OUR ROOTS'
+                link='/about-us/history'
+              />
+              <LinkFeedItem
+                className=''
+                title='Join Psi Chi Omega'
+                caption='Become a brother'
+                link='/join/fraternity'
               />
             </LinkFeed>
           </Grid>

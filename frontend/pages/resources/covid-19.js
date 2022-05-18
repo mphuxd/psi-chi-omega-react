@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 import Image from "next/image";
 import { Layout, Wrapper, Grid, Meta } from "@/components";
 import ReactMarkdown from "react-markdown";
@@ -9,7 +10,12 @@ export async function getStaticProps({ params }) {
     populate: {
       "*": { populate: "*" },
       covid: { populate: "*" },
-      leader: { populate: "*" },
+      bullet: { populate: "*" },
+      leader: {
+        populate: {
+          image: { fields: ["alternativeText", "width", "height", "url"] },
+        },
+      },
       links: { populate: "*" },
     },
   });
@@ -24,7 +30,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function Covid19({ leader, links }) {
+function Covid19({ covid, leader, links }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -46,10 +52,10 @@ function Covid19({ leader, links }) {
             <h1 className='col-span-full text-center text--headline'>{leader.title}</h1>
             <div className='col-span-full mt-4 md:mt-6 lg:mt-8'>
               <Image
-                src={leader.image.data[0].attributes.url}
+                src={leader.image.data.attributes.url}
                 alt='Placeholder'
-                width={leader.image.data[0].attributes.width}
-                height={leader.image.data[0].attributes.height}
+                width={leader.image.data.attributes.width}
+                height={leader.image.data.attributes.height}
                 layout='responsive'
                 priority={true}
               />
@@ -59,33 +65,22 @@ function Covid19({ leader, links }) {
         <Wrapper className='my-6 md:my-12 lg:my-20'>
           <Grid className='' isCenter={true}>
             <div className='col-span-full lg:col-start-3 lg:col-span-7 text--body space-y-8'>
-              {/* <ReactMarkdown children={covid.copy} /> */}
-              <p className='font-bold'>
-                The health, safety, and well-being of our community, on and off campus, is our top
-                priority.
-              </p>
-              <p className=''>
-                To proceed with plans to repopulate campus this fall, we will continue to draw upon
-                health and safety protocols that have helped to keep our community safe during the
-                current academic year. We will continue to update plans and procedures as new
-                information is released from UC Davis. We also recommend all students to stay
-                informed by regularly visiting UC Davis’ COVID-19 website.
-              </p>
+              {<ReactMarkdown parserOptions={{ commonmark: true }}>{covid.copy}</ReactMarkdown>}
               <ol className='list-disc list-inside space-y-8'>
-                <li className=''>
-                  Psi Chi Omega will be accepting new members in Fall 2021 with UC Davis approval
-                  but may be postponed or cancelled at any time.{" "}
-                  <strong>All applicants must be vaccinated.</strong>
-                </li>
-                <li className=''>
-                  For Fall quarter 2021, all members are required to be vaccinated. Vaccinated
-                  students and members will be permitted to attend our events once our operations
-                  are allowed to safely resume.
-                </li>
-                <li className=''>
-                  For Spring 2020, all in-person events have been cancelled or postponed. Some
-                  events with greek organizations may be conducted virtually through Zoom.{" "}
-                </li>
+                {covid.bullet.map((bullet, i) => {
+                  return (
+                    <li key={i}>
+                      <ReactMarkdown
+                        components={{
+                          p: React.Fragment,
+                        }}
+                        parserOptions={{ commonmark: true }}
+                      >
+                        {bullet.text}
+                      </ReactMarkdown>
+                    </li>
+                  );
+                })}
               </ol>
             </div>
           </Grid>

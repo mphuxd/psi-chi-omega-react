@@ -32,6 +32,12 @@ export default function Layout({ children }) {
       </motion.main>
       <Footer
         description='Psi Chi Omega offers our members the tools, guidance, and environment that allow our members create meaningful, longlasting experiences, memories, and relationships.'
+        logoSrc='/images/pco-crest.png'
+        logoAlt='Psi Chi Omega Crest'
+        logoWidth={240}
+        logoHeight={211}
+        signUpText='Subscribe to our newsletter to get the latest information on events, updates, and more.'
+        legal='Copyright © 2021 Psi Chi Omega Fraternity ∙ GAMMA Chapter ∙ MPH AM S2K14 ∙ MBK'
         youtube='/'
         ig='/'
         facebook='/'

@@ -86,6 +86,7 @@ function LittleSisProgram({ littleSis, image, about, history, benefits, imageTwo
         <Wrapper className='mt-20 md:mt-20 lg:my-[144px]'>
           <Grid isCenter={true}>
             <SectionHeaderSplit
+              divider={true}
               leftText={
                 <>
                   A place that feels like <span className='text-red-800'>home.</span>
@@ -192,21 +193,21 @@ function LittleSisProgram({ littleSis, image, about, history, benefits, imageTwo
             <LinkFeed>
               <LinkFeedItem
                 className=''
-                title='Join Psi Chi Omega'
-                caption='Become a brother'
-                link='/'
+                title='ABOUT PSI CHI OMEGA'
+                caption='DISCOVER OUR MISSION, PURPOSE, AND BROTHERHOOD'
+                link='/about-us/'
               />
               <LinkFeedItem
                 className=''
-                title='Little Sis Program'
-                caption='About Little Sis'
-                link='/'
+                title='OUR COMMITMENTS'
+                caption='SEE HOW WE’RE GIVING BACK TO OUR COMMUNITY'
+                link='/about-us/community-involvement'
               />
               <LinkFeedItem
                 className=''
                 title='Alumni'
                 caption='About our alumni network'
-                link='/'
+                link='/members/alumni'
               />
             </LinkFeed>
           </Grid>
