@@ -38,6 +38,7 @@ function Meta({ description, keywords, url, title, imgURL, twitterHandle }) {
         name='viewport'
         content='width=device-width, minimum-scale=1.0, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
+      <meta name="robots" content="noindex"/>
     </>
   );
 }
