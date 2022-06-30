@@ -34,7 +34,7 @@ const Hero = React.forwardRef(
     }
 
     return (
-      <Wrapper className='items-center mt-24 md:mt-20 lg:mt-24'>
+      <Wrapper className='items-center mt-24 md:mt-40 lg:mt-24 2xl:mt-32'>
         <div ref={ref} className={classNames}>
           <HeroTitle className='uppercase' text={title} />
           {heroSubtitle}
