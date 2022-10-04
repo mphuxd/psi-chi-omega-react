@@ -12,7 +12,7 @@ export const HeaderDefault = () => (
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       //render prop exposes props to be used below
       <Header isActive={isSideNavExpanded}>
-        <HeaderName isActive={isSideNavExpanded}></HeaderName>
+        <HeaderName isActive={isSideNavExpanded}/>
         <HeaderMenuButton onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />
         <HeaderNavBar />
         <HeaderSidepanel callBack={onClickSideNavExpand} isActive={isSideNavExpanded}>

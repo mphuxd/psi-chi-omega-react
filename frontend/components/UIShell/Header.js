@@ -4,19 +4,19 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 const Header = ({ isActive, children }) => {
-  const [show, setShow] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const showHeader = () => {
+  const handleShowHeader = () => {
     const minOffset = 3; // wiggle room
     if (window) {
       if (window.scrollY > lastScrollY + minOffset && window.scrollY) {
-        setShow(false);
+        setIsVisible(false);
       } else if (
         (window.scrollY < lastScrollY - minOffset && window.scrollY) ||
         window.scrollY === 0
       ) {
-        setShow(true);
+        setIsVisible(true);
       }
       setLastScrollY(window.scrollY);
     }
@@ -24,22 +24,23 @@ const Header = ({ isActive, children }) => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", showHeader);
+      window.addEventListener("scroll", handleShowHeader);
       return () => {
-        window.removeEventListener("scroll", showHeader);
+        window.removeEventListener("scroll", handleShowHeader);
       };
     }
   });
 
   let classNames = cx(
-    { "header transition-all duration-150 sticky mx-auto": true },
-    { "fixed opacity-100": isActive },
-    { "opacity-0 md:opacity-100 ": !show && !isActive },
-    { "fixed opacity-100": show },
+    {
+      "transition-all fixed duration-150 mx-auto w-full z-10 bg-white md:bg-opacity-80 backdrop-filter backdrop-blur-lg": true,
+    },
+    { "fixed opacity-100": isActive || isVisible },
+    { "opacity-0 md:opacity-100 ": !isVisible && !isActive }
   );
   return (
-    <header className="w-full fixed z-10 md:bg-white md:bg-opacity-50 md:backdrop-filter md:backdrop-blur-md">
-      <div className={classNames}>{children}</div>
+    <header className={classNames}>
+      <div className='header'>{children}</div>
     </header>
   );
 };
