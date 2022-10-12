@@ -1,21 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import cx from "classnames";
 
-function AccordionButton({ isActive }) {
+export const ACCORDION_BUTTON_TEST_ID = "accordion-button";
+
+function AccordionButton({ isActive, disabledBreakpoints }) {
   let classNames = cx({
-    ["accordion-button transition-transform origin-center inline-block lg:hidden justify-center flex flex-col "]: true,
-    ["accordion-button--down rotate-180"]: isActive,
-    ["accordion-button-up"]: !isActive,
+    ["accordion-button"]: true,
+    [disabledBreakpoints[0] + ":" + "hidden"]: true,
+    ["rotate-180"]: isActive,
   });
   return (
-    <div className={classNames}>
+    <div className={classNames} data-state={isActive} data-testid={ACCORDION_BUTTON_TEST_ID}>
       <Image src='/images/icons/expand_more.svg' alt='Expand More' width={32} height={32} />
     </div>
   );
 }
-
-AccordionButton.propTypes = {};
 
 export default AccordionButton;

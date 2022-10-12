@@ -162,13 +162,15 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
               label={culture.sectionheader.linkLabel}
             />
             <Wrapper className='col-span-full mt-12 lg:mt-24'>
-              <Image
-                src={culture.image.data.attributes.url}
-                alt={culture.image.data.attributes.alternativeText}
-                width={culture.image.data.attributes.width}
-                height={culture.image.data.attributes.height}
-                layout='responsive'
-              />
+              <div>
+                <Image
+                  src={culture.image.data.attributes.url}
+                  alt={culture.image.data.attributes.alternativeText}
+                  width={culture.image.data.attributes.width}
+                  height={culture.image.data.attributes.height}
+                  layout='responsive'
+                />
+              </div>
             </Wrapper>
             <Wrapper className='col-span-full mt-20 lg:mt-28'>
               <SectionHeaderSplitOffset

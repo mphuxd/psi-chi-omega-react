@@ -3,7 +3,11 @@
 \*------------------------------------*/
 
 @layer components {
-  .accordion-item::before {
+  .accordion-item {
+    @apply theme-grid__inner relative py-4 md:py-6;
+  }
+
+  .accordion-item_trigger::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -18,5 +22,41 @@
     height: 1px;
     bottom: 0px;
     background-color: #000;
+  }
+
+  .accordion-item_trigger {
+    @apply col-span-full lg:col-span-4 flex justify-between flex-row lg:hover:cursor-default;
+  }
+
+  .accordion-item_header {
+    @apply inline-block font-body text-2xl leading-8 font-bold sm:text-4xl md:text-3xl md:leading-tight xl:leading-tight;
+  }
+
+  .accordion-item_caption {
+    @apply text-left lg:inline;
+  }
+
+  .accordion-item_caption--open {
+    @apply inline;
+  }
+
+  .accordion-item_caption--closed {
+    @apply hidden;
+  }
+
+  .accordion-item_content {
+    @apply text--body col-span-full lg:col-span-8;
+  }
+
+  .accordion-item_content--open {
+    @apply block pb-4;
+  }
+
+  .accordion-item_content--closed {
+    @apply hidden;
+  }
+
+  .accordion-button {
+    @apply transition-transform origin-center justify-center flex  flex-col;
   }
 }

@@ -1,49 +1,68 @@
 import React, { useState } from "react";
-import cx from "classnames";
-import useBreakpointSize from "../../hooks/useBreakpointSize";
-import Image from "next/image";
 import AccordionButton from "./AccordionButton";
+import useBreakpointSize from "../../hooks/useBreakpointSize";
+import cx from "classnames";
 
-const AccordionItem = ({ title, caption, children, open = false }) => {
-  const [isOpen, setIsOpen] = useState(open);
-  let className = cx({
-    ["text--body col-span-full lg:col-span-8 lg:block"]: true,
-    ["accordion-item--active block pb-4"]: isOpen,
-    ["accordion-item--closed hidden"]: !isOpen,
-    ["accordion-item--disabled"]: false,
+export const ACCORDION_ITEM_TEST_ID = "accordion-item";
+export const ACCORDION_TRIGGER_TEST_ID = "accordion-trigger";
+export const ACCORDION_HEADER_TEST_ID = "accordion-header";
+export const ACCORDION_CAPTION_TEST_ID = "accordion-caption";
+export const ACCORDION_CONTENT_TEXT_TEST_ID = "accordion-content-text";
+
+const AccordionItem = ({ title, caption, children, startOpened = false }) => {
+  //atypical accordion item.
+  //at these breakpoints, the layout changes & accordion is not collapsible
+  const disabledBreakpoints = ["lg", "xl", "2xl", "max"];
+  const [isOpen, setIsOpen] = useState(startOpened);
+
+  let accordionItemContentClass = cx({
+    ["accordion-item_content"]: true,
+    ["accordion-item_content--open"]: isOpen,
+    ["accordion-item_content--closed"]: !isOpen,
   });
 
-  let captionClass = cx({
-    ["text-left lg:inline"]: true,
-    ["inline"]: isOpen,
-    ["hidden"]: !isOpen,
+  let accordionCaptionClass = cx({
+    ["accordion-item_caption"]: true,
+    ["accordion-item_caption--open"]: isOpen,
+    ["accordion-item_caption--closed"]: !isOpen,
   });
 
-  let breakPoint = useBreakpointSize();
-  let disabledBreakPoints = ["lg", "xl", "2xl", "max"];
-  const onClick = () => {
-    if (disabledBreakPoints.includes(breakPoint)) {
+  let breakpoint = useBreakpointSize();
+  if (disabledBreakpoints.includes(breakpoint) && !isOpen) {
+    setIsOpen(true);
+  }
+
+  const onClick = (e) => {
+    if (disabledBreakpoints.includes(breakpoint)) {
       return false;
     }
     setIsOpen(!isOpen);
   };
 
   return (
-    <li className='theme-grid__inner relative py-4 md:py-6'>
+    <li className='accordion-item' data-state={isOpen} data-testid={ACCORDION_ITEM_TEST_ID}>
       <button
+        className='accordion-item_trigger'
         onClick={onClick}
-        className='accordion-item col-span-full lg:col-span-4 flex justify-between flex-row lg:hover:cursor-default'
+        data-state={isOpen}
+        data-testid={ACCORDION_TRIGGER_TEST_ID}
       >
         <div className='flex flex-col'>
-          <h3 className='inline-block font-body text-2xl leading-8 font-bold sm:text-4xl md:text-3xl md:leading-tight xl:leading-tight'>
+          <h3 className='accordion-item_header' data-testid={ACCORDION_HEADER_TEST_ID}>
             {title}
           </h3>
-          <p className={captionClass}>{caption}</p>
+          {caption && (
+            <p className={accordionCaptionClass} data-testid={ACCORDION_CAPTION_TEST_ID}>
+              {caption}
+            </p>
+          )}
         </div>
-        <AccordionButton isActive={isOpen}></AccordionButton>
+        <AccordionButton isActive={isOpen} disabledBreakpoints={disabledBreakpoints} />
       </button>
 
-      <div className={className}>{children}</div>
+      <div className={accordionItemContentClass} data-testid={ACCORDION_CONTENT_TEXT_TEST_ID}>
+        {children}
+      </div>
     </li>
   );
 };
