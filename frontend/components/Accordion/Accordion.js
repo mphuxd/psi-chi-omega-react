@@ -1,9 +1,14 @@
-import React from "react";
 import cx from "classnames";
 
-const Accordion = ({ children, className }) => {
+export const ACCORDION_TEST_ID = "accordion";
+
+function Accordion({ children, className }) {
   let classNames = cx(className);
-  return <ol className={classNames}>{children}</ol>;
-};
+  return (
+    <ol data-testid={ACCORDION_TEST_ID} className={classNames}>
+      {children}
+    </ol>
+  );
+}
 
 export default Accordion;

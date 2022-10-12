@@ -3,8 +3,26 @@
 \*------------------------------------*/
 
 @layer components {
+
+  .link-feed-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0px;
+    background-color: #000;
+  }
+  .link-feed-item--end::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    background-color: #000;
+  }
+
   .link-feed-item {
-    @apply theme-grid__inner accordion-item relative py-4 md:py-6 2xl:py-4;
+    @apply theme-grid__inner relative py-4 md:py-6 2xl:py-4;
   }
   .link-feed-item__body {
     @apply grid grid-cols-3 col-span-3 gap-x-4 sm:grid-cols-7 sm:col-span-7 md:grid-cols-11 md:col-span-11 md:gap-x-4 lg:gap-x-8 lg:col-span-11 my-auto;

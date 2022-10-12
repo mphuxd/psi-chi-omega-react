@@ -24,8 +24,8 @@ function LeaderLarge({
         </p>
         <section className='col-span-full gap-x-8 flex flex-col lg:flex-row xl:mt-10 mt-4 md:mt-8'>
           <div className='text-tiny md:text-lg md:leading-7 lg:text-base lg:leading-6 leading-5 lg:w-1/2'>
-            <p>{copy1}</p>
-            { copy2 && <p className='mt-4'>{copy2}</p>}
+            {copy1}
+            {copy2 && <p className='mt-4'>{copy2}</p>}
           </div>
           <div className='mt-6 lg:mt-0 lg:w-1/2'>
             <Image
