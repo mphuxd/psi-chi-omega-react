@@ -6,28 +6,26 @@ import Image from "next/image";
 const CardDefault = React.forwardRef(
   ({ srcImg, altImg, widthImg, heightImg, heading, body, linkHref, linkLabel }, ref) => {
     return (
-      <Link href={linkHref} ref={ref} passHref>
-        <a className='card-default'>
-          <div className='md:w-full'>
-            <Image
-              src={srcImg}
-              alt={altImg}
-              width={widthImg}
-              height={heightImg}
-              layout='responsive'
-            />
+      <Link legacyBehavior={false} className='card-default' href={linkHref} ref={ref} passHref>
+        <div className='md:w-full'>
+          <Image
+            src={srcImg}
+            alt={altImg}
+            width={widthImg}
+            height={heightImg}
+            layout='responsive'
+          />
+        </div>
+        <div className='card-default__body'>
+          <div>
+            <h3 className='text--minorheadline'>{heading}</h3>
+            <p className='text--body mt-3 md:mt-4'>{body}</p>
           </div>
-          <div className='card-default__body'>
-            <div>
-              <h3 className='text--minorheadline'>{heading}</h3>
-              <p className='text--body mt-3 md:mt-4'>{body}</p>
-            </div>
-            <div className='link--button'>
-              <Image src='/link-arrow.svg' width={48} height={48} alt='Arrow' />
-              <span className='text--button my-auto'>{linkLabel}</span>
-            </div>
+          <div className='link--button'>
+            <Image src='/link-arrow.svg' width={48} height={48} alt='Arrow' />
+            <span className='text--button my-auto'>{linkLabel}</span>
           </div>
-        </a>
+        </div>
       </Link>
     );
   }

@@ -9,7 +9,7 @@ function HeaderSidepanelBackdrop({ onClick, isActive }) {
     ["hidden"]: !isActive,
   });
 
-  return <div onClick={onClick} className={classNames}></div>;
+  return <div aria-hidden onClick={onClick} className={classNames}></div>;
 }
 
 HeaderSidepanelBackdrop.propTypes = {};

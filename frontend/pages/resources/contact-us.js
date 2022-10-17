@@ -47,7 +47,6 @@ function ContactUs({ contact }) {
           title='Contact Us | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
@@ -59,8 +58,12 @@ function ContactUs({ contact }) {
             body={
               <>
                 If you have any questions or concerns, you might find answers in our{" "}
-                <Link href='/resources/faq'>
-                  <a className='underline'>FAQ</a>
+                <Link
+                  legacyBehavior={false}
+                  href='/resources/faq'
+                  className='underline hover:underline'
+                >
+                  FAQ
                 </Link>
                 , or you can contact us here. {contact.body}
               </>
@@ -72,8 +75,9 @@ function ContactUs({ contact }) {
           <Grid isCenter={true}>
             <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
               <FormInputContainer className=''>
-                <FormInputLabel name='Name' />
+                <FormInputLabel name='Name' htmlFor='contact-us-sender-name' />
                 <input
+                  id='contact-us-sender-name'
                   className='form-input'
                   {...register("name", { required: true, maxLength: 80 })}
                 />
@@ -84,8 +88,9 @@ function ContactUs({ contact }) {
               </FormInputContainer>
 
               <FormInputContainer className=''>
-                <FormInputLabel name='Your Email Address' />
+                <FormInputLabel name='Your Email Address' htmlFor='contact-us-sender-email' />
                 <input
+                  id='contact-us-sender-email'
                   type='text'
                   className='form-input'
                   {...register("email", {
@@ -102,8 +107,9 @@ function ContactUs({ contact }) {
               </FormInputContainer>
 
               <FormInputContainer className='row-start-3 sm:row-start-2'>
-                <FormInputLabel name='Subject' />
+                <FormInputLabel name='Subject' htmlFor='contact-us-message-subject' />
                 <input
+                  id='contact-us-message-subject'
                   type='text'
                   className='form-input'
                   {...register("subject", {
@@ -118,12 +124,16 @@ function ContactUs({ contact }) {
               </FormInputContainer>
 
               <div className='form-texarea-container'>
-                <label className='pb-4 pl-2 text-tiny font-normal font-body' htmlFor=''>
+                <label
+                  className='pb-4 pl-2 text-tiny font-normal font-body'
+                  htmlFor='contact-us-message'
+                >
                   Message
                 </label>
                 <textarea
                   type='text'
                   className='form-texarea'
+                  id='contact-us-message'
                   {...register("message", { required: true })}
                 />
                 <div className='form-input__error'>
@@ -131,7 +141,7 @@ function ContactUs({ contact }) {
                 </div>
               </div>
 
-              <button className='form-submit' type='submit'>
+              <button className='form-submit hover:bg-slate-100' type='submit'>
                 <span className='text--button pr-2'>SUBMIT</span>
                 <Image
                   src='/images/icons/arrow_nopadding.png'

@@ -77,7 +77,6 @@ function Alumni({ leader, work, help, getInvolved, letter }) {
           title='Alumni | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
@@ -155,9 +154,7 @@ function Alumni({ leader, work, help, getInvolved, letter }) {
           <Grid className='pt-12 md:py-20 lg:py-40' isCenter={true}>
             <div className='col-span-full lg:col-start-3 lg:col-span-8 space-y-8 text--body'>
               <h2 className='text--subheadline'>{letter.heading}</h2>
-              <p>
-                <ReactMarkdown parserOptions={{ commonmark: true }}>{letter.copy}</ReactMarkdown>
-              </p>
+              <ReactMarkdown parserOptions={{ commonmark: true }}>{letter.copy}</ReactMarkdown>
               <div className='pt-8'>
                 <Image
                   src={letter.image.data.attributes.url}

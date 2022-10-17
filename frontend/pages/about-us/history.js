@@ -49,7 +49,6 @@ function History({ leader, milestones }) {
           title='History | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
@@ -81,11 +80,9 @@ function History({ leader, milestones }) {
                   }
                   bodyObject={
                     <HistoryBody>
-                      <p>
-                        <ReactMarkdown parserOptions={{ commonmark: true }}>
-                          {milestone.body}
-                        </ReactMarkdown>
-                      </p>
+                      <ReactMarkdown parserOptions={{ commonmark: true }}>
+                        {milestone.body}
+                      </ReactMarkdown>
                     </HistoryBody>
                   }
                 />

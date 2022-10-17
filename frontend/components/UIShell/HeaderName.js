@@ -7,10 +7,8 @@ function HeaderName() {
 
   return (
     <div className={classNames}>
-      <Link className='mt-auto mb-auto' href='/'>
-        <a>
-          <Image src='/logo_black.svg' alt='Psi Chi Omega Logo' width={61} height={21} />
-        </a>
+      <Link legacyBehavior={false} className='my-auto' href='/'>
+        <Image src='/logo_black.svg' alt='Psi Chi Omega Logo' width={61} height={21} />
       </Link>
     </div>
   );

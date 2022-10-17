@@ -22,7 +22,7 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
   };
 
   return (
-    <div
+    <button
       onClick={handleSetIsOpenDropdownClick}
       onBlur={handleSetIsOpenDropdownBlur}
       tabIndex='0'
@@ -30,7 +30,7 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
     >
       <span className='uppercase'>{name}</span>
       <div className={listClassNames}>{children}</div>
-    </div>
+    </button>
   );
 };
 

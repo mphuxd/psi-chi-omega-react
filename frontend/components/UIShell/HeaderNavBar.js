@@ -5,21 +5,29 @@ import { navContext } from "@/context/navContext";
 
 export const HeaderNavBar = () => {
   let headerData = useContext(navContext);
-  let headerNav = headerData.map((group, index) => {
-    return (
-      <HeaderNavBarItem name={group.groupName} tag={group.groupTag} key={index}>
-        {group.links.map((link, index) => {
-          return (
-            <Link href={link.href} key={index}>
-              {link.name}
-            </Link>
-          );
-        })}
-      </HeaderNavBarItem>
-    );
-  });
 
-  return <nav className='hidden md:flex md:flex-row md:justify-between'>{headerNav}</nav>;
+  return (
+    <nav className='hidden md:flex md:flex-row md:justify-between'>
+      {headerData.map((group, index) => {
+        return (
+          <HeaderNavBarItem name={group.groupName} tag={group.groupTag} key={index}>
+            {group.links.map((link, index) => {
+              return (
+                <Link
+                  legacyBehavior={false}
+                  href={link.href}
+                  className='hover:underline'
+                  key={index}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </HeaderNavBarItem>
+        );
+      })}
+    </nav>
+  );
 };
 
 export default HeaderNavBar;

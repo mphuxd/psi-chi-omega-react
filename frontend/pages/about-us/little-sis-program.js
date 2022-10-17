@@ -167,7 +167,7 @@ function LittleSisProgram({ littleSis, image, about, history, benefits, imageTwo
                 height={imageTwo.height}
               />
               <Link href='/join/little-sis'>
-                <a className='theme-grid__inner relative py-4 md:py-6'>
+                <div className='hover:cursor-pointer theme-grid__inner relative py-4 md:py-6'>
                   <div className='link-feed-item__body'>
                     <span className='link-feed-item__header'>{link[0].heading}</span>
                     <span className='link-feed-item__caption mt-2 md:mt-4 lg:my-auto lg:col-span-5 lg:leading-6'>
@@ -182,7 +182,7 @@ function LittleSisProgram({ littleSis, image, about, history, benefits, imageTwo
                       height={48}
                     />
                   </div>
-                </a>
+                </div>
               </Link>
             </div>
           </Grid>

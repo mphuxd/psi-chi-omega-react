@@ -5,10 +5,8 @@ import Image from "next/image";
 
 const LinkImage = ({ className, href, src, alt, width, height }) => {
   return (
-    <Link className={className} href={href}>
-      <a>
-        <Image src={src} alt={alt} width={width} height={height} />
-      </a>
+    <Link legacyBehavior={false} className={className} href={href}>
+      <Image src={src} alt={alt} width={width} height={height} />
     </Link>
   );
 };

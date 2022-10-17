@@ -13,8 +13,8 @@ function FooterNav() {
       <FooterNavGroup name={group.groupName} key={index}>
         {group.links.map((link, index) => {
           return (
-            <Link href={link.href} key={index}>
-              <a className="w-fit">{link.name}</a>
+            <Link legacyBehavior={false} className='w-fit' href={link.href} key={index}>
+              {link.name}
             </Link>
           );
         })}

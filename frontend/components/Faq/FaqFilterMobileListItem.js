@@ -5,7 +5,7 @@ import cx from "classnames";
 function FaqFilterMobileListItem({ onClick, label, activeFilter }) {
   let className = cx({
     ["underline"]: label === activeFilter,
-    ["basis-1/2 sm:basis-1/4 shrink hover:cursor-pointer"]: true,
+    ["basis-1/2 sm:basis-1/4 shrink hover:cursor-pointer text-left"]: true,
   });
 
   function handleClick() {
@@ -13,9 +13,9 @@ function FaqFilterMobileListItem({ onClick, label, activeFilter }) {
   }
 
   return (
-    <span onClick={handleClick} className={className}>
+    <button onClick={handleClick} className={className}>
       {label}
-    </span>
+    </button>
   );
 }
 

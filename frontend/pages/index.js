@@ -97,7 +97,6 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           title='Psi Chi Omega Fraternity | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
@@ -251,12 +250,20 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           <Grid className='mx-auto'>
             <span className='text-center text--subheadline col-span-full justify-self-center '>
               Need help? Check out our{" "}
-              <Link href='/resources/faq'>
-                <a className='underline decoration-midnight'>FAQ</a>
+              <Link
+                legacyBehavior={false}
+                href='/resources/faq'
+                className='hover:cursor-pointer underline hover:underline decoration-midnight'
+              >
+                FAQ
               </Link>{" "}
               or{" "}
-              <Link className='underline' href='/resources/contact-us'>
-                <a className='underline decoration-midnight'>Contact Us</a>
+              <Link
+                legacyBehavior={false}
+                href='/resources/contact-us'
+                className='hover:cursor-pointer underline hover:underline decoration-midnight'
+              >
+                Contact Us
               </Link>
               .
             </span>

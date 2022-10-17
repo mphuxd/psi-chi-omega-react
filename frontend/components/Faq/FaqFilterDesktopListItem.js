@@ -13,9 +13,9 @@ function FaqFilterDesktopListItem({ onClick, label, activeFilter }) {
   }
 
   return (
-    <span onClick={handleClick} className={className}>
+    <button onClick={handleClick} className={className}>
       {label}
-    </span>
+    </button>
   );
 }
 

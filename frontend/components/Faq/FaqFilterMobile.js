@@ -31,15 +31,15 @@ function FaqFilterMobile({ filterList }) {
       <div id='filter-expanded' className={filterClass}>
         <div className='flex flex-row justify-between items-center pb-4'>
           <span className='uppercase text-body font-bold'>Categories</span>
-          <div className="h-[32px] w-[32px] p-1" onClick={handleExpand}>
+          <button className="h-[32px] w-[32px] p-1" onClick={handleExpand}>
             <Image
               src='/images/icons/close.png'
-              alt='close filter'
+              alt='Close filter'
               width={36}
               height={36}
               layout='responsive'
             />
-          </div>
+          </button>
         </div>
         {filterList}
       </div>
