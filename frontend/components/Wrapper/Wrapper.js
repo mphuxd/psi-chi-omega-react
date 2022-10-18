@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import cx from "classnames";
+import React from "react";
 
-const Wrapper = ({ className, children }) => {
+const Wrapper = ({ className, children, as = "section" }) => {
   let classNames = cx("flex flex-col justify-center", className);
-  return <section className={classNames}>{children}</section>;
+
+  return React.createElement(as, { className: classNames }, children);
 };
 
 Wrapper.propTypes = {

@@ -13,7 +13,13 @@ function FaqFilterMobileListItem({ onClick, label, activeFilter }) {
   }
 
   return (
-    <button onClick={handleClick} className={className}>
+    <button
+      id={"mobile-filter-" + label}
+      role='option'
+      aria-selected={label === activeFilter ? true : false}
+      onClick={handleClick}
+      className={className}
+    >
       {label}
     </button>
   );

@@ -25,13 +25,25 @@ function FaqFilterMobile({ filterList }) {
 
   return (
     <div id='filter-mobile' className='w-full lg:hidden'>
-      <button id='filter-closed' className={buttonClass} onClick={handleExpand}>
-        Select FAQ Topics
+      <button
+        aria-expanded={isActive}
+        aria-label='Expand Mobile Filter to select FAQ topics.'
+        aria-controls='filter-mobile-expanded'
+        id='filter-closed'
+        className={buttonClass}
+        onClick={handleExpand}
+      >
+        <span aria-hidden>Select FAQ Topics</span>
       </button>
-      <div id='filter-expanded' className={filterClass}>
+      <div id='filter-mobile-expanded' className={filterClass}>
         <div className='flex flex-row justify-between items-center pb-4'>
-          <span className='uppercase text-body font-bold'>Categories</span>
-          <button className="h-[32px] w-[32px] p-1" onClick={handleExpand}>
+          <span id="mobile-filter-title" className='uppercase text-body font-bold'>Categories</span>
+          <button
+            aria-label='Collapse Mobile Filter'
+            aria-controls='filter-mobile-expanded'
+            className='h-[32px] w-[32px] p-1'
+            onClick={handleExpand}
+          >
             <Image
               src='/images/icons/close.png'
               alt='Close filter'

@@ -24,10 +24,10 @@ function FaqFilter({ list, onClick, isActive }) {
   });
 
   return (
-    <div id='filter' className='col-span-full lg:col-span-3'>
-      <FaqFilterMobile filterList={<FaqFilterMobileList>{mobileList}</FaqFilterMobileList>} />
-      <FaqFilterDesktop filterList={desktopList} />
-    </div>
+    <aside aria-controls='faq-list' id='filter' className='col-span-full lg:col-span-3'>
+      <FaqFilterMobile filterList={<FaqFilterMobileList activeFilter={isActive}>{mobileList}</FaqFilterMobileList>} />
+      <FaqFilterDesktop activeFilter={isActive} filterList={desktopList} />
+    </aside>
   );
 }
 

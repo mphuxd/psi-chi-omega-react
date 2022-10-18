@@ -42,6 +42,7 @@ const FooterSignUpForm = () => {
           </ErrorMessage>
           <div className='flex flex-row'>
             <Field
+              aria-label="Enter e-mail address to sign up for the Psi Chi Omega newsletter."
               type='email'
               name='email'
               className='bg-midnight p-4 px-4 resize-none outline-none text--caption border border-1 border-white  text-slate-200 md:w-4/6  '

@@ -9,8 +9,8 @@ function FaqListItem({ question, answer, category, label }) {
     ["block"]: category === label,
   });
   return (
-    <li id='faq-item' className={className}>
-      <span className='text--minorheadline'>{question}</span>
+    <li className={className}>
+      <h4 className='text--minorheadline'>{question}</h4>
       {/* change minor to text-xl but check for breaking changes */}
       <p className='mt-1 sm:max-w-2xl lg:max-w-none lg:mt-2 text--body'>{answer}</p>
     </li>

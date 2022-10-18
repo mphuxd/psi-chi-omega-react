@@ -20,7 +20,7 @@ const Footer = ({
   facebook,
 }) => {
   return (
-    <Wrapper className='bg-midnight items-center'>
+    <Wrapper as='footer' className='bg-midnight items-center'>
       <Grid className='mx-auto pt-12 sm:gap-x-4 sm:pt-16 md:gap-x-4 lg:pt-24 lg:gap-x-8 xl:pt-32 xl:gap-y-24 text-mist font-body'>
         <FooterDescription description={description} />
         <FooterNav />
