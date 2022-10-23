@@ -60,6 +60,7 @@ const ContentBlockMediaText = ({
         <ContentBlockText className='' eyebrowLabel={eyebrowLabel} header={header} text={text} />
         <LinkButton
           className={linkClassNames}
+          linkAlt={header}
           href={linkHref}
           alt={linkAlt}
           label={label}
@@ -89,4 +90,3 @@ ContentBlockMediaText.propType = {
 };
 
 export default ContentBlockMediaText;
-

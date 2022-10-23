@@ -9,13 +9,21 @@ import HeaderSidepanelBackdrop from "./HeaderSidepanelBackdrop";
 
 export const HeaderDefault = () => (
   <HeaderContainer
-    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+    render={({ isMobile, isSideNavExpanded, onClickSideNavExpand }) => (
       //render prop exposes props to be used below
       <Header isActive={isSideNavExpanded}>
-        <HeaderName isActive={isSideNavExpanded}/>
-        <HeaderMenuButton onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />
-        <HeaderNavBar />
-        <HeaderSidepanel callBack={onClickSideNavExpand} isActive={isSideNavExpanded}>
+        <HeaderName isActive={isSideNavExpanded} />
+        <HeaderMenuButton
+          isMobile={isMobile}
+          onClick={onClickSideNavExpand}
+          isActive={isSideNavExpanded}
+        />
+        <HeaderNavBar isMobile={isMobile} />
+        <HeaderSidepanel
+          isMobile={isMobile}
+          callBack={onClickSideNavExpand}
+          isActive={isSideNavExpanded}
+        >
           <HeaderSideNav isActive={isSideNavExpanded} />
         </HeaderSidepanel>
         <HeaderSidepanelBackdrop onClick={onClickSideNavExpand} isActive={isSideNavExpanded} />

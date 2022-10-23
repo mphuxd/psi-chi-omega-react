@@ -1,46 +1,57 @@
-import classNames from "classnames";
 import cx from "classnames";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const Header = ({ isActive, children }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [atTop, setAtTop] = useState(true);
 
-  const handleShowHeader = () => {
+  const handleScroll = useCallback(() => {
     const minOffset = 3; // wiggle room
     if (window) {
       if (window.scrollY > lastScrollY + minOffset && window.scrollY) {
         setIsVisible(false);
-      } else if (
-        (window.scrollY < lastScrollY - minOffset && window.scrollY) ||
-        window.scrollY === 0
-      ) {
+        //scroll down
+      } else if (window.scrollY < lastScrollY - minOffset && window.scrollY) {
         setIsVisible(true);
+        //scroll up
       }
+
+      if (window.scrollY === 0) {
+        setAtTop(true);
+      } else {
+        setAtTop(false);
+      }
+
       setLastScrollY(window.scrollY);
     }
-  };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleShowHeader);
+      window.addEventListener("scroll", handleScroll);
       return () => {
-        window.removeEventListener("scroll", handleShowHeader);
+        window.removeEventListener("scroll", handleScroll);
       };
     }
+  }, [handleScroll]);
+
+  let classNames = cx({
+    header: true,
+    "opacity-100": isActive || isVisible,
+    "opacity-0 md:opacity-100": !isVisible && !isActive,
+    "bg-white md:bg-opacity-80": !atTop,
   });
 
-  let classNames = cx(
-    {
-      "transition-all fixed duration-150 mx-auto w-full z-10 bg-white md:bg-opacity-80 backdrop-filter backdrop-blur-lg": true,
-    },
-    { "fixed opacity-100": isActive || isVisible },
-    { "opacity-0 md:opacity-100 ": !isVisible && !isActive }
-  );
+  let innerClassNames = cx("header-inner", {
+    "border-opacity-100": !atTop,
+    "border-opacity-0": atTop,
+  });
+
   return (
     <header className={classNames}>
-      <div className='header'>{children}</div>
+      <nav className={innerClassNames}>{children}</nav>
     </header>
   );
 };

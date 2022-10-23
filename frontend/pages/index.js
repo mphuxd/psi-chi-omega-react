@@ -6,75 +6,29 @@ import "swiper/css/navigation";
 import {
   Layout,
   Grid,
-  Hero,
   CardNoBody,
   CardDefault,
   Carousel,
   CarouselSlideContainer,
   ContentHeader,
-  ContentBlockQuote,
   ContentEvent,
   ContentBlockMediaText,
   SectionHeader,
   Wrapper,
   IsInView,
   Meta,
+  HeroModern,
 } from "@/components";
-import { fetchAPI } from "./api/strapi";
+import { getHomepage } from "./api/pages/getHomepage";
 
-export async function getStaticProps({ params }) {
-  const homepageRes = await fetchAPI("/homepage", {
-    populate: {
-      "*": { populate: "*" },
-      hero: { populate: { image: { fields: ["alternativeText", "width", "height", "url"] } } },
-      about: { populate: "*" },
-      carousel: {
-        populate: {
-          slide: { populate: { image: { fields: ["alternativeText", "width", "height", "url"] } } },
-        },
-      },
-      cards: {
-        populate: {
-          card: {
-            populate: {
-              image: { fields: ["alternativeText", "width", "height", "url"] },
-            },
-          },
-        },
-      },
-      join: {
-        populate: {
-          header: { populate: "*" },
-          brothers: {
-            populate: {
-              image: { fields: ["alternativeText", "width", "height", "url"] },
-            },
-          },
-          sisters: {
-            populate: {
-              image: { fields: ["alternativeText", "width", "height", "url"] },
-            },
-          },
-        },
-      },
-      community: {
-        populate: {
-          header: { populate: "*" },
-          content: {
-            populate: {
-              image: { fields: ["alternativeText", "width", "height", "url"] },
-            },
-          },
-        },
-      },
-      events: { populate: "*" },
-    },
-  });
+export async function getStaticProps() {
+  const homepageRes = await getHomepage();
 
   return {
     props: {
       about: homepageRes.data.attributes.about,
       hero: homepageRes.data.attributes.hero,
+      heroModern: homepageRes.data.attributes.HeroModern,
       carousel: homepageRes.data.attributes.carousel.data,
       cards: homepageRes.data.attributes.cards.data,
       join: homepageRes.data.attributes.join,
@@ -85,7 +39,16 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Home({ hero, about, carousel, cards, join, community, events }) {
+export default function Home({
+  hero,
+  heroModern,
+  about,
+  carousel,
+  cards,
+  join,
+  community,
+  events,
+}) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -101,13 +64,14 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
       </Head>
 
       <Layout className=''>
-        <Hero
-          title={hero.title}
-          imageSrc={hero.image.data.attributes.url}
-          imageAlt={hero.image.data.attributes.alternativeText}
-          imageWidth={hero.image.data.attributes.width}
-          imageHeight={hero.image.data.attributes.height}
-          subtext={hero.subtext}
+        <HeroModern
+          title={heroModern.title}
+          caption={heroModern.caption}
+          description={heroModern.description}
+          ctaLabel={heroModern.ctaLabel}
+          ariaLabel='Join the brotherhood'
+          href={heroModern.href}
+          images={heroModern.images.data}
         />
 
         <Wrapper className='my-20 md:my-32'>
@@ -122,10 +86,16 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           </Grid>
 
           <IsInView toggleOnce={true} animateClassNames='animate__fast'>
-            <Carousel>
+            <Carousel ariaLabel='Featured Pages'>
               {carousel.attributes.slide.map((slide, i) => {
                 return (
-                  <SwiperSlide key={i} className='swiper--slide-width'>
+                  <SwiperSlide
+                    key={i}
+                    className='swiper--slide-width'
+                    tabIndex={0}
+                    aria-roledescription='slide'
+                    aria-labelledby={slide.heading.replaceAll(" ", "-")}
+                  >
                     {({ isActive }) => (
                       <CarouselSlideContainer
                         src={slide.image.data.attributes.url}

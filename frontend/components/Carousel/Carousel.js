@@ -1,15 +1,14 @@
+import React, { useState } from "react";
 import { Swiper } from "swiper/react";
-import { Navigation } from "swiper";
-import React from "react";
-import PropTypes from "prop-types";
-import useBreakpointSize from "../../hooks/useBreakpointSize";
-import cx from "classnames";
-import { useState } from "react";
+import { Navigation, A11y } from "swiper";
 import CarouselPagNext from "./CarouselPagNext";
 import CarouselPagPrev from "./CarouselPagPrev";
+import useBreakpointSize from "../../hooks/useBreakpointSize";
+import cx from "classnames";
+import PropTypes from "prop-types";
 
 const Carousel = React.forwardRef(
-  ({ children, inView, entry, className, animateClassNames }, ref) => {
+  ({ children, inView, entry, className, ariaLabel, animateClassNames }, ref) => {
     let [isStart, setIsStart] = useState(true);
     let [isEnd, setIsEnd] = useState(false);
     let breakPoint = useBreakpointSize();
@@ -57,10 +56,17 @@ const Carousel = React.forwardRef(
     );
 
     return (
-      <div ref={ref} className={classNames}>
+      <div
+        role='group'
+        aria-label={ariaLabel}
+        aria-roledescription='carousel'
+        ref={ref}
+        className={classNames}
+      >
         <Swiper
+          tabIndex={0}
           slidesPerView={swiperProps.slidesPerView}
-          modules={[Navigation]}
+          modules={[Navigation, A11y]}
           centeredSlides={true}
           spaceBetween={swiperProps.spaceBetween}
           navigation={{
@@ -71,7 +77,6 @@ const Carousel = React.forwardRef(
         >
           {children}
         </Swiper>
-
         <div className='theme-grid mx-auto'>
           <div className='mt-10 flex flex-row justify-center col-span-full xl:col-start-11 '>
             <CarouselPagPrev isStart={isStart} />

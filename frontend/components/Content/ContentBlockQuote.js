@@ -76,6 +76,7 @@ const ContentBlockQuote = ({
           href={linkHref}
           alt={linkAlt}
           label={label}
+          linkAlt={header}
           isCenter={linkIsCenter}
         />
       </ContentBlockQuoteBody>

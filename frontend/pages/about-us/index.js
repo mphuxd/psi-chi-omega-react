@@ -181,7 +181,7 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
               <Accordion className='w-full relative mt-4 mb-20 accordion-item--end'>
                 {pillars.pillar.map((pillar, i) => {
                   return (
-                    <AccordionItem key={i} title={pillar.title} caption={pillar.caption}>
+                    <AccordionItem key={i} index={i} title={pillar.title} caption={pillar.caption}>
                       <div className='mt-4 lg:mt-0'>
                         <div className='mt-4 lg:mt-0'>{pillar.definition1}</div>
                         {pillar.definiton2 && <div className='mt-2'>{pillar.definiton2}</div>}

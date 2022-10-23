@@ -49,6 +49,11 @@
       "type": "component",
       "repeatable": false,
       "component": "homepage.events"
+    },
+    "HeroModern": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-modern"
     }
   }
 }

@@ -10,21 +10,26 @@ export const HeaderSideNav = ({ isActive }) => {
   let className = "flex-col z-10 absolute mt-24 ml-2";
   let classNames = cx(className, display);
   let navData = useContext(navContext);
-  let navGroup = navData.map((group, index) => {
-    return (
-      <HeaderSideNavGroup name={group.groupName} key={index}>
-        {group.links.map((link, index) => {
-          return (
-            <Link legacyBehavior={false} className='w-fit' href={link.href} key={index}>
-              {link.name}
-            </Link>
-          );
-        })}
-      </HeaderSideNavGroup>
-    );
-  });
 
-  return <div className={classNames}>{navGroup}</div>;
+  return (
+    <ul id='mobile-header-menu' className={classNames}>
+      {navData.map((group, index) => {
+        return (
+          <HeaderSideNavGroup name={group.groupName} key={index}>
+            {group.links.map((link, index) => {
+              return (
+                <li key={index}>
+                  <Link legacyBehavior={false} className='w-fit' href={link.href} key={index}>
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </HeaderSideNavGroup>
+        );
+      })}
+    </ul>
+  );
 };
 
 HeaderSideNav.propTypes = {

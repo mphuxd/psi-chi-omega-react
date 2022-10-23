@@ -22,13 +22,14 @@ const CarouselSlideContainer = ({
     "opacity-100 ": isActive,
     "opacity-25  ": !isActive,
   });
+
   return (
-    <div className={classNames}>
+    <div role="group" className={classNames}>
       <CarouselSlideImage src={src} alt={alt} width={width} height={height} />
       <CarouselSlideBody>
         <CarouselSlideBodyTitle title={heading} />
         <CarouselSlideBodyText text={copy} />
-        <LinkButton className='mt-10' href={href} alt={linkAlt} label={label} isCenter={false} />
+        <LinkButton linkAlt={linkAlt} className='mt-10' href={href} label={label} isCenter={false} />
       </CarouselSlideBody>
     </div>
   );

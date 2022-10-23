@@ -3,7 +3,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-export const HeaderSidepanel = ({ callBack, isActive, children }) => {
+export const HeaderSidepanel = ({ callBack, isActive, children, isMobile }) => {
   let classNames = cx({
     "header-side-panel--white": true,
     "header-side-panel--active": isActive,
@@ -18,10 +18,10 @@ export const HeaderSidepanel = ({ callBack, isActive, children }) => {
   }, [isActive, callBack, size]);
 
   useEffect(() => {
-    const menuButton = [document.getElementById("header-menu-button")];
+    const menuButton = [document.getElementById("mobile-header-menu-button")];
     const focusableElements = 'button, a, [tabindex]:not([tabindex="-1"])';
 
-    const modal = document.getElementById("header-side-panel");
+    const modal = document.getElementById("mobile-header-side-panel");
     const modalElements = menuButton.concat(...modal.querySelectorAll(focusableElements));
 
     const firstElement = modalElements[0];
@@ -51,9 +51,14 @@ export const HeaderSidepanel = ({ callBack, isActive, children }) => {
   });
 
   return (
-    <div id='header-side-panel' className={classNames}>
+    <nav
+      aria-label='Psi Chi Omega Mobile Side Navigation'
+      id='mobile-header-side-panel'
+      className={classNames}
+      aria-hidden={!isMobile}
+    >
       {children}
-    </div>
+    </nav>
   );
 };
 

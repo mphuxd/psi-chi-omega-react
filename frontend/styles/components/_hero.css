@@ -12,4 +12,44 @@
   .hero-subtext {
     @apply text-sm font-normal w-auto text-center col-span-full font-body mt-8 md:text-tiny max:text-lg max:mt-12;
   }
+  .hero-slide-width {
+    @apply w-3/4 lg:w-5/12 xl:w-1/3 2xl:w-1/3 max-w-1120 !important;
+  }
+  .hero-wrapper-bg {
+    z-index: -1;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        circle 800px at 700px 200px,
+        var(--colors-purple4),
+        var(---transparent)
+      ),
+      radial-gradient(
+        circle 600px at calc(100% - 300px) 300px,
+        var(--colors-mint3),
+        var(---transparent)
+      ),
+      radial-gradient(circle 800px at right center, var(--colors-sky3), var(---transparent)),
+      radial-gradient(circle 800px at right bottom, var(--colors-slate5), var(---transparent)),
+      radial-gradient(
+        circle 800px at calc(50% - 600px) calc(100% - 100px),
+        var(--colors-green4),
+        var(--colors-pink2),
+        var(---transparent)
+      );
+    ---transparent: #fdfcfd00;
+    --colors-mint3: hsl(164 76.6% 93.3%);
+    --colors-sky3: hsl(193 99% 94.7%);
+    --colors-sky4: hsl(193 91.4% 91.4%);
+    --colors-pink2: hsl(323 100% 98.4%);
+    --colors-purple4: hsl(275 76.4% 94.7%);
+    --colors-green4: hsl(140 48.7% 91%);
+    --colors-slate5: hsl(208 11.7% 91.1%);
+    --colors-orange5: hsl(25 100% 88.2%);
+  }
 }

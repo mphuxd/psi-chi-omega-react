@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 
 export const HeaderNavBarItem = ({ name, tag, children }) => {
   const router = useRouter();
-  let [isOpenDropdown, setIsOpenDropdown] = useState(false);
-  let displayDropdown = isOpenDropdown ? "flex" : "hidden";
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const displayDropdown = isOpenDropdown ? "flex" : "hidden";
 
-  let listClassNames = cx("header-navbar__list", displayDropdown);
-  let itemClassNames = cx("header-navbar-item", {
+  const listClassNames = cx("header-navbar__list", displayDropdown);
+  const itemClassNames = cx("header-navbar-item", {
     "header-menu__divider": router.pathname.includes(tag),
   });
 
@@ -21,16 +21,24 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
     }
   };
 
+  const listID = name.replaceAll(" ", "-");
+
   return (
-    <button
-      onClick={handleSetIsOpenDropdownClick}
-      onBlur={handleSetIsOpenDropdownBlur}
-      tabIndex='0'
-      className={itemClassNames}
-    >
-      <span className='uppercase'>{name}</span>
-      <div className={listClassNames}>{children}</div>
-    </button>
+    <li>
+      <button
+        onClick={handleSetIsOpenDropdownClick}
+        onBlur={handleSetIsOpenDropdownBlur}
+        tabIndex='0'
+        className={itemClassNames}
+        aria-expanded={isOpenDropdown}
+        aria-controls={listID}
+      >
+        <span className='uppercase'>{name}</span>
+        <ul id={listID} className={listClassNames}>
+          {children}
+        </ul>
+      </button>
+    </li>
   );
 };
 
