@@ -10,6 +10,7 @@ import {
   LinkFeed,
   LinkFeedItem,
   Meta,
+  LeaderImportant,
 } from "@/components";
 import ReactMarkdown from "react-markdown";
 
@@ -47,31 +48,16 @@ function LittleSis({ join, process, steps }) {
           title='Join Little Sis | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
       <Layout>
         <Wrapper>
-          <Grid
-            className='mt-24 md:mt-20 lg:mt-24 gap-y-4 md:gap-y-6 lg:gap-y-6 xl:gap-y-8'
-            isCenter={true}
-          >
-            <h1 className='text--superheadline col-span-full mx-auto text-center'>
-              {join.heading}
-            </h1>
-            <p className='col-span-full lg:col-span-8 lg:col-start-3 text-center'>{join.copy}</p>
-            <div className='col-span-full'>
-              <Image
-                src={join.image.data.attributes.url}
-                alt={join.image.data.attributes.alternativeText}
-                width={join.image.data.attributes.width}
-                height={join.image.data.attributes.height}
-                layout='responsive'
-                priority={true}
-              />
-            </div>
-          </Grid>
+          <LeaderImportant
+            heading={join.heading}
+            copy={join.copy}
+            image={join.image.data.attributes}
+          />
         </Wrapper>
 
         <Wrapper className='my-8 lg:my-16'>

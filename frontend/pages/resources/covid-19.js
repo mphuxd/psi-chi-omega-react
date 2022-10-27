@@ -42,13 +42,12 @@ function Covid19({ covid, leader, links }) {
           title='COVID-19 | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
       <Layout>
         <Wrapper>
-          <Grid className='mt-24 md:mt-20 lg:mt-24' isCenter={true}>
+          <Grid className='mt-24 md:mt-20 lg:mt-24 2xl:mt-32' isCenter={true}>
             <h1 className='col-span-full text-center text--headline'>{leader.title}</h1>
             <div className='col-span-full mt-4 md:mt-6 lg:mt-8'>
               <Image
