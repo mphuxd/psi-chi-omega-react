@@ -82,6 +82,7 @@ export default function Home({
           href={heroModern.href}
           images={heroModern.images.data}
         /> */}
+
         <Wrapper className='my-20 md:my-32'>
           <Grid className='mx-auto'>
             <SectionHeader
