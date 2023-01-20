@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Link from "next/link";
-import { SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
+import Head from 'next/head';
+import Link from 'next/link';
+import { SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import {
   Layout,
   Grid,
@@ -18,8 +18,9 @@ import {
   IsInView,
   Meta,
   HeroModern,
-} from "@/components";
-import { getHomepage } from "./api/pages/getHomepage";
+  Hero,
+} from '@/components';
+import { getHomepage } from './api/pages/getHomepage';
 
 export async function getStaticProps() {
   const homepageRes = await getHomepage();
@@ -64,7 +65,15 @@ export default function Home({
       </Head>
 
       <Layout className=''>
-        <HeroModern
+        <Hero
+          title={hero.title}
+          imageSrc={hero.image.data.attributes.url}
+          imageAlt={hero.image.data.attributes.alternativeText}
+          imageWidth={hero.image.data.attributes.width}
+          imageHeight={hero.image.data.attributes.height}
+          subtext={hero.subtext}
+        />
+        {/* <HeroModern
           title={heroModern.title}
           caption={heroModern.caption}
           description={heroModern.description}
@@ -72,7 +81,7 @@ export default function Home({
           ariaLabel='Join the brotherhood'
           href={heroModern.href}
           images={heroModern.images.data}
-        />
+        /> */}
 
         <Wrapper className='my-20 md:my-32'>
           <Grid className='mx-auto'>
@@ -94,7 +103,7 @@ export default function Home({
                     className='swiper--slide-width'
                     tabIndex={0}
                     aria-roledescription='slide'
-                    aria-labelledby={slide.heading.replaceAll(" ", "-")}
+                    aria-labelledby={slide.heading.replaceAll(' ', '-')}
                   >
                     {({ isActive }) => (
                       <CarouselSlideContainer
@@ -219,15 +228,15 @@ export default function Home({
         <Wrapper className='pb-12 md:py-20 xl:pt-32 xl:pb-64'>
           <Grid className='mx-auto'>
             <span className='text-center text--subheadline col-span-full justify-self-center '>
-              Need help? Check out our{" "}
+              Need help? Check out our{' '}
               <Link
                 legacyBehavior={false}
                 href='/resources/faq'
                 className='hover:cursor-pointer underline hover:underline decoration-midnight'
               >
                 FAQ
-              </Link>{" "}
-              or{" "}
+              </Link>{' '}
+              or{' '}
               <Link
                 legacyBehavior={false}
                 href='/resources/contact-us'
