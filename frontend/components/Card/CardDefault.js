@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const CardDefault = React.forwardRef(
   ({ srcImg, altImg, widthImg, heightImg, heading, body, linkHref, linkLabel }, ref) => {

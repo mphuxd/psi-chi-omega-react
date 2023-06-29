@@ -1,11 +1,11 @@
-import HeaderContainer from "./HeaderContainer";
-import Header from "./Header";
-import HeaderName from "./HeaderName";
-import HeaderMenuButton from "./HeaderMenuButton";
-import HeaderNavBar from "./HeaderNavBar";
-import HeaderSidepanel from "./HeaderSidepanel";
-import HeaderSideNav from "./HeaderSideNav";
-import HeaderSidepanelBackdrop from "./HeaderSidepanelBackdrop";
+import HeaderContainer from './HeaderContainer';
+import Header from './Header';
+import HeaderName from './HeaderName';
+import HeaderMenuButton from './HeaderMenuButton';
+import HeaderNavBar from './HeaderNavBar';
+import HeaderSidepanel from './HeaderSidepanel';
+import HeaderSideNav from './HeaderSideNav';
+import HeaderSidepanelBackdrop from './HeaderSidepanelBackdrop';
 
 export const HeaderDefault = () => (
   <HeaderContainer
@@ -19,6 +19,7 @@ export const HeaderDefault = () => (
           isActive={isSideNavExpanded}
         />
         <HeaderNavBar isMobile={isMobile} />
+
         <HeaderSidepanel
           isMobile={isMobile}
           callBack={onClickSideNavExpand}

@@ -2,7 +2,7 @@ import ContentBlockMedia from "./ContentBlockMedia";
 import ContentBlockBody from "./ContentBlockBody";
 import ContentBlockText from "./ContentBlockText";
 import LinkButton from "../Link/LinkButton";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { useInView } from "react-intersection-observer";

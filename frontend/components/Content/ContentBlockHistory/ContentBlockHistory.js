@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Grid from "../../Grid/Grid";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function ContentBlockHistory({
   heading,

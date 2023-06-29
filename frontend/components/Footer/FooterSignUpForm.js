@@ -1,12 +1,12 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 async function submitHandler(values) {
   try {
-    const response = await fetch("/api/sheets", {
-      method: "POST",
+    const response = await fetch('/api/sheets', {
+      method: 'POST',
       body: JSON.stringify(values, null, 2),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     // console.log(await response.json()); correct response received
@@ -18,7 +18,7 @@ async function submitHandler(values) {
 const FooterSignUpForm = () => {
   return (
     <Formik
-      initialValues={{ email: "" }}
+      initialValues={{ email: '' }}
       validate={(values) => {
         const errors = {};
         if (!values.email) {
@@ -42,7 +42,7 @@ const FooterSignUpForm = () => {
           </ErrorMessage>
           <div className='flex flex-row'>
             <Field
-              aria-label="Enter e-mail address to sign up for the Psi Chi Omega newsletter."
+              aria-label='Enter e-mail address to sign up for the Psi Chi Omega newsletter.'
               type='email'
               name='email'
               className='bg-midnight p-4 px-4 resize-none outline-none text--caption border border-1 border-white  text-slate-200 md:w-4/6  '
@@ -50,7 +50,7 @@ const FooterSignUpForm = () => {
             />
             <Field
               type='submit'
-              name=''
+              name='Sign Up'
               value='SIGN UP'
               className='bg-midnight text-white resize-none outline-none p-4 px-4 text--caption border border-1 border-white'
               disabled={isSubmitting} //use issubmitting to render a new button

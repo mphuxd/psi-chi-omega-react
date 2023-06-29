@@ -1,6 +1,6 @@
 import { A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import useBreakpointSize from "@/hooks/useBreakpointSize";
 import "swiper/css";
 import "swiper/css/a11y";

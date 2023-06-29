@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 function FaqListItem({ question, answer, category, label }) {
   let className = cx({
-    ["block"]: category === "All FAQs",
-    ["hidden"]: category != label && category != "All FAQs",
-    ["block"]: category === label,
+    ['block']: category === 'All FAQs',
+    ['hidden']: category != label && category != 'All FAQs',
+    ['block']: category === label,
   });
   return (
     <li className={className}>

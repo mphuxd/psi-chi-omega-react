@@ -1,8 +1,8 @@
-import Image from "next/image";
-import PropTypes from "prop-types";
+import Image from 'next/legacy/image';
+import PropTypes from 'prop-types';
 
 export const HeaderMenuButton = ({ onClick, isActive, isMobile }) => {
-  let classNames = "flex flex-col justify-center content-center z-40 p-2 md:hidden";
+  let classNames = 'flex flex-col justify-center content-center z-40 p-2 md:hidden';
   return (
     <button
       id='mobile-header-menu-button'

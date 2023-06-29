@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { useState } from "react";
+import Head from 'next/head';
+import { useState } from 'react';
 import {
   Layout,
   Wrapper,
@@ -9,16 +9,16 @@ import {
   FaqList,
   FaqListItem,
   Meta,
-} from "@/components";
+} from '@/components';
 
-import { fetchAPI } from "../api/strapi";
+import { fetchAPI } from '../api/strapi';
 
 export async function getStaticProps({ params }) {
-  const faqRes = await fetchAPI("/faq", {
+  const faqRes = await fetchAPI('/faq', {
     populate: {
-      "*": { populate: "*" },
-      filterLabels: { populate: "*" },
-      faq_questions: { populate: "*" },
+      '*': { populate: '*' },
+      filterLabels: { populate: '*' },
+      faq_questions: { populate: '*' },
     },
   });
 
@@ -33,7 +33,7 @@ export async function getStaticProps({ params }) {
 }
 
 function Faq({ faq, filterLabels, faqQuestions }) {
-  let [isActive, setActive] = useState("All FAQs");
+  let [isActive, setActive] = useState('All FAQs');
   const filterList = [];
 
   filterLabels.forEach((label) => filterList.push(label.label));
@@ -58,7 +58,6 @@ function Faq({ faq, filterLabels, faqQuestions }) {
           title='FAQ | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 
@@ -72,7 +71,7 @@ function Faq({ faq, filterLabels, faqQuestions }) {
             <FaqFilter list={filterList} onClick={handleClick} isActive={isActive} />
             <FaqList category={isActive}>
               {faqQuestions.map((question, i) => {
-                if (isActive === "All FAQs") {
+                if (isActive === 'All FAQs') {
                   return (
                     <FaqListItem
                       key={i}
