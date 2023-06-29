@@ -38,7 +38,7 @@
   }
 
   .header-navbar-item {
-    @apply header-menu__dropdown hover:header-menu__divider--hover focus:header-menu__divider text-left z-10;
+    @apply header-menu__dropdown hover:header-menu__divider--hover focus:header-menu__divider--hover text-left z-10;
   }
 
   .header-menu__dropdown {
@@ -68,6 +68,7 @@
     left: 8px;
     width: 50%;
     height: 2px;
+    opacity: 50%;
     background-color: #006341;
   }
 

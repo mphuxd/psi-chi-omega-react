@@ -3,9 +3,12 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { navContext } from '@/context/navContext';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import cx from 'classnames';
+import { useRouter } from 'next/router';
 
 export const HeaderNavBar = ({ isMobile }) => {
   let headerData = useContext(navContext);
+  const router = useRouter();
 
   return (
     <NavigationMenu.Root aria-hidden={isMobile} className='hidden md:block'>
@@ -14,7 +17,9 @@ export const HeaderNavBar = ({ isMobile }) => {
           return (
             <NavigationMenu.Item key={index} className='relative'>
               <NavigationMenu.Trigger
-                className='header-navbar-item'
+                className={cx('header-navbar-item', {
+                  'header-menu__divider': router.pathname.includes(group.groupTag),
+                })}
                 onPointerMove={(event) => event.preventDefault()}
                 onPointerLeave={(event) => event.preventDefault()}
               >
