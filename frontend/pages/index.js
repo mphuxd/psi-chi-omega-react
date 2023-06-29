@@ -207,7 +207,7 @@ export default function Home({ hero, about, carousel, cards, join, community, ev
           </Grid>
         </Wrapper>
 
-        <Wrapper className='pb-12 md:py-20 xl:pt-32 xl:pb-64'>
+        <Wrapper as='div' className='pb-12 md:py-20 xl:pt-32 xl:pb-64'>
           <Grid className='mx-auto'>
             <span className='text-center text--subheadline col-span-full justify-self-center '>
               Need help? Check out our{' '}
