@@ -1,4 +1,3 @@
-import HeaderNavBarItem from './HeaderNavBarItem';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { navContext } from '@/context/navContext';
