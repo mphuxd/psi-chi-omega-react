@@ -8,39 +8,23 @@ export const HeaderNavBar = ({ isMobile }) => {
   let headerData = useContext(navContext);
 
   return (
-    // <ul aria-hidden={isMobile} className='hidden md:flex md:flex-row md:justify-between'>
-    //   {headerData.map((group, index) => {
-    //     return (
-    //       <HeaderNavBarItem name={group.groupName} tag={group.groupTag} key={index}>
-    //         {group.links.map((link, index) => {
-    //           return (
-    //             <li role='none' key={index}>
-    //               <Link
-    //                 role='menuitem'
-    //                 legacyBehavior={false}
-    //                 href={link.href}
-    //                 className='hover:underline'
-    //                 key={index}
-    //               >
-    //                 {link.name}
-    //               </Link>
-    //             </li>
-    //           );
-    //         })}
-    //       </HeaderNavBarItem>
-    //     );
-    //   })}
-    // </ul>
-
     <NavigationMenu.Root aria-hidden={isMobile} className='hidden md:block'>
       <NavigationMenu.List className='hidden md:flex md:flex-row md:justify-between'>
         {headerData.map((group, index) => {
           return (
             <NavigationMenu.Item key={index} className='relative'>
-              <NavigationMenu.Trigger className='header-navbar-item'>
+              <NavigationMenu.Trigger
+                className='header-navbar-item'
+                onPointerMove={(event) => event.preventDefault()}
+                onPointerLeave={(event) => event.preventDefault()}
+              >
                 {group.groupName}
               </NavigationMenu.Trigger>
-              <NavigationMenu.Content className='header-navbar__list'>
+              <NavigationMenu.Content
+                className='header-navbar__list'
+                onPointerEnter={(event) => event.preventDefault()}
+                onPointerLeave={(event) => event.preventDefault()}
+              >
                 {group.links.map((link, index) => {
                   return (
                     <NavigationMenu.Link asChild className='hover:underline' key={index}>
