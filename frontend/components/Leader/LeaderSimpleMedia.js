@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import LeaderSimple from "./LeaderSimple";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function LeaderSimpleMedia({
   heading,

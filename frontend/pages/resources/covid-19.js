@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Layout, Wrapper, Grid, Meta } from "@/components";
 import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../api/strapi";

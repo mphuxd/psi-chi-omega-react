@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function HeaderName() {
   let classNames = "flex flex-col justify-center content-center z-10";

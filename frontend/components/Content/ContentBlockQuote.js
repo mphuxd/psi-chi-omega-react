@@ -3,7 +3,7 @@ import ContentBlockQuoteBody from "./ContentBlockQuoteBody";
 import ContentBlockText from "./ContentBlockText";
 import ContentBlockQuoteBodyAttributes from "./ContentBlockQuoteBodyAttributes";
 import LinkButton from "../Link/LinkButton";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { useInView } from "react-intersection-observer";

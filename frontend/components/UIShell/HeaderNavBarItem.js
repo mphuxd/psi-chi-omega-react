@@ -13,11 +13,11 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
     'header-menu__divider': router.pathname.includes(tag),
   });
 
-  const handleSetIsOpenDropdownClick = () => setIsOpenDropdown((isOpenDropdown = !isOpenDropdown));
+  const handleSetIsOpenDropdownClick = () => setIsOpenDropdown(!isOpenDropdown);
 
   const handleSetIsOpenDropdownBlur = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
-      setIsOpenDropdown((isOpenDropdown = false));
+      setIsOpenDropdown(false);
     }
   };
 

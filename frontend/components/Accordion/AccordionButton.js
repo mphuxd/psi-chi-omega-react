@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import cx from 'classnames';
 
 export const ACCORDION_BUTTON_TEST_ID = 'accordion-button';
