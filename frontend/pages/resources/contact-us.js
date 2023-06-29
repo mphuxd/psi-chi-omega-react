@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useForm } from "react-hook-form";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useForm } from 'react-hook-form';
 import {
   Layout,
   Wrapper,
@@ -10,13 +10,13 @@ import {
   FormInputContainer,
   FormInputLabel,
   Meta,
-} from "@/components";
+} from '@/components';
 
-import { fetchAPI } from "../api/strapi";
+import { fetchAPI } from '../api/strapi';
 
 export async function getStaticProps({ params }) {
-  const contactRes = await fetchAPI("/contact-us", {
-    populate: "*",
+  const contactRes = await fetchAPI('/contact-us', {
+    populate: '*',
   });
 
   return {
@@ -57,7 +57,7 @@ function ContactUs({ contact }) {
             heading={contact.heading}
             body={
               <>
-                If you have any questions or concerns, you might find answers in our{" "}
+                If you have any questions or concerns, you might find answers in our{' '}
                 <Link
                   legacyBehavior={false}
                   href='/resources/faq'
@@ -79,11 +79,11 @@ function ContactUs({ contact }) {
                 <input
                   id='contact-us-sender-name'
                   className='form-input'
-                  {...register("name", { required: true, maxLength: 80 })}
+                  {...register('name', { required: true, maxLength: 80 })}
                 />
                 <div className='form-input__error'>
-                  {errors.name?.type === "required" && "A name or alias is required"}
-                  {errors.name?.type === "maxLength" && "Input is too long"}
+                  {errors.name?.type === 'required' && 'A name or alias is required'}
+                  {errors.name?.type === 'maxLength' && 'Input is too long'}
                 </div>
               </FormInputContainer>
 
@@ -93,7 +93,7 @@ function ContactUs({ contact }) {
                   id='contact-us-sender-email'
                   type='text'
                   className='form-input'
-                  {...register("email", {
+                  {...register('email', {
                     required: true,
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -101,8 +101,8 @@ function ContactUs({ contact }) {
                   })}
                 />
                 <div className='form-input__error'>
-                  {errors.email?.type === "required" && "Enter a valid e-mail address"}
-                  {errors.email?.type === "pattern" && "Enter a valid e-mail address"}
+                  {errors.email?.type === 'required' && 'Enter a valid e-mail address'}
+                  {errors.email?.type === 'pattern' && 'Enter a valid e-mail address'}
                 </div>
               </FormInputContainer>
 
@@ -112,14 +112,14 @@ function ContactUs({ contact }) {
                   id='contact-us-message-subject'
                   type='text'
                   className='form-input'
-                  {...register("subject", {
+                  {...register('subject', {
                     required: true,
                     maxLength: 100,
                   })}
                 />
                 <div className='form-input__error'>
-                  {errors.subject?.type === "required" && "Please enter a message subject"}
-                  {errors.subject?.type === "maxLength" && "Subject is too long"}
+                  {errors.subject?.type === 'required' && 'Please enter a message subject'}
+                  {errors.subject?.type === 'maxLength' && 'Subject is too long'}
                 </div>
               </FormInputContainer>
 
@@ -131,13 +131,12 @@ function ContactUs({ contact }) {
                   Message
                 </label>
                 <textarea
-                  type='text'
                   className='form-texarea'
                   id='contact-us-message'
-                  {...register("message", { required: true })}
+                  {...register('message', { required: true })}
                 />
                 <div className='form-input__error'>
-                  {errors.message?.type === "required" && "Please enter a message"}
+                  {errors.message?.type === 'required' && 'Please enter a message'}
                 </div>
               </div>
 

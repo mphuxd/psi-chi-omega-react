@@ -40,16 +40,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({
-  hero,
-  heroModern,
-  about,
-  carousel,
-  cards,
-  join,
-  community,
-  events,
-}) {
+export default function Home({ hero, about, carousel, cards, join, community, events }) {
   return (
     <div className='antialiased overflow-x-hidden min-w-full'>
       <Head>
@@ -73,15 +64,6 @@ export default function Home({
           imageHeight={hero.image.data.attributes.height}
           subtext={hero.subtext}
         />
-        {/* <HeroModern
-          title={heroModern.title}
-          caption={heroModern.caption}
-          description={heroModern.description}
-          ctaLabel={heroModern.ctaLabel}
-          ariaLabel='Join the brotherhood'
-          href={heroModern.href}
-          images={heroModern.images.data}
-        /> */}
 
         <Wrapper className='my-20 md:my-32'>
           <Grid className='mx-auto'>

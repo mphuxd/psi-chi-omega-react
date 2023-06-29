@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 import {
   Accordion,
   AccordionItem,
@@ -19,24 +19,24 @@ import {
   LinkFeed,
   LinkFeedItem,
   Meta,
-} from "@/components";
-import ReactMarkdown from "react-markdown";
-import { fetchAPI } from "../api/strapi";
+} from '@/components';
+import ReactMarkdown from 'react-markdown';
+import { fetchAPI } from '../api/strapi';
 
 export async function getStaticProps({ params }) {
-  const aboutRes = await fetchAPI("/about-us", {
+  const aboutRes = await fetchAPI('/about-us', {
     populate: {
-      "*": { populate: "*" },
-      leader: { populate: "*" },
-      sectionheader: { populate: "*" },
+      '*': { populate: '*' },
+      leader: { populate: '*' },
+      sectionheader: { populate: '*' },
       metrics: {
-        populate: "*",
+        populate: '*',
       },
-      content: { populate: "*" },
-      culture: { populate: "*" },
-      pillars: { populate: "*" },
-      commitments: { populate: "*" },
-      why: { populate: "*" },
+      content: { populate: '*' },
+      culture: { populate: '*' },
+      pillars: { populate: '*' },
+      commitments: { populate: '*' },
+      why: { populate: '*' },
     },
   });
   return {
@@ -66,7 +66,6 @@ function About({ leader, sectionHeader, metrics, content, culture, pillars, comm
           title='About Us | ΨΧΩ'
           imgURL=''
           twitterHandle=''
-          
         />
       </Head>
 

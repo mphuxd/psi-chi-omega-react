@@ -1,7 +1,7 @@
-import HeaderNavBarItem from "./HeaderNavBarItem";
-import Link from "next/link";
-import { useContext } from "react";
-import { navContext } from "@/context/navContext";
+import HeaderNavBarItem from './HeaderNavBarItem';
+import Link from 'next/link';
+import { useContext } from 'react';
+import { navContext } from '@/context/navContext';
 
 export const HeaderNavBar = ({ isMobile }) => {
   let headerData = useContext(navContext);
@@ -13,8 +13,9 @@ export const HeaderNavBar = ({ isMobile }) => {
           <HeaderNavBarItem name={group.groupName} tag={group.groupTag} key={index}>
             {group.links.map((link, index) => {
               return (
-                <li key={index}>
+                <li role='none' key={index}>
                   <Link
+                    role='menuitem'
                     legacyBehavior={false}
                     href={link.href}
                     className='hover:underline'
@@ -33,5 +34,3 @@ export const HeaderNavBar = ({ isMobile }) => {
 };
 
 export default HeaderNavBar;
-
-//alternatively use a callback to setactive group.

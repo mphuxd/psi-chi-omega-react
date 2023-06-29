@@ -1,8 +1,8 @@
-import HeaderDefault from "../UIShell/HeaderDefault";
-import Footer from "../Footer/Footer";
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
-import NextNProgress from "nextjs-progressbar";
+import HeaderDefault from '../UIShell/HeaderDefault';
+import Footer from '../Footer/Footer';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import NextNProgress from 'nextjs-progressbar';
 
 export default function Layout({ children }) {
   const variants = {

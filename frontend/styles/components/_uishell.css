@@ -11,7 +11,7 @@
     padding-right: 8px;
   }
   .header-side-nav-group__divider::after {
-    content: "";
+    content: '';
     background: black;
     display: block;
     position: absolute;
@@ -22,7 +22,7 @@
   }
 
   .header {
-    @apply transition-all fixed duration-150 mx-auto w-full z-10 backdrop-filter backdrop-blur-lg;
+    @apply transition-all fixed duration-[400] mx-auto w-full z-10 backdrop-filter ease-in-out backdrop-blur-lg;
   }
 
   .header-inner {
@@ -51,7 +51,7 @@
 
   .header-menu__divider::after {
     z-index: 100;
-    content: "";
+    content: '';
     position: absolute;
     top: 100%;
     left: 8px;
@@ -62,7 +62,7 @@
 
   .header-menu__divider--hover::after {
     z-index: 0;
-    content: "";
+    content: '';
     position: absolute;
     top: 100%;
     left: 8px;

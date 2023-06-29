@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import { useRouter } from "next/router";
+import React, { useState } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
 export const HeaderNavBarItem = ({ name, tag, children }) => {
   const router = useRouter();
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
-  const displayDropdown = isOpenDropdown ? "flex" : "hidden";
+  const displayDropdown = isOpenDropdown ? 'flex' : 'hidden';
 
-  const listClassNames = cx("header-navbar__list", displayDropdown);
-  const itemClassNames = cx("header-navbar-item", {
-    "header-menu__divider": router.pathname.includes(tag),
+  const listClassNames = cx('header-navbar__list', displayDropdown);
+  const itemClassNames = cx('header-navbar-item', {
+    'header-menu__divider': router.pathname.includes(tag),
   });
 
   const handleSetIsOpenDropdownClick = () => setIsOpenDropdown((isOpenDropdown = !isOpenDropdown));
@@ -21,10 +21,10 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
     }
   };
 
-  const listID = name.replaceAll(" ", "-");
+  const listID = name.replaceAll(' ', '-');
 
   return (
-    <li>
+    <li className='relative'>
       <button
         onClick={handleSetIsOpenDropdownClick}
         onBlur={handleSetIsOpenDropdownBlur}
@@ -34,7 +34,7 @@ export const HeaderNavBarItem = ({ name, tag, children }) => {
         aria-controls={listID}
       >
         <span className='uppercase'>{name}</span>
-        <ul id={listID} className={listClassNames}>
+        <ul role='menu' id={listID} className={listClassNames}>
           {children}
         </ul>
       </button>

@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Image from "next/image";
-import { useState } from "react";
-import cx from "classnames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
+import { useState } from 'react';
+import cx from 'classnames';
 
 function FaqFilterMobile({ filterList }) {
   const [isActive, setActive] = useState(false);
 
   let buttonClass = cx({
-    ["text-center w-full mx-auto py-3 outline outline-1 font-bold"]: true,
-    ["hidden"]: isActive,
-    ["block"]: !isActive,
+    ['text-center w-full mx-auto py-3 outline outline-1 font-bold']: true,
+    ['hidden']: isActive,
+    ['block']: !isActive,
   });
 
   let filterClass = cx({
-    ["outline outline-1 px-4 pt-2 pb-4"]: true,
-    ["block"]: isActive,
-    ["hidden"]: !isActive,
+    ['outline outline-1 px-4 pt-2 pb-4']: true,
+    ['block']: isActive,
+    ['hidden']: !isActive,
   });
 
   function handleExpand(event) {
@@ -37,7 +37,9 @@ function FaqFilterMobile({ filterList }) {
       </button>
       <div id='filter-mobile-expanded' className={filterClass}>
         <div className='flex flex-row justify-between items-center pb-4'>
-          <span id="mobile-filter-title" className='uppercase text-body font-bold'>Categories</span>
+          <span id='mobile-filter-title' className='uppercase text-body font-bold'>
+            Categories
+          </span>
           <button
             aria-label='Collapse Mobile Filter'
             aria-controls='filter-mobile-expanded'
